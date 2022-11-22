@@ -1,6 +1,6 @@
 {
   "name": "@vkruglikov/react-telegram-web-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "source": "./src/index.ts",
   "type": "module",
@@ -21,7 +21,10 @@
     "type": "git",
     "url": "git+https://github.com/vkruglikov/react-telegram-web-app.git"
   },
-  "author": "",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Valentin Kruglikov dev.n@bk.ru",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/vkruglikov/react-telegram-web-app/issues"
