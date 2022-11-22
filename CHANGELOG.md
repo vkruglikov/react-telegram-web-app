@@ -1,5 +1,11 @@
 # @vkruglikov/react-telegram-web-app
 
+## 1.0.3
+
+### Patch Changes
+
+- 81546ee: Add docs pages
+
 ## 1.0.2
 
 ### Patch Changes
