@@ -1,0 +1,36 @@
+{
+  "name": "react-telegram-web-app",
+  "version": "1.0.0",
+  "description": "",
+  "source": "./src/index.ts",
+  "type": "module",
+  "exports": {
+    "require": "./lib/react-telegram-web-app.cjs",
+    "default": "./lib/react-telegram-web-app.modern.js"
+  },
+  "main": "lib/react-telegram-web-app.cjs",
+  "module": "lib/react-telegram-web-app.module.js",
+  "unpkg": "lib/react-telegram-web-app.umd.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "rm -rf ./lib/*; microbundle build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vkruglikov/react-telegram-web-app.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vkruglikov/react-telegram-web-app/issues"
+  },
+  "homepage": "https://github.com/vkruglikov/react-telegram-web-app#readme",
+  "devDependencies": {
+    "@types/react": "^18",
+    "microbundle": "^0.15.1"
+  },
+  "peerDependencies": {
+    "react": "^18",
+    "react-dom": "^18"
+  }
+}

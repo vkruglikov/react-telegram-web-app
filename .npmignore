@@ -1,0 +1,11 @@
+/node_modules/
+/.idea
+/src
+/telegram-web-app.d.ts
+/.github
+/.nvmrc
+/tsconfig.json
+
+# Ignore Mac DS_Store files
+.DS_Store
+**/.DS_Store
