@@ -1,9 +1,14 @@
 {
   "name": "@vkruglikov/react-telegram-web-app",
   "version": "1.0.1",
-  "description": "",
+  "description": "React components for Telegram WebApp",
   "source": "./src/index.ts",
   "type": "module",
+  "keywords": [
+    "react",
+    "telegram",
+    "telegram-bot"
+  ],
   "exports": {
     "require": "./lib/react-telegram-web-app.cjs",
     "default": "./lib/react-telegram-web-app.modern.js"
