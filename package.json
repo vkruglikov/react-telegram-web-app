@@ -1,5 +1,5 @@
 {
-  "name": "react-telegram-web-app",
+  "name": "@vkruglikov/react-telegram-web-app",
   "version": "1.0.0",
   "description": "",
   "source": "./src/index.ts",
@@ -13,7 +13,9 @@
   "unpkg": "lib/react-telegram-web-app.umd.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "build": "rm -rf ./lib/*; microbundle build"
+    "build": "rm -rf ./lib/*; microbundle build",
+    "changeset": "changeset",
+    "release": "npm run build && changeset publish"
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,7 @@
   },
   "homepage": "https://github.com/vkruglikov/react-telegram-web-app#readme",
   "devDependencies": {
+    "@changesets/cli": "^2.25.2",
     "@types/react": "^18",
     "microbundle": "^0.15.1"
   },
