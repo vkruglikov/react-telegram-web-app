@@ -1,6 +1,6 @@
-@vkruglikov/react-telegram-web-app - v1.0.2
+@vkruglikov/react-telegram-web-app - v1.1.0
 
-# @vkruglikov/react-telegram-web-app - v1.0.2
+# @vkruglikov/react-telegram-web-app - v1.1.0
 
 ## Table of contents
 

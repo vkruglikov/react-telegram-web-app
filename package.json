@@ -19,6 +19,7 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "rm -rf ./lib/*; microbundle build",
+    "prepare": "npm run typedoc && npm run changeset",
     "changeset": "changeset",
     "typedoc": "typedoc",
     "release": "npm run build && changeset publish"
