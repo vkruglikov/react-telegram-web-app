@@ -1,5 +1,11 @@
 # @vkruglikov/react-telegram-web-app
 
+## 1.2.0
+
+### Minor Changes
+
+- b7bfbcb: Add BackButton component
+
 ## 1.1.2
 
 ### Patch Changes
