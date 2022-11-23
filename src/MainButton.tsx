@@ -1,6 +1,9 @@
 import { FC, useEffect } from 'react';
 
-/** The props type of {@link MainButton | `MainButton`}. */
+/**
+ * The props type of {@link MainButton | `MainButton`}.
+ * @group Interface Props
+ */
 export interface MainButtonProps {
 	/**
 	 * Current button text
@@ -32,19 +35,18 @@ export interface MainButtonProps {
 }
 
 /**
- * Renders a MainMutton component in React app
- *
- * The MainButton component is described in official telegram docs
- * https://core.telegram.org/bots/webapps#mainbutton
+ * Renders a {@link telegram!MainButton} component in React app as {@link react!Component}
  *
  * ```tsx
+ * import { MainButton } from "@vkruglikov/react-telegram-web-app";
+ *
  * <MainButton
  *     text="CLICK ME"
  *     onClick={() => console.log('Hello, I am button!)}
  * />
  * ```
  * @returns Component always returns `null`. Not renders any elements
- * @link react!Component
+ * @group React Components
  */
 const MainButton: FC<MainButtonProps> = ({
 	text = 'CONTINUE',

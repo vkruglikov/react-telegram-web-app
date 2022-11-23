@@ -4,35 +4,30 @@
 
 ## Table of contents
 
-### Interfaces
+### Interface Props
 
 - [MainButtonProps](interfaces/MainButtonProps.md)
 
-### Functions
+### React Components
 
 - [MainButton](README.md#mainbutton)
 
-## Functions
+## React Components
 
 ### MainButton
 
 ▸ **MainButton**(`props`, `context?`): `null` \| `ReactElement`<`any`, `any`\>
 
-Renders a MainMutton component in React app
-
-The MainButton component is described in official telegram docs
-https://core.telegram.org/bots/webapps#mainbutton
+Renders a [telegram!MainButton](https://core.telegram.org/bots/webapps#mainbutton) component in React app as [react!Component](https://reactjs.org/docs/react-component.html)
 
 ```tsx
+import { MainButton } from "@vkruglikov/react-telegram-web-app";
+
 <MainButton
     text="CLICK ME"
     onClick={() => console.log('Hello, I am button!)}
 />
 ```
-
-**`Link`**
-
-react!Component
 
 #### Parameters
 

@@ -21,7 +21,7 @@
     "build": "rm -rf ./lib/*; microbundle build",
     "prepare": "husky install",
     "changeset": "changeset",
-    "typedoc": "typedoc",
+    "docs": "typedoc",
     "release": "npm run build && changeset publish",
     "format": "prettier --write ."
   },
