@@ -1,5 +1,11 @@
 # @vkruglikov/react-telegram-web-app
 
+## 1.1.2
+
+### Patch Changes
+
+- 4e36d80: Update documentation
+
 ## 1.1.1
 
 ### Patch Changes
