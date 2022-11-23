@@ -21,12 +21,12 @@
 Renders a [telegram!MainButton](https://core.telegram.org/bots/webapps#mainbutton) component in React app as [react!Component](https://reactjs.org/docs/react-component.html)
 
 ```tsx
-import { MainButton } from "@vkruglikov/react-telegram-web-app";
+import { MainButton } from '@vkruglikov/react-telegram-web-app';
 
 <MainButton
-    text="CLICK ME"
-    onClick={() => console.log('Hello, I am button!)}
-/>
+	text="CLICK ME"
+	onClick={() => console.log('Hello, I am button!')}
+/>;
 ```
 
 #### Parameters

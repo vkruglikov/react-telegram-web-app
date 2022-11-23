@@ -42,7 +42,7 @@ export interface MainButtonProps {
  *
  * <MainButton
  *     text="CLICK ME"
- *     onClick={() => console.log('Hello, I am button!)}
+ *     onClick={() => console.log('Hello, I am button!')}
  * />
  * ```
  * @returns Component always returns `null`. Not renders any elements
