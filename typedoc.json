@@ -7,7 +7,6 @@
   "out": "docs",
   "readme": "none",
   "disableSources": true,
-  "includeVersion": true,
   "externalSymbolLinkMappings": {
     "react": {
       "Component": "https://reactjs.org/docs/react-component.html"
