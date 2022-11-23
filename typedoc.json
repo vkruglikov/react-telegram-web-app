@@ -7,7 +7,8 @@
 	"disableSources": true,
 	"externalSymbolLinkMappings": {
 		"telegram": {
-			"MainButton": "https://core.telegram.org/bots/webapps#mainbutton"
+			"MainButton": "https://core.telegram.org/bots/webapps#mainbutton",
+			"BackButton": "https://core.telegram.org/bots/webapps#backbutton"
 		},
 		"react": {
 			"Component": "https://reactjs.org/docs/react-component.html"
