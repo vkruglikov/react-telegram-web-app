@@ -16,7 +16,7 @@
 
 ### MainButton
 
-▸ **MainButton**(`props`, `context?`): ``null`` \| `ReactElement`<`any`, `any`\>
+▸ **MainButton**(`props`, `context?`): `null` \| `ReactElement`<`any`, `any`\>
 
 Renders a MainMutton component in React app
 
@@ -36,13 +36,13 @@ react!Component
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `props` | [`MainButtonProps`](interfaces/MainButtonProps.md) |
-| `context?` | `any` |
+| Name       | Type                                               |
+| :--------- | :------------------------------------------------- |
+| `props`    | [`MainButtonProps`](interfaces/MainButtonProps.md) |
+| `context?` | `any`                                              |
 
 #### Returns
 
-``null`` \| `ReactElement`<`any`, `any`\>
+`null` \| `ReactElement`<`any`, `any`\>
 
 Component always returns `null`. Not renders any elements

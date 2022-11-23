@@ -19,10 +19,11 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "rm -rf ./lib/*; microbundle build",
-    "prepare": "npm run typedoc && npm run changeset",
+    "prepare": "husky install",
     "changeset": "changeset",
     "typedoc": "typedoc",
-    "release": "npm run build && changeset publish"
+    "release": "npm run build && changeset publish",
+    "format": "prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -40,12 +41,38 @@
   "devDependencies": {
     "@changesets/cli": "^2.25.2",
     "@types/react": "^18",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.3",
     "microbundle": "^0.15.1",
+    "prettier": "2.8.0",
     "typedoc": "^0.23.21",
     "typedoc-plugin-markdown": "^3.13.6"
   },
   "peerDependencies": {
     "react": "^18",
     "react-dom": "^18"
+  },
+  "lint-staged": {
+    "*.(tsx|ts)": [
+      "prettier --write"
+    ],
+    "*.md": [
+      "prettier --write"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all",
+    "useTabs": true,
+    "arrowParens": "avoid",
+    "overrides": [
+      {
+        "files": "package.json",
+        "options": {
+          "useTabs": false,
+          "parser": "json-stringify"
+        }
+      }
+    ]
   }
 }

@@ -1,1 +1,1 @@
-export {default as MainButton, MainButtonProps} from './MainButton';
+export { default as MainButton, MainButtonProps } from './MainButton';

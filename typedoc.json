@@ -1,15 +1,13 @@
 {
-  "entryPoints": ["src/index.ts"],
-  "githubPages": true,
-  "plugin": [
-    "typedoc-plugin-markdown"
-  ],
-  "out": "docs",
-  "readme": "none",
-  "disableSources": true,
-  "externalSymbolLinkMappings": {
-    "react": {
-      "Component": "https://reactjs.org/docs/react-component.html"
-    }
-  }
+	"entryPoints": ["src/index.ts"],
+	"githubPages": true,
+	"plugin": ["typedoc-plugin-markdown"],
+	"out": "docs",
+	"readme": "none",
+	"disableSources": true,
+	"externalSymbolLinkMappings": {
+		"react": {
+			"Component": "https://reactjs.org/docs/react-component.html"
+		}
+	}
 }

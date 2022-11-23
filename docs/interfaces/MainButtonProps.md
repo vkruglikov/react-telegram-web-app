@@ -27,7 +27,7 @@ Current button color.
 
 Set to themeParams.button_color by default
 
-___
+---
 
 ### disable
 
@@ -39,7 +39,7 @@ The button disable state.
 
 Set to `false` y defaults
 
-___
+---
 
 ### onClick
 
@@ -55,7 +55,7 @@ The button press event handler
 
 `void`
 
-___
+---
 
 ### progress
 
@@ -67,7 +67,7 @@ The button progress state indicator.
 
 Set to `false` by default
 
-___
+---
 
 ### text
 
@@ -79,7 +79,7 @@ Current button text
 
 Set to `CONTINUE` by default
 
-___
+---
 
 ### textColor
 
