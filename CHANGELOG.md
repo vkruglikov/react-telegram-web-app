@@ -1,5 +1,11 @@
 # @vkruglikov/react-telegram-web-app
 
+## 1.1.1
+
+### Patch Changes
+
+- 395c91f: Documentation fix
+
 ## 1.1.0
 
 ### Minor Changes
