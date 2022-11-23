@@ -1,6 +1,8 @@
-[@vkruglikov/react-telegram-web-app](../README.md) / [Exports](../modules.md) / MainButtonProps
+[@vkruglikov/react-telegram-web-app - v1.0.2](../README.md) / MainButtonProps
 
 # Interface: MainButtonProps
+
+The props type of [`MainButton`](../README.md#mainbutton).
 
 ## Table of contents
 
@@ -17,11 +19,13 @@
 
 ### color
 
-• `Optional` **color**: \`#${string}\`
+• `Optional` **color**: `string`
 
-#### Defined in
+Current button color.
 
-[src/MainButton.tsx:11](https://github.com/vkruglikov/react-telegram-web-app/blob/ffcb6ad/src/MainButton.tsx#L11)
+**`Default Value`**
+
+Set to themeParams.button_color by default
 
 ___
 
@@ -29,9 +33,11 @@ ___
 
 • `Optional` **disable**: `boolean`
 
-#### Defined in
+The button disable state.
 
-[src/MainButton.tsx:9](https://github.com/vkruglikov/react-telegram-web-app/blob/ffcb6ad/src/MainButton.tsx#L9)
+**`Default Value`**
+
+Set to `false` y defaults
 
 ___
 
@@ -43,13 +49,11 @@ ___
 
 ▸ (): `void`
 
+The button press event handler
+
 ##### Returns
 
 `void`
-
-#### Defined in
-
-[src/MainButton.tsx:10](https://github.com/vkruglikov/react-telegram-web-app/blob/ffcb6ad/src/MainButton.tsx#L10)
 
 ___
 
@@ -57,9 +61,11 @@ ___
 
 • `Optional` **progress**: `boolean`
 
-#### Defined in
+The button progress state indicator.
 
-[src/MainButton.tsx:8](https://github.com/vkruglikov/react-telegram-web-app/blob/ffcb6ad/src/MainButton.tsx#L8)
+**`Default Value`**
+
+Set to `false` by default
 
 ___
 
@@ -67,16 +73,20 @@ ___
 
 • `Optional` **text**: `string`
 
-#### Defined in
+Current button text
 
-[src/MainButton.tsx:7](https://github.com/vkruglikov/react-telegram-web-app/blob/ffcb6ad/src/MainButton.tsx#L7)
+**`Default Value`**
+
+Set to `CONTINUE` by default
 
 ___
 
 ### textColor
 
-• `Optional` **textColor**: \`#${string}\`
+• `Optional` **textColor**: `string`
 
-#### Defined in
+Current button text color
 
-[src/MainButton.tsx:12](https://github.com/vkruglikov/react-telegram-web-app/blob/ffcb6ad/src/MainButton.tsx#L12)
+**`Default Value`**
+
+Set to themeParams.button_text_color by default

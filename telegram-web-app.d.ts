@@ -194,12 +194,12 @@ export declare namespace TelegramWebApps {
          * Button color in the #RRGGBB format.
          * Also available as the CSS variable var(--tg-theme-button-color).
          */
-        button_color?: `#${string}`;
+        button_color?: string;
         /**
          * Button text color in the #RRGGBB format.
          * Also available as the CSS variable var(--tg-theme-button-text-color).
          */
-        button_text_color?: `#${string}`;
+        button_text_color?: string;
         /**
          * Secondary background color in the #RRGGBB format.
          * Also available as the CSS variable var(--tg-theme-secondary-bg-color).
@@ -392,11 +392,11 @@ export declare namespace TelegramWebApps {
         /**
          * 	Current button color. Set to themeParams.button_color by default.
          */
-        color: `#${string}`;
+        color: string;
         /**
          * Current button text color. Set to themeParams.button_text_color by default.
          */
-        textColor: `#${string}`;
+        textColor: string;
         /**
          * Shows whether the button is visible. Set to false by default.
          */

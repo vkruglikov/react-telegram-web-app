@@ -7,7 +7,9 @@ React components for Telegram WebApp
 [![GitHub Actions CI](https://github.com/vkruglikov/react-telegram-web-app/actions/workflows/release.yml/badge.svg)](https://github.com/vkruglikov/react-telegram-web-app/actions/workflows/release.yml)
 [![License](https://badgen.net/github/license/vkruglikov/react-telegram-web-app)](https://github.com/vkruglikov/react-telegram-web-app/blob/master/LICENSE)
 
-## Install for React 18
+### Install for React ^18
 ```sh
 npm i @vkruglikov/react-telegram-web-app --save
 ```
+
+### Documentation [link](docs/README.md)

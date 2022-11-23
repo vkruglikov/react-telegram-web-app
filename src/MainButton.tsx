@@ -1,17 +1,51 @@
 import {FC, useEffect} from 'react';
 
-const WebApp = window.Telegram.WebApp;
-const WebAppMainButton = WebApp.MainButton;
-
+/** The props type of {@link MainButton | `MainButton`}. */
 export interface MainButtonProps {
+    /**
+     * Current button text
+     * @defaultValue Set to `CONTINUE` by default
+     */
     text?: string;
+    /**
+     * The button progress state indicator.
+     * @defaultValue  Set to `false` by default
+     */
     progress?: boolean;
+    /**
+     * The button disable state.
+     * @defaultValue Set to `false` y defaults
+     */
     disable?: boolean;
+    /** The button press event handler */
     onClick?: () => void;
-    color?: `#${string}`;
-    textColor?: `#${string}`;
+    /**
+     * Current button color.
+     * @defaultValue Set to themeParams.button_color by default
+     */
+    color?: string;
+    /**
+     * Current button text color
+     * @defaultValue Set to themeParams.button_text_color by default
+     */
+    textColor?: string;
 }
 
+/**
+ * Renders a MainMutton component in React app
+ *
+ * The MainButton component is described in official telegram docs
+ * https://core.telegram.org/bots/webapps#mainbutton
+ *
+ * ```tsx
+ * <MainButton
+ *     text="CLICK ME"
+ *     onClick={() => console.log('Hello, I am button!)}
+ * />
+ * ```
+ * @returns Component always returns `null`. Not renders any elements
+ * @link react!Component
+ */
 const MainButton: FC<MainButtonProps> = ({
     text= 'CONTINUE',
     progress= false,
@@ -19,7 +53,10 @@ const MainButton: FC<MainButtonProps> = ({
     color,
     textColor,
     onClick,
-}) => {
+}): null => {
+    const { WebApp } = window.Telegram;
+    const { MainButton: WebAppMainButton } = WebApp;
+
     useEffect(() => {
         WebAppMainButton.show();
         return () => {

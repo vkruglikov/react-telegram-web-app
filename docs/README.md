@@ -1,14 +1,48 @@
-@vkruglikov/react-telegram-web-app / [Exports](modules.md)
+@vkruglikov/react-telegram-web-app - v1.0.2
 
-# react-telegram-web-app
-React components for Telegram WebApp
+# @vkruglikov/react-telegram-web-app - v1.0.2
 
-[![npm](https://img.shields.io/npm/v/@vkruglikov/react-telegram-web-app.svg)](https://www.npmjs.com/package/@vkruglikov/react-telegram-web-app)
-[![types](https://badgen.net/npm/types/@vkruglikov/react-telegram-web-app)](https://npmjs.org/package/@vkruglikov/react-telegram-web-app)
-[![GitHub Actions CI](https://github.com/vkruglikov/react-telegram-web-app/actions/workflows/release.yml/badge.svg)](https://github.com/vkruglikov/react-telegram-web-app/actions/workflows/release.yml)
-[![License](https://badgen.net/github/license/vkruglikov/react-telegram-web-app)](https://github.com/vkruglikov/react-telegram-web-app/blob/master/LICENSE)
+## Table of contents
 
-## Install for React 18
-```sh
-npm i @vkruglikov/react-telegram-web-app --save
+### Interfaces
+
+- [MainButtonProps](interfaces/MainButtonProps.md)
+
+### Functions
+
+- [MainButton](README.md#mainbutton)
+
+## Functions
+
+### MainButton
+
+▸ **MainButton**(`props`, `context?`): ``null`` \| `ReactElement`<`any`, `any`\>
+
+Renders a MainMutton component in React app
+
+The MainButton component is described in official telegram docs
+https://core.telegram.org/bots/webapps#mainbutton
+
+```tsx
+<MainButton
+    text="CLICK ME"
+    onClick={() => console.log('Hello, I am button!)}
+/>
 ```
+
+**`Link`**
+
+react!Component
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `props` | [`MainButtonProps`](interfaces/MainButtonProps.md) |
+| `context?` | `any` |
+
+#### Returns
+
+``null`` \| `ReactElement`<`any`, `any`\>
+
+Component always returns `null`. Not renders any elements

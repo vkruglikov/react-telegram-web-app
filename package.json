@@ -20,7 +20,7 @@
   "scripts": {
     "build": "rm -rf ./lib/*; microbundle build",
     "changeset": "changeset",
-    "typedoc": "typedoc --plugin typedoc-plugin-markdown --out docs src/index.ts",
+    "typedoc": "typedoc",
     "release": "npm run build && changeset publish"
   },
   "repository": {
