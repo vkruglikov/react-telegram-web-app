@@ -4,15 +4,51 @@
 
 ## Table of contents
 
-### Interface Props
+### Interfaces
 
 - [BackButtonProps](interfaces/BackButtonProps.md)
 - [MainButtonProps](interfaces/MainButtonProps.md)
+- [ShowPopupButton](interfaces/ShowPopupButton.md)
+- [ShowPopupParams](interfaces/ShowPopupParams.md)
+
+### Type Aliases
+
+- [ShowPopupHandler](README.md#showpopuphandler)
 
 ### React Components
 
 - [BackButton](README.md#backbutton)
 - [MainButton](README.md#mainbutton)
+
+### Hooks
+
+- [useShowPopup](README.md#useshowpopup)
+
+## Type Aliases
+
+### ShowPopupHandler
+
+Ƭ **ShowPopupHandler**: (`params`: [`ShowPopupParams`](interfaces/ShowPopupParams.md)) => `Promise`<`string`\>
+
+#### Type declaration
+
+▸ (`params`): `Promise`<`string`\>
+
+Then handler provided Promise, and resolve the field id of the pressed button will be passed.
+
+**`Throws`**
+
+##### Parameters
+
+| Name     | Type                                               |
+| :------- | :------------------------------------------------- |
+| `params` | [`ShowPopupParams`](interfaces/ShowPopupParams.md) |
+
+##### Returns
+
+`Promise`<`string`\>
+
+Button id as string, it was described by [ShowPopupButton](interfaces/ShowPopupButton.md)
 
 ## React Components
 
@@ -70,3 +106,16 @@ import { MainButton } from '@vkruglikov/react-telegram-web-app';
 `null` \| `ReactElement`<`any`, `any`\>
 
 Component always returns `null`. Not renders any elements
+
+## Hooks
+
+### useShowPopup
+
+▸ **useShowPopup**(): [`ShowPopupHandler`](README.md#showpopuphandler)
+
+The hook provided showPopup handle of the type [ShowPopupHandler](README.md#showpopuphandler).
+The handle that shows a native popup described by the params argument of the type [ShowPopupParams](interfaces/ShowPopupParams.md).
+
+#### Returns
+
+[`ShowPopupHandler`](README.md#showpopuphandler)

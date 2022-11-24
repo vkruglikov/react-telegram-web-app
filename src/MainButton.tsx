@@ -2,7 +2,6 @@ import { FC, useEffect } from 'react';
 
 /**
  * The props type of {@link MainButton | `MainButton`}.
- * @group Interface Props
  */
 export interface MainButtonProps {
 	/**

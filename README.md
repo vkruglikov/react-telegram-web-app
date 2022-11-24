@@ -19,3 +19,5 @@ npm i @vkruglikov/react-telegram-web-app --save
   The component controls the main button, which is displayed at the bottom of the Web App in the Telegram interface.
 - [BackButton](./docs/README.md#backbutton) -
   This component controls the back button, which can be displayed in the header of the Web App in the Telegram interface.
+- [useShowPopup](./docs/README.md#useshowpopup) -
+  The hook that provided showPopup method that shows a native popup described by the params argument of the type.

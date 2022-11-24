@@ -2,7 +2,6 @@ import { FC, useEffect } from 'react';
 
 /**
  * The props type of {@link BackButton | `BackButton`}.
- * @group Interface Props
  */
 export interface BackButtonProps {
 	/** The back button press event handler */
@@ -22,7 +21,7 @@ export interface BackButtonProps {
  * @returns Component always returns `null`. Not renders any elements
  * @group React Components
  */
-const BackButton: FC<BackButtonProps> = ({ onClick }): null => {
+const BackButton: FC<BackButtonProps> = ({ onClick }) => {
 	const { BackButton: WebAppBackButton } = window.Telegram.WebApp;
 
 	useEffect(() => {
