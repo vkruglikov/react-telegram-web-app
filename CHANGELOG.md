@@ -1,5 +1,11 @@
 # @vkruglikov/react-telegram-web-app
 
+## 1.3.0
+
+### Minor Changes
+
+- 28c08e4: Add useShowPopup hook
+
 ## 1.2.0
 
 ### Minor Changes
