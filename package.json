@@ -1,6 +1,6 @@
 {
   "name": "@vkruglikov/react-telegram-web-app",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "React components for Telegram WebApp",
   "source": "./src/index.ts",
   "type": "module",
