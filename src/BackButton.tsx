@@ -22,7 +22,9 @@ export interface BackButtonProps {
  * @group React Components
  */
 const BackButton: FC<BackButtonProps> = ({ onClick }) => {
-	const { BackButton: WebAppBackButton } = window.Telegram.WebApp;
+	const WebAppBackButton =
+		typeof window !== 'undefined' ? window?.Telegram?.WebApp?.BackButton : null;
+	if (!WebAppBackButton) return null;
 
 	useEffect(() => {
 		WebAppBackButton.show();
