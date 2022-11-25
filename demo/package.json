@@ -24,7 +24,7 @@
       "react-app"
     ]
   },
-  "homepage": "./build",
+  "homepage": "./",
   "browserslist": {
     "production": [
       ">0.2%",
