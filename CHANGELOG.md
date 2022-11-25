@@ -1,5 +1,11 @@
 # @vkruglikov/react-telegram-web-app
 
+## 1.4.1
+
+### Patch Changes
+
+- 6a7c5b4: Add CRA demo webapp
+
 ## 1.4.0
 
 ### Minor Changes
