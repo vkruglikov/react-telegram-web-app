@@ -1,5 +1,11 @@
 # @vkruglikov/react-telegram-web-app
 
+## 1.4.0
+
+### Minor Changes
+
+- fdbfcc8: Fix window typed error
+
 ## 1.3.0
 
 ### Minor Changes
