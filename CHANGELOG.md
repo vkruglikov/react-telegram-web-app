@@ -1,5 +1,11 @@
 # @vkruglikov/react-telegram-web-app
 
+## 1.5.2
+
+### Patch Changes
+
+- 2006b71: Add docst and example with useHapticFeedback
+
 ## 1.5.1
 
 ### Patch Changes
