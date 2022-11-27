@@ -1,5 +1,11 @@
 # @vkruglikov/react-telegram-web-app
 
+## 1.5.3
+
+### Patch Changes
+
+- 7a5106c: Fix MainButton uniq effects
+
 ## 1.5.2
 
 ### Patch Changes
