@@ -62,13 +62,6 @@ const MainButton: FC<MainButtonProps> = ({
   if (!WebAppMainButton || !WebApp) return null;
 
   useEffect(() => {
-    WebAppMainButton.show();
-    return () => {
-      WebAppMainButton.hide();
-    };
-  }, []);
-
-  useEffect(() => {
     WebAppMainButton.setParams({
       color: color || WebApp.themeParams.button_color || '#fff',
     });
@@ -110,6 +103,13 @@ const MainButton: FC<MainButtonProps> = ({
       WebAppMainButton.offClick(onClick);
     };
   }, [onClick]);
+
+  useEffect(() => {
+    WebAppMainButton.show();
+    return () => {
+      WebAppMainButton.hide();
+    };
+  }, []);
 
   return null;
 };

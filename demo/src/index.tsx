@@ -22,8 +22,8 @@ root.render(
         // @ts-ignore
         window.Telegram?.WebApp?.themeParams?.text_color
           ? {
-              // @ts-ignore
               algorithm:
+                // @ts-ignore
                 window.Telegram?.WebApp?.colorScheme === 'dark'
                   ? theme.darkAlgorithm
                   : theme.defaultAlgorithm,
