@@ -21,6 +21,8 @@ npm i @vkruglikov/react-telegram-web-app --save
   This component controls the back button, which can be displayed in the header of the Web App in the Telegram interface.
 - [useShowPopup](./docs/README.md#useshowpopup) -
   The hook that provided showPopup method that shows a native popup.
+- [useHapticFeedback](./docs/README.md#usehapticfeedback) -
+  This object controls haptic feedback.
 
 ## Demo
 

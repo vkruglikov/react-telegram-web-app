@@ -6,3 +6,9 @@ export {
   ShowPopupParams,
   ShowPopupButton,
 } from './useShowPopup';
+export {
+  default as useHapticFeedback,
+  ImpactOccurredHandler,
+  NotificationOccurredHandler,
+  SelectionChangedHandler,
+} from './useHapticFeedback';

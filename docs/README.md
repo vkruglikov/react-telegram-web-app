@@ -13,6 +13,9 @@
 
 ### Type Aliases
 
+- [ImpactOccurredHandler](README.md#impactoccurredhandler)
+- [NotificationOccurredHandler](README.md#notificationoccurredhandler)
+- [SelectionChangedHandler](README.md#selectionchangedhandler)
 - [ShowPopupHandler](README.md#showpopuphandler)
 
 ### React Components
@@ -22,9 +25,83 @@
 
 ### Hooks
 
+- [useHapticFeedback](README.md#usehapticfeedback)
 - [useShowPopup](README.md#useshowpopup)
 
 ## Type Aliases
+
+### ImpactOccurredHandler
+
+Ƭ **ImpactOccurredHandler**: (`style`: `"light"` \| `"medium"` \| `"heavy"` \| `"rigid"` \| `"soft"`) => `void`
+
+#### Type declaration
+
+▸ (`style`): `void`
+
+A method tells that an impact occurred. The Telegram app may play the appropriate haptics based on style value passed. Style can be one of these values:
+
+- light, indicates a collision between small or lightweight UI objects,
+- medium, indicates a collision between medium-sized or medium-weight UI objects,
+- heavy, indicates a collision between large or heavyweight UI objects,
+- rigid, indicates a collision between hard or inflexible UI objects,
+- soft, indicates a collision between soft or flexible UI objects.
+  [telegram!HapticFeedback](https://core.telegram.org/bots/webapps#hapticfeedback)
+
+##### Parameters
+
+| Name    | Type                                                          |
+| :------ | :------------------------------------------------------------ |
+| `style` | `"light"` \| `"medium"` \| `"heavy"` \| `"rigid"` \| `"soft"` |
+
+##### Returns
+
+`void`
+
+---
+
+### NotificationOccurredHandler
+
+Ƭ **NotificationOccurredHandler**: (`type`: `"error"` \| `"success"` \| `"warning"`) => `void`
+
+#### Type declaration
+
+▸ (`type`): `void`
+
+A method tells that a task or action has succeeded, failed, or produced a warning. The Telegram app may play the appropriate haptics based on type value passed. Type can be one of these values:
+
+- error, indicates that a task or action has failed,
+- success, indicates that a task or action has completed successfully,
+- warning, indicates that a task or action produced a warning.
+  [telegram!HapticFeedback](https://core.telegram.org/bots/webapps#hapticfeedback)
+
+##### Parameters
+
+| Name   | Type                                    |
+| :----- | :-------------------------------------- |
+| `type` | `"error"` \| `"success"` \| `"warning"` |
+
+##### Returns
+
+`void`
+
+---
+
+### SelectionChangedHandler
+
+Ƭ **SelectionChangedHandler**: () => `void`
+
+#### Type declaration
+
+▸ (): `void`
+
+A method tells that the user has changed a selection. The Telegram app may play the appropriate haptics.
+[telegram!HapticFeedback](https://core.telegram.org/bots/webapps#hapticfeedback)
+
+##### Returns
+
+`void`
+
+---
 
 ### ShowPopupHandler
 
@@ -108,6 +185,19 @@ import { MainButton } from '@vkruglikov/react-telegram-web-app';
 Component always returns `null`. Not renders any elements
 
 ## Hooks
+
+### useHapticFeedback
+
+▸ **useHapticFeedback**(): [[`ImpactOccurredHandler`](README.md#impactoccurredhandler), [`NotificationOccurredHandler`](README.md#notificationoccurredhandler), [`SelectionChangedHandler`](README.md#selectionchangedhandler)]
+
+This object controls haptic feedback.
+You have to look original telegram description [telegram!HapticFeedback](https://core.telegram.org/bots/webapps#hapticfeedback), because it Hook implementing his.
+
+#### Returns
+
+[[`ImpactOccurredHandler`](README.md#impactoccurredhandler), [`NotificationOccurredHandler`](README.md#notificationoccurredhandler), [`SelectionChangedHandler`](README.md#selectionchangedhandler)]
+
+---
 
 ### useShowPopup
 
