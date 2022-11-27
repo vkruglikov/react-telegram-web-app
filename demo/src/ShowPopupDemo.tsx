@@ -72,7 +72,7 @@ const ShowPopupDemo: FC = () => {
         </Form.Item>
         <Form.Item>
           <Button block type="primary" htmlType="submit">
-            Apply
+            Show popup
           </Button>
         </Form.Item>
       </Form>

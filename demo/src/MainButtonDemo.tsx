@@ -10,7 +10,12 @@ const MainButtonDemo: FC = () => {
     {
       show: boolean;
     } & Pick<MainButtonProps, 'text' | 'progress' | 'disable'>
-  >();
+  >({
+    text: 'BUTTON TEXT',
+    show: false,
+    progress: false,
+    disable: false,
+  });
   const onFinish = (values: any) => setButtonState(values);
 
   return (
@@ -25,20 +30,40 @@ const MainButtonDemo: FC = () => {
         autoComplete="off"
       >
         <Form.Item label="Text" name="text">
-          <Input />
+          <Input disabled />
         </Form.Item>
         <Form.Item name="progress" label="progress" valuePropName="checked">
-          <Switch />
+          <Switch
+            onChange={value =>
+              setButtonState({
+                ...buttonState,
+                progress: value,
+              })
+            }
+          />
         </Form.Item>
         <Form.Item name="disable" label="disable" valuePropName="checked">
-          <Switch />
-        </Form.Item>
-        <Form.Item name="show" label="show" valuePropName="checked">
-          <Switch />
+          <Switch
+            onChange={value =>
+              setButtonState({
+                ...buttonState,
+                disable: value,
+              })
+            }
+          />
         </Form.Item>
         <Form.Item>
-          <Button block type="primary" htmlType="submit">
-            Apply
+          <Button
+            block
+            type="primary"
+            onClick={() =>
+              setButtonState({
+                ...buttonState,
+                show: !buttonState?.show,
+              })
+            }
+          >
+            {buttonState?.show ? 'Hide MainButton' : 'Show MainButton'}
           </Button>
         </Form.Item>
       </Form>

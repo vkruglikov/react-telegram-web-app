@@ -6,7 +6,6 @@ const BackButtonDemo: FC = () => {
   const [buttonState, setButtonState] = useState<{
     show: boolean;
   }>();
-  const onFinish = (values: any) => setButtonState(values);
   const showPopup = useShowPopup();
 
   return (
@@ -16,16 +15,19 @@ const BackButtonDemo: FC = () => {
         labelCol={{ span: 6 }}
         name="basic"
         layout="horizontal"
-        initialValues={buttonState}
-        onFinish={onFinish}
         autoComplete="off"
       >
-        <Form.Item name="show" label="show" valuePropName="checked">
-          <Switch />
-        </Form.Item>
         <Form.Item>
-          <Button block type="primary" htmlType="submit">
-            Apply
+          <Button
+            block
+            type="primary"
+            onClick={() =>
+              setButtonState({
+                show: !buttonState?.show,
+              })
+            }
+          >
+            {buttonState?.show ? 'Hide BackButton' : 'Show BackButton'}
           </Button>
         </Form.Item>
       </Form>

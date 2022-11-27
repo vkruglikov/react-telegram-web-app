@@ -35,7 +35,7 @@ export type SelectionChangedFunction = () => void;
  * You have to look original telegram description {@link telegram!HapticFeedback}, because it Hook implementing his.
  * @group Hooks
  */
-const useHapticFeedback = (): [
+const useHapticFeedback = (): readonly [
   ImpactOccurredFunction,
   NotificationOccurredFunction,
   SelectionChangedFunction,
@@ -55,7 +55,7 @@ const useHapticFeedback = (): [
     window.Telegram.WebApp.HapticFeedback.selectionChanged();
   }, []);
 
-  return [impactOccurred, notificationOccurred, selectionChanged];
+  return [impactOccurred, notificationOccurred, selectionChanged] as const;
 };
 
 export default useHapticFeedback;

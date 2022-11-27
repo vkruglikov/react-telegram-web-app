@@ -7,6 +7,7 @@ import MainButtonDemo from './MainButtonDemo';
 import BackButtonDemo from './BackButtonDemo';
 import ShowPopupDemo from './ShowPopupDemo';
 import { ConfigProvider } from 'antd';
+import HapticFeedbackDemo from './HapticFeedbackDemo';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
@@ -23,6 +24,8 @@ root.render(
               token: {
                 // @ts-ignore
                 colorText: window.Telegram.WebApp.themeParams.text_color,
+                // @ts-ignore
+                colorPrimary: window.Telegram.WebApp.themeParams.button_color,
               },
             }
           : undefined
@@ -35,6 +38,7 @@ root.render(
         <MainButtonDemo />
         <BackButtonDemo />
         <ShowPopupDemo />
+        <HapticFeedbackDemo />
       </div>
     </ConfigProvider>
   </div>,
