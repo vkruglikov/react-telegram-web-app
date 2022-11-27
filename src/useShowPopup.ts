@@ -42,18 +42,18 @@ export interface ShowPopupParams extends Record<string, unknown> {
 }
 
 /**
- * Then handler provided Promise, and resolve the field id of the pressed button will be passed.
+ * Then function provided Promise, and resolve the field id of the pressed button will be passed.
  * @return Button id as string, it was described by {@link ShowPopupButton}
  * @throws
  */
-export type ShowPopupHandler = (params: ShowPopupParams) => Promise<string>;
+export type ShowPopupFunction = (params: ShowPopupParams) => Promise<string>;
 
 /**
- * The hook provided showPopup handle of the type {@link ShowPopupHandler}.
- * The handle that shows a native popup described by the params argument of the type {@link ShowPopupParams}.
+ * The hook provided showPopup function of the type {@link ShowPopupFunction}.
+ * The function that shows a native popup described by the params argument of the type {@link ShowPopupParams}.
  * @group Hooks
  */
-const useShowPopup: () => ShowPopupHandler = () =>
+const useShowPopup: () => ShowPopupFunction = () =>
   useCallback(
     params =>
       new Promise((resolve, reject) => {

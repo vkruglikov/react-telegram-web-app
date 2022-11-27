@@ -13,10 +13,10 @@
 
 ### Type Aliases
 
-- [ImpactOccurredHandler](README.md#impactoccurredhandler)
-- [NotificationOccurredHandler](README.md#notificationoccurredhandler)
-- [SelectionChangedHandler](README.md#selectionchangedhandler)
-- [ShowPopupHandler](README.md#showpopuphandler)
+- [ImpactOccurredFunction](README.md#impactoccurredfunction)
+- [NotificationOccurredFunction](README.md#notificationoccurredfunction)
+- [SelectionChangedFunction](README.md#selectionchangedfunction)
+- [ShowPopupFunction](README.md#showpopupfunction)
 
 ### React Components
 
@@ -30,9 +30,9 @@
 
 ## Type Aliases
 
-### ImpactOccurredHandler
+### ImpactOccurredFunction
 
-Ƭ **ImpactOccurredHandler**: (`style`: `"light"` \| `"medium"` \| `"heavy"` \| `"rigid"` \| `"soft"`) => `void`
+Ƭ **ImpactOccurredFunction**: (`style`: `"light"` \| `"medium"` \| `"heavy"` \| `"rigid"` \| `"soft"`) => `void`
 
 #### Type declaration
 
@@ -59,9 +59,9 @@ A method tells that an impact occurred. The Telegram app may play the appropriat
 
 ---
 
-### NotificationOccurredHandler
+### NotificationOccurredFunction
 
-Ƭ **NotificationOccurredHandler**: (`type`: `"error"` \| `"success"` \| `"warning"`) => `void`
+Ƭ **NotificationOccurredFunction**: (`type`: `"error"` \| `"success"` \| `"warning"`) => `void`
 
 #### Type declaration
 
@@ -86,9 +86,9 @@ A method tells that a task or action has succeeded, failed, or produced a warnin
 
 ---
 
-### SelectionChangedHandler
+### SelectionChangedFunction
 
-Ƭ **SelectionChangedHandler**: () => `void`
+Ƭ **SelectionChangedFunction**: () => `void`
 
 #### Type declaration
 
@@ -103,15 +103,15 @@ A method tells that the user has changed a selection. The Telegram app may play 
 
 ---
 
-### ShowPopupHandler
+### ShowPopupFunction
 
-Ƭ **ShowPopupHandler**: (`params`: [`ShowPopupParams`](interfaces/ShowPopupParams.md)) => `Promise`<`string`\>
+Ƭ **ShowPopupFunction**: (`params`: [`ShowPopupParams`](interfaces/ShowPopupParams.md)) => `Promise`<`string`\>
 
 #### Type declaration
 
 ▸ (`params`): `Promise`<`string`\>
 
-Then handler provided Promise, and resolve the field id of the pressed button will be passed.
+Then function provided Promise, and resolve the field id of the pressed button will be passed.
 
 **`Throws`**
 
@@ -188,24 +188,24 @@ Component always returns `null`. Not renders any elements
 
 ### useHapticFeedback
 
-▸ **useHapticFeedback**(): [[`ImpactOccurredHandler`](README.md#impactoccurredhandler), [`NotificationOccurredHandler`](README.md#notificationoccurredhandler), [`SelectionChangedHandler`](README.md#selectionchangedhandler)]
+▸ **useHapticFeedback**(): [[`ImpactOccurredFunction`](README.md#impactoccurredfunction), [`NotificationOccurredFunction`](README.md#notificationoccurredfunction), [`SelectionChangedFunction`](README.md#selectionchangedfunction)]
 
-This object controls haptic feedback.
+This hook that provided [ImpactOccurredFunction](README.md#impactoccurredfunction), [NotificationOccurredFunction](README.md#notificationoccurredfunction) and [SelectionChangedFunction](README.md#selectionchangedfunction) functions that controls haptic feedback.
 You have to look original telegram description [telegram!HapticFeedback](https://core.telegram.org/bots/webapps#hapticfeedback), because it Hook implementing his.
 
 #### Returns
 
-[[`ImpactOccurredHandler`](README.md#impactoccurredhandler), [`NotificationOccurredHandler`](README.md#notificationoccurredhandler), [`SelectionChangedHandler`](README.md#selectionchangedhandler)]
+[[`ImpactOccurredFunction`](README.md#impactoccurredfunction), [`NotificationOccurredFunction`](README.md#notificationoccurredfunction), [`SelectionChangedFunction`](README.md#selectionchangedfunction)]
 
 ---
 
 ### useShowPopup
 
-▸ **useShowPopup**(): [`ShowPopupHandler`](README.md#showpopuphandler)
+▸ **useShowPopup**(): [`ShowPopupFunction`](README.md#showpopupfunction)
 
-The hook provided showPopup handle of the type [ShowPopupHandler](README.md#showpopuphandler).
-The handle that shows a native popup described by the params argument of the type [ShowPopupParams](interfaces/ShowPopupParams.md).
+The hook provided showPopup function of the type [ShowPopupFunction](README.md#showpopupfunction).
+The function that shows a native popup described by the params argument of the type [ShowPopupParams](interfaces/ShowPopupParams.md).
 
 #### Returns
 
-[`ShowPopupHandler`](README.md#showpopuphandler)
+[`ShowPopupFunction`](README.md#showpopupfunction)

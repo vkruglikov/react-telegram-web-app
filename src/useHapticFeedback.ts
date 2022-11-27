@@ -9,7 +9,7 @@ import { useCallback } from 'react';
  * - soft, indicates a collision between soft or flexible UI objects.
  * {@link telegram!HapticFeedback}
  */
-export type ImpactOccurredHandler = (
+export type ImpactOccurredFunction = (
   style: 'light' | 'medium' | 'heavy' | 'rigid' | 'soft',
 ) => void;
 
@@ -20,7 +20,7 @@ export type ImpactOccurredHandler = (
  * - warning, indicates that a task or action produced a warning.
  * {@link telegram!HapticFeedback}
  */
-export type NotificationOccurredHandler = (
+export type NotificationOccurredFunction = (
   type: 'error' | 'success' | 'warning',
 ) => void;
 
@@ -28,30 +28,30 @@ export type NotificationOccurredHandler = (
  * A method tells that the user has changed a selection. The Telegram app may play the appropriate haptics.
  * {@link telegram!HapticFeedback}
  */
-export type SelectionChangedHandler = () => void;
+export type SelectionChangedFunction = () => void;
 
 /**
- * This object controls haptic feedback.
+ * This hook that provided {@link ImpactOccurredFunction}, {@link NotificationOccurredFunction} and {@link SelectionChangedFunction} functions that controls haptic feedback.
  * You have to look original telegram description {@link telegram!HapticFeedback}, because it Hook implementing his.
  * @group Hooks
  */
 const useHapticFeedback = (): [
-  ImpactOccurredHandler,
-  NotificationOccurredHandler,
-  SelectionChangedHandler,
+  ImpactOccurredFunction,
+  NotificationOccurredFunction,
+  SelectionChangedFunction,
 ] => {
-  const impactOccurred: ImpactOccurredHandler = useCallback(style => {
+  const impactOccurred: ImpactOccurredFunction = useCallback(style => {
     window.Telegram.WebApp.HapticFeedback.impactOccurred(style);
   }, []);
 
-  const notificationOccurred: NotificationOccurredHandler = useCallback(
+  const notificationOccurred: NotificationOccurredFunction = useCallback(
     type => {
       window.Telegram.WebApp.HapticFeedback.notificationOccurred(type);
     },
     [],
   );
 
-  const selectionChanged: SelectionChangedHandler = useCallback(() => {
+  const selectionChanged: SelectionChangedFunction = useCallback(() => {
     window.Telegram.WebApp.HapticFeedback.selectionChanged();
   }, []);
 
