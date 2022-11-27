@@ -1,5 +1,11 @@
 # @vkruglikov/react-telegram-web-app
 
+## 1.5.0
+
+### Minor Changes
+
+- dd146bc: Add useHapticFeedback hook
+
 ## 1.4.1
 
 ### Patch Changes
