@@ -22,7 +22,7 @@ npm i @vkruglikov/react-telegram-web-app --save
 - [useShowPopup](./docs/README.md#useshowpopup) -
   The hook that provided showPopup function that shows a native popup.
 - [useHapticFeedback](./docs/README.md#usehapticfeedback) -
-  This hook that provided `impactOccurred`, `impactOccurred` and `impactOccurred` functions that controls haptic feedback.
+  This hook that provided `impactOccurred`, `notificationOccurred` and `selectionChanged` functions that controls haptic feedback.
 
 ## Demo
 
