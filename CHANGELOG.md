@@ -1,5 +1,11 @@
 # @vkruglikov/react-telegram-web-app
 
+## 1.5.1
+
+### Patch Changes
+
+- 92a21c9: Change interfeces
+
 ## 1.5.0
 
 ### Minor Changes
