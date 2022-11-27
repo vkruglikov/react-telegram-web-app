@@ -89,8 +89,8 @@ Renders a [telegram!MainButton](https://core.telegram.org/bots/webapps#mainbutto
 import { MainButton } from '@vkruglikov/react-telegram-web-app';
 
 <MainButton
-	text="CLICK ME"
-	onClick={() => console.log('Hello, I am button!')}
+  text="CLICK ME"
+  onClick={() => console.log('Hello, I am button!')}
 />;
 ```
 

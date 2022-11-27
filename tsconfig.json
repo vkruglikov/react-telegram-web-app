@@ -1,17 +1,17 @@
 {
-	"include": ["src", "telegram-web-app.d.ts"],
-	"compilerOptions": {
-		"skipLibCheck": true,
-		"target": "ESNext",
-		"module": "ESNext",
-		"moduleResolution": "node",
-		"esModuleInterop": true,
-		"jsx": "react",
-		"noImplicitReturns": true,
-		"noImplicitThis": true,
-		"noImplicitAny": true,
-		"importHelpers": true,
-		"strictNullChecks": true,
-		"suppressImplicitAnyIndexErrors": true
-	}
+  "include": ["src", "telegram-web-app.d.ts"],
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "jsx": "react",
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "importHelpers": true,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true
+  }
 }

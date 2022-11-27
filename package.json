@@ -63,7 +63,7 @@
   "prettier": {
     "singleQuote": true,
     "trailingComma": "all",
-    "useTabs": true,
+    "useTabs": false,
     "arrowParens": "avoid",
     "overrides": [
       {

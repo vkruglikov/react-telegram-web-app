@@ -4,8 +4,8 @@ import { FC, useEffect } from 'react';
  * The props type of {@link BackButton | `BackButton`}.
  */
 export interface BackButtonProps {
-	/** The back button press event handler */
-	onClick: () => void;
+  /** The back button press event handler */
+  onClick: () => void;
 }
 
 /**
@@ -22,29 +22,29 @@ export interface BackButtonProps {
  * @group React Components
  */
 const BackButton: FC<BackButtonProps> = ({ onClick }) => {
-	const WebAppBackButton =
-		typeof window !== 'undefined' ? window?.Telegram?.WebApp?.BackButton : null;
-	if (!WebAppBackButton) return null;
+  const WebAppBackButton =
+    typeof window !== 'undefined' ? window?.Telegram?.WebApp?.BackButton : null;
+  if (!WebAppBackButton) return null;
 
-	useEffect(() => {
-		WebAppBackButton.show();
-		return () => {
-			WebAppBackButton.hide();
-		};
-	}, []);
+  useEffect(() => {
+    WebAppBackButton.show();
+    return () => {
+      WebAppBackButton.hide();
+    };
+  }, []);
 
-	useEffect(() => {
-		if (!onClick) {
-			return;
-		}
+  useEffect(() => {
+    if (!onClick) {
+      return;
+    }
 
-		WebAppBackButton.onClick(onClick);
-		return () => {
-			WebAppBackButton.offClick(onClick);
-		};
-	}, [onClick]);
+    WebAppBackButton.onClick(onClick);
+    return () => {
+      WebAppBackButton.offClick(onClick);
+    };
+  }, [onClick]);
 
-	return null;
+  return null;
 };
 
 export default BackButton;
