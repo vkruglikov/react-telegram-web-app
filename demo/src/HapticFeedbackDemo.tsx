@@ -1,11 +1,9 @@
-import { Button, Form, Input, Typography, Switch, Select } from 'antd';
+import { Button, Form, Typography, Select } from 'antd';
 import { FC, useState } from 'react';
 import {
   ImpactOccurredFunction,
   NotificationOccurredFunction,
-  ShowPopupParams,
   useHapticFeedback,
-  useShowPopup,
 } from '@vkruglikov/react-telegram-web-app';
 
 const HapticFeedbackDemo: FC = () => {

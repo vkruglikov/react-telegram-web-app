@@ -1,4 +1,4 @@
-import { Button, Form, Typography, Switch } from 'antd';
+import { Button, Form, Typography } from 'antd';
 import { FC, useState } from 'react';
 import { BackButton, useShowPopup } from '@vkruglikov/react-telegram-web-app';
 

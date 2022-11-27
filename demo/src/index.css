@@ -57,7 +57,7 @@ code {
   box-sizing: border-box;
 }
 
-.ant-input {
+.ant-input, .ant-select, .ant-select-item {
   background-color: unset !important;
 }
 
