@@ -1,5 +1,11 @@
 # @vkruglikov/react-telegram-web-app
 
+## 1.5.4
+
+### Patch Changes
+
+- 5a248e3: Fix .npmignore paths
+
 ## 1.5.3
 
 ### Patch Changes
