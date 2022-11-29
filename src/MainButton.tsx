@@ -55,8 +55,7 @@ const MainButton: FC<MainButtonProps> = ({
   textColor,
   onClick,
 }): null => {
-  const WebApp =
-    typeof window !== 'undefined' ? window?.Telegram?.WebApp : null;
+  const WebApp = typeof window !== 'undefined' ? window.Telegram.WebApp : null;
   const WebAppMainButton = WebApp?.MainButton;
 
   if (!WebAppMainButton || !WebApp) return null;

@@ -23,7 +23,11 @@ npm i @vkruglikov/react-telegram-web-app --save
   The hook that provided showPopup function that shows a native popup.
 - [useHapticFeedback](./docs/README.md#usehapticfeedback) -
   This hook that provided `impactOccurred`, `notificationOccurred` and `selectionChanged` functions that controls haptic feedback.
+- [useThemeParams](./docs/README.md#usethemeparams) -
+  This hook that provided `colorScheme` and `themeParams` object.
 
 ## Demo
 
 You can try open demo telegram bot with React WebApp [@react_telegram_web_app_bot](https://t.me/react_telegram_web_app_bot).
+
+Also, you can study demo [source code](./demo/src/index.tsx).

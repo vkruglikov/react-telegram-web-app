@@ -10,9 +10,11 @@
 - [MainButtonProps](interfaces/MainButtonProps.md)
 - [ShowPopupButton](interfaces/ShowPopupButton.md)
 - [ShowPopupParams](interfaces/ShowPopupParams.md)
+- [ThemeParams](interfaces/ThemeParams.md)
 
 ### Type Aliases
 
+- [ColorScheme](README.md#colorscheme)
 - [ImpactOccurredFunction](README.md#impactoccurredfunction)
 - [NotificationOccurredFunction](README.md#notificationoccurredfunction)
 - [SelectionChangedFunction](README.md#selectionchangedfunction)
@@ -27,8 +29,18 @@
 
 - [useHapticFeedback](README.md#usehapticfeedback)
 - [useShowPopup](README.md#useshowpopup)
+- [useThemeParams](README.md#usethemeparams)
 
 ## Type Aliases
+
+### ColorScheme
+
+Ƭ **ColorScheme**: `"light"` \| `"dark"` \| `undefined`
+
+The color scheme currently used in the Telegram app. Either “light” or “dark”.
+Can `undefined`, if `window` is undefined.
+
+---
 
 ### ImpactOccurredFunction
 
@@ -209,3 +221,15 @@ The function that shows a native popup described by the params argument of the t
 #### Returns
 
 [`ShowPopupFunction`](README.md#showpopupfunction)
+
+---
+
+### useThemeParams
+
+▸ **useThemeParams**(): readonly [[`ColorScheme`](README.md#colorscheme), [`ThemeParams`](interfaces/ThemeParams.md)]
+
+The hook provided colorScheme and themeParams values of the type [ColorScheme](README.md#colorscheme) and [ThemeParams](interfaces/ThemeParams.md).
+
+#### Returns
+
+readonly [[`ColorScheme`](README.md#colorscheme), [`ThemeParams`](interfaces/ThemeParams.md)]

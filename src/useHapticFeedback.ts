@@ -30,6 +30,18 @@ export type NotificationOccurredFunction = (
  */
 export type SelectionChangedFunction = () => void;
 
+const impactOccurred: ImpactOccurredFunction = style => {
+  window.Telegram.WebApp.HapticFeedback.impactOccurred(style);
+};
+
+const notificationOccurred: NotificationOccurredFunction = type => {
+  window.Telegram.WebApp.HapticFeedback.notificationOccurred(type);
+};
+
+const selectionChanged: SelectionChangedFunction = () => {
+  window.Telegram.WebApp.HapticFeedback.selectionChanged();
+};
+
 /**
  * This hook that provided {@link ImpactOccurredFunction}, {@link NotificationOccurredFunction} and {@link SelectionChangedFunction} functions that controls haptic feedback.
  * You have to look original telegram description {@link telegram!HapticFeedback}, because it Hook implementing his.
@@ -39,23 +51,6 @@ const useHapticFeedback = (): readonly [
   ImpactOccurredFunction,
   NotificationOccurredFunction,
   SelectionChangedFunction,
-] => {
-  const impactOccurred: ImpactOccurredFunction = useCallback(style => {
-    window.Telegram.WebApp.HapticFeedback.impactOccurred(style);
-  }, []);
-
-  const notificationOccurred: NotificationOccurredFunction = useCallback(
-    type => {
-      window.Telegram.WebApp.HapticFeedback.notificationOccurred(type);
-    },
-    [],
-  );
-
-  const selectionChanged: SelectionChangedFunction = useCallback(() => {
-    window.Telegram.WebApp.HapticFeedback.selectionChanged();
-  }, []);
-
-  return [impactOccurred, notificationOccurred, selectionChanged] as const;
-};
+] => [impactOccurred, notificationOccurred, selectionChanged] as const;
 
 export default useHapticFeedback;

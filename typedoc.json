@@ -11,7 +11,8 @@
       "BackButton": "https://core.telegram.org/bots/webapps#backbutton",
       "PopupParams": "https://core.telegram.org/bots/webapps#popupparams",
       "PopupButton": "https://core.telegram.org/bots/webapps#popupbutton",
-      "HapticFeedback": "https://core.telegram.org/bots/webapps#hapticfeedback"
+      "HapticFeedback": "https://core.telegram.org/bots/webapps#hapticfeedback",
+      "ThemeParams": "https://core.telegram.org/bots/webapps#themeparams"
     },
     "react": {
       "Component": "https://reactjs.org/docs/react-component.html"

@@ -12,3 +12,8 @@ export {
   NotificationOccurredFunction,
   SelectionChangedFunction,
 } from './useHapticFeedback';
+export {
+  default as useThemeParams,
+  ThemeParams,
+  ColorScheme,
+} from './useThemeParams';
