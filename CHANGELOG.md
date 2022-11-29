@@ -1,5 +1,11 @@
 # @vkruglikov/react-telegram-web-app
 
+## 1.6.0
+
+### Minor Changes
+
+- 9ed6405: Add useThemeParams hook
+
 ## 1.5.4
 
 ### Patch Changes
