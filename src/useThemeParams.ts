@@ -31,7 +31,6 @@ export interface ThemeParams {
   button_text_color?: string;
   /**
    * Secondary background color in the #RRGGBB format.
-   * @since 6.1
    */
   secondary_bg_color?: string;
 }
