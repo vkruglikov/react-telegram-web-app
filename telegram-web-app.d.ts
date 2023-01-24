@@ -87,6 +87,17 @@ export declare namespace TelegramWebApps {
      */
     HapticFeedback: HapticFeedback;
     /**
+     * Bot API 6.4+ A method that shows a native popup for scanning a QR code described by the params argument of the type ScanQrPopupParams.
+     */
+    showScanQrPopup(
+      params: { text?: string },
+      callback?: (text: string) => true | void,
+    ): void;
+    /**
+     * Bot API 6.4+ A method that closes the native popup for scanning a QR code opened with the showScanQrPopup method.
+     */
+    closeScanQrPopup(): void;
+    /**
      * Returns true if the user's app supports a version of the Bot API that is equal to or higher than the version passed as the parameter.
      */
     isVersionAtLeast(version: string): boolean;

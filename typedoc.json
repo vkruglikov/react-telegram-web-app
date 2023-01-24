@@ -8,6 +8,7 @@
   "externalSymbolLinkMappings": {
     "telegram": {
       "MainButton": "https://core.telegram.org/bots/webapps#mainbutton",
+      "ScanQrPopupParams": "https://core.telegram.org/bots/webapps#scanqrpopupparams",
       "BackButton": "https://core.telegram.org/bots/webapps#backbutton",
       "PopupParams": "https://core.telegram.org/bots/webapps#popupparams",
       "PopupButton": "https://core.telegram.org/bots/webapps#popupbutton",

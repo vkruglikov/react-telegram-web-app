@@ -17,3 +17,10 @@ export {
   ThemeParams,
   ColorScheme,
 } from './useThemeParams';
+export {
+  default as useScanQrPopup,
+  ScanQrPopupCallback,
+  ScanQrPopupParams,
+  ShowScanQrPopupFunction,
+  CloseScanQrPopupFunction,
+} from './useScanQrPopup';
