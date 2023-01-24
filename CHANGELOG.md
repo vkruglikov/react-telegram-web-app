@@ -1,5 +1,11 @@
 # @vkruglikov/react-telegram-web-app
 
+## 1.7.0
+
+### Minor Changes
+
+- c8b49cf: Added useScanQrPopup hook. This hook provide functions showScanQrPopup, closeScanQrPopup
+
 ## 1.6.0
 
 ### Minor Changes
