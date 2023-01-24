@@ -1,5 +1,11 @@
 # @vkruglikov/react-telegram-web-app
 
+## 1.8.0
+
+### Minor Changes
+
+- 458e93d: Added docs and demo, describes work useScanQrPopup hook
+
 ## 1.7.0
 
 ### Minor Changes
