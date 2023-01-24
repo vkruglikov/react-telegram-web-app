@@ -65,10 +65,6 @@ Link color in the #RRGGBB format.
 
 Secondary background color in the #RRGGBB format.
 
-**`Since`**
-
-6.1
-
 ---
 
 ### text_color

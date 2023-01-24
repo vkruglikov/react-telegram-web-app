@@ -8,17 +8,21 @@
 
 - [BackButtonProps](interfaces/BackButtonProps.md)
 - [MainButtonProps](interfaces/MainButtonProps.md)
+- [ScanQrPopupParams](interfaces/ScanQrPopupParams.md)
 - [ShowPopupButton](interfaces/ShowPopupButton.md)
 - [ShowPopupParams](interfaces/ShowPopupParams.md)
 - [ThemeParams](interfaces/ThemeParams.md)
 
 ### Type Aliases
 
+- [CloseScanQrPopupFunction](README.md#closescanqrpopupfunction)
 - [ColorScheme](README.md#colorscheme)
 - [ImpactOccurredFunction](README.md#impactoccurredfunction)
 - [NotificationOccurredFunction](README.md#notificationoccurredfunction)
+- [ScanQrPopupCallback](README.md#scanqrpopupcallback)
 - [SelectionChangedFunction](README.md#selectionchangedfunction)
 - [ShowPopupFunction](README.md#showpopupfunction)
+- [ShowScanQrPopupFunction](README.md#showscanqrpopupfunction)
 
 ### React Components
 
@@ -28,10 +32,27 @@
 ### Hooks
 
 - [useHapticFeedback](README.md#usehapticfeedback)
+- [useScanQrPopup](README.md#usescanqrpopup)
 - [useShowPopup](README.md#useshowpopup)
 - [useThemeParams](README.md#usethemeparams)
 
 ## Type Aliases
+
+### CloseScanQrPopupFunction
+
+Ƭ **CloseScanQrPopupFunction**: () => `void`
+
+#### Type declaration
+
+▸ (): `void`
+
+A method that closes the native popup for scanning a QR code opened with the showScanQrPopup method
+
+##### Returns
+
+`void`
+
+---
 
 ### ColorScheme
 
@@ -98,6 +119,30 @@ A method tells that a task or action has succeeded, failed, or produced a warnin
 
 ---
 
+### ScanQrPopupCallback
+
+Ƭ **ScanQrPopupCallback**: (`text`: `string`) => `true` \| `void`
+
+#### Type declaration
+
+▸ (`text`): `true` \| `void`
+
+If an optional callback parameter was passed, the callback function will be called and the text from the QR
+code will be passed as the first argument.
+Returning true inside this callback function causes the popup to be closed.
+
+##### Parameters
+
+| Name   | Type     |
+| :----- | :------- |
+| `text` | `string` |
+
+##### Returns
+
+`true` \| `void`
+
+---
+
 ### SelectionChangedFunction
 
 Ƭ **SelectionChangedFunction**: () => `void`
@@ -138,6 +183,30 @@ Then function provided Promise, and resolve the field id of the pressed button w
 `Promise`<`string`\>
 
 Button id as string, it was described by [ShowPopupButton](interfaces/ShowPopupButton.md)
+
+---
+
+### ShowScanQrPopupFunction
+
+Ƭ **ShowScanQrPopupFunction**: (`params`: [`ScanQrPopupParams`](interfaces/ScanQrPopupParams.md), `callback?`: [`ScanQrPopupCallback`](README.md#scanqrpopupcallback)) => `void`
+
+#### Type declaration
+
+▸ (`params`, `callback?`): `void`
+
+A method that shows a native popup for scanning a QR code described
+by the params argument of the type [ScanQrPopupParams](interfaces/ScanQrPopupParams.md).
+
+##### Parameters
+
+| Name        | Type                                                   |
+| :---------- | :----------------------------------------------------- |
+| `params`    | [`ScanQrPopupParams`](interfaces/ScanQrPopupParams.md) |
+| `callback?` | [`ScanQrPopupCallback`](README.md#scanqrpopupcallback) |
+
+##### Returns
+
+`void`
 
 ## React Components
 
@@ -208,6 +277,18 @@ You have to look original telegram description [telegram!HapticFeedback](https:/
 #### Returns
 
 readonly [[`ImpactOccurredFunction`](README.md#impactoccurredfunction), [`NotificationOccurredFunction`](README.md#notificationoccurredfunction), [`SelectionChangedFunction`](README.md#selectionchangedfunction)]
+
+---
+
+### useScanQrPopup
+
+▸ **useScanQrPopup**(): readonly [[`ShowScanQrPopupFunction`](README.md#showscanqrpopupfunction), [`CloseScanQrPopupFunction`](README.md#closescanqrpopupfunction)]
+
+The hook provided showScanQrPopup function of the type [ShowScanQrPopupFunction](README.md#showscanqrpopupfunction) and closeScanQrPopup [CloseScanQrPopupFunction](README.md#closescanqrpopupfunction).
+
+#### Returns
+
+readonly [[`ShowScanQrPopupFunction`](README.md#showscanqrpopupfunction), [`CloseScanQrPopupFunction`](README.md#closescanqrpopupfunction)]
 
 ---
 

@@ -11,6 +11,7 @@ import MainButtonDemo from './MainButtonDemo';
 import BackButtonDemo from './BackButtonDemo';
 import ShowPopupDemo from './ShowPopupDemo';
 import HapticFeedbackDemo from './HapticFeedbackDemo';
+import ScanQrPopupDemo from './ScanQrPopupDemo';
 
 const DemoApp = () => {
   const [colorScheme, themeParams] = useThemeParams();
@@ -42,6 +43,7 @@ const DemoApp = () => {
           <BackButtonDemo />
           <ShowPopupDemo />
           <HapticFeedbackDemo />
+          <ScanQrPopupDemo />
         </div>
       </ConfigProvider>
     </div>

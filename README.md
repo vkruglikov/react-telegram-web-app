@@ -7,6 +7,12 @@ React components for Telegram WebApp
 [![GitHub Actions CI](https://github.com/vkruglikov/react-telegram-web-app/actions/workflows/release.yml/badge.svg)](https://github.com/vkruglikov/react-telegram-web-app/actions/workflows/release.yml)
 [![License](https://badgen.net/github/license/vkruglikov/react-telegram-web-app)](https://github.com/vkruglikov/react-telegram-web-app/blob/master/LICENSE)
 
+## 🔴 Live Demo & Code Examples
+
+You can try open demo telegram bot with React WebApp [@react_telegram_web_app_bot](https://t.me/react_telegram_web_app_bot).
+
+Also, you can look demo [source code](./demo/src).
+
 ## 🔧 Installation & Get started
 
 1️⃣ **Foremost**, you have to do [initializing web apps](https://core.telegram.org/bots/webapps#initializing-web-apps) step, because package has dependency of Telegram Web App context.
@@ -50,6 +56,8 @@ const App = () => {
   This hook that provided `impactOccurred`, `notificationOccurred` and `selectionChanged` functions that controls haptic feedback.
 - [useThemeParams](./docs/README.md#usethemeparams) -
   This hook that provided `colorScheme` and `themeParams` object.
+- [useScanQrPopup](./docs/README.md#usescanqrpopup) -
+  This hook that provided `showScanQrPopup` and `closeScanQrPopup` functions.
 
 ## 🛣 Roadmap
 
@@ -58,12 +66,6 @@ Here's what's coming up:
 - [ ] In the future, We would like to use us components also in Web application, without Telegram context.
 - [ ] All Telegram WebApp feature support.
 - [x] Main Telegram WebApp feature support.
-
-## 🔴 Live Demo & Code Examples
-
-You can try open demo telegram bot with React WebApp [@react_telegram_web_app_bot](https://t.me/react_telegram_web_app_bot).
-
-Also, you can look demo [source code](./demo/src).
 
 ## 🥂 License
 
