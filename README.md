@@ -74,3 +74,8 @@ Here's what's coming up:
 ## 🥂 License
 
 [MIT](./LICENSE)
+
+## 💻👞🙊📚 Follow me on LinkedIn
+
+I publish posts on front-end development, and in particular work with Telegram WebApps
+https://www.linkedin.com/in/kruglikov-valentin/
