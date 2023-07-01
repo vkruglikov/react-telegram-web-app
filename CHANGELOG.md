@@ -1,5 +1,12 @@
 # @vkruglikov/react-telegram-web-app
 
+## 1.9.0
+
+### Minor Changes
+
+- 5b1f85f: Added hook useReadTextFromClipboard, that provide function that read text from clipboard
+- 2e16b48: Added hook useSwitchInlineQuery
+
 ## 1.8.0
 
 ### Minor Changes
