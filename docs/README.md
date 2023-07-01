@@ -24,6 +24,7 @@
 - [SelectionChangedFunction](README.md#selectionchangedfunction)
 - [ShowPopupFunction](README.md#showpopupfunction)
 - [ShowScanQrPopupFunction](README.md#showscanqrpopupfunction)
+- [SwitchInlineQueryFunction](README.md#switchinlinequeryfunction)
 
 ### React Components
 
@@ -36,6 +37,7 @@
 - [useReadTextFromClipboard](README.md#usereadtextfromclipboard)
 - [useScanQrPopup](README.md#usescanqrpopup)
 - [useShowPopup](README.md#useshowpopup)
+- [useSwitchInlineQuery](README.md#useswitchinlinequery)
 - [useThemeParams](README.md#usethemeparams)
 
 ## Type Aliases
@@ -129,7 +131,7 @@ A method tells that a task or action has succeeded, failed, or produced a warnin
 
 ▸ (): `Promise`<`string`\>
 
-Then function provided Promise function that read text from clipboard
+This function provided Promise function that read text from clipboard
 
 ##### Returns
 
@@ -226,6 +228,30 @@ by the params argument of the type [ScanQrPopupParams](interfaces/ScanQrPopupPar
 
 `void`
 
+---
+
+### SwitchInlineQueryFunction
+
+Ƭ **SwitchInlineQueryFunction**: (`query`: `string`, `chatType`: `"users"` \| `"bots"` \| `"groups"` \| `"channels"`) => `void`
+
+#### Type declaration
+
+▸ (`query`, `chatType`): `void`
+
+This function that inserts the bot's username and the specified inline query in the current chat's input field
+You have to look original description switchInlineQuery in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-web-apps) for more information
+
+##### Parameters
+
+| Name       | Type                                                |
+| :--------- | :-------------------------------------------------- |
+| `query`    | `string`                                            |
+| `chatType` | `"users"` \| `"bots"` \| `"groups"` \| `"channels"` |
+
+##### Returns
+
+`void`
+
 ## React Components
 
 ### BackButton
@@ -302,7 +328,7 @@ readonly [[`ImpactOccurredFunction`](README.md#impactoccurredfunction), [`Notifi
 
 ▸ **useReadTextFromClipboard**(): [`ReadTextFromClipboardFunction`](README.md#readtextfromclipboardfunction)
 
-This hook that provided [ReadTextFromClipboardFunction](README.md#readtextfromclipboardfunction) as Promise function that read text from clipboard.
+This hook that provided [ReadTextFromClipboardFunction](README.md#readtextfromclipboardfunction) Promise function that read text from clipboard.
 You have to look original description readTextFromClipboard in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-web-apps), because hook just implements his.
 
 #### Returns
@@ -333,6 +359,19 @@ The function that shows a native popup described by the params argument of the t
 #### Returns
 
 [`ShowPopupFunction`](README.md#showpopupfunction)
+
+---
+
+### useSwitchInlineQuery
+
+▸ **useSwitchInlineQuery**(): [`SwitchInlineQueryFunction`](README.md#switchinlinequeryfunction)
+
+This hook that provided [SwitchInlineQueryFunction](README.md#switchinlinequeryfunction)
+You have to look original description switchInlineQuery in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-web-apps), because hook just implements his.
+
+#### Returns
+
+[`SwitchInlineQueryFunction`](README.md#switchinlinequeryfunction)
 
 ---
 

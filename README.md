@@ -60,6 +60,8 @@ const App = () => {
   This hook that provided `showScanQrPopup` and `closeScanQrPopup` functions.
 - [useReadTextFromClipboard](./docs/README.md#usereadtextfromclipboard) -
   This hook that provided `readTextFromClipboard` function.
+- [useSwitchInlineQuery](./docs/README.md#useswitchinlinequery) -
+  This hook that provided `useSwitchInlineQuery` function.
 
 ## 🛣 Roadmap
 

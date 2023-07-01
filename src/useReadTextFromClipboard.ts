@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 
 /**
- * Then function provided Promise function that read text from clipboard
+ * This function provided Promise function that read text from clipboard
  * @return {Promise<string>}
  */
 export type ReadTextFromClipboardFunction = () => Promise<string>;

@@ -87,6 +87,10 @@ export declare namespace TelegramWebApps {
      */
     HapticFeedback: HapticFeedback;
 
+    switchInlineQuery(
+      query: string,
+      choose_chat_types?: 'users' | 'bots' | 'groups' | 'channels',
+    );
     /**
      * Bot API 6.4+ A method that requests text from the clipboard. The Web App will receive the event clipboardTextReceived. If an optional callback parameter was passed, the callback function will be called and the text from the clipboard will be passed as the first argument.
      */

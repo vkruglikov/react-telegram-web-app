@@ -28,3 +28,7 @@ export {
   default as useReadTextFromClipboard,
   ReadTextFromClipboardFunction,
 } from './useReadTextFromClipboard';
+export {
+  default as useSwitchInlineQuery,
+  SwitchInlineQueryFunction,
+} from './useSwitchInlineQuery';
