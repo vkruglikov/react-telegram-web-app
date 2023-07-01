@@ -86,6 +86,11 @@ export declare namespace TelegramWebApps {
      * @since 6.1
      */
     HapticFeedback: HapticFeedback;
+
+    /**
+     * Bot API 6.4+ A method that requests text from the clipboard. The Web App will receive the event clipboardTextReceived. If an optional callback parameter was passed, the callback function will be called and the text from the clipboard will be passed as the first argument.
+     */
+    readTextFromClipboard(callback?: (text: string) => void): void;
     /**
      * Bot API 6.4+ A method that shows a native popup for scanning a QR code described by the params argument of the type ScanQrPopupParams.
      */

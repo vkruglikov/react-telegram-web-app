@@ -19,6 +19,7 @@
 - [ColorScheme](README.md#colorscheme)
 - [ImpactOccurredFunction](README.md#impactoccurredfunction)
 - [NotificationOccurredFunction](README.md#notificationoccurredfunction)
+- [ReadTextFromClipboardFunction](README.md#readtextfromclipboardfunction)
 - [ScanQrPopupCallback](README.md#scanqrpopupcallback)
 - [SelectionChangedFunction](README.md#selectionchangedfunction)
 - [ShowPopupFunction](README.md#showpopupfunction)
@@ -32,6 +33,7 @@
 ### Hooks
 
 - [useHapticFeedback](README.md#usehapticfeedback)
+- [useReadTextFromClipboard](README.md#usereadtextfromclipboard)
 - [useScanQrPopup](README.md#usescanqrpopup)
 - [useShowPopup](README.md#useshowpopup)
 - [useThemeParams](README.md#usethemeparams)
@@ -116,6 +118,22 @@ A method tells that a task or action has succeeded, failed, or produced a warnin
 ##### Returns
 
 `void`
+
+---
+
+### ReadTextFromClipboardFunction
+
+Ƭ **ReadTextFromClipboardFunction**: () => `Promise`<`string`\>
+
+#### Type declaration
+
+▸ (): `Promise`<`string`\>
+
+Then function provided Promise function that read text from clipboard
+
+##### Returns
+
+`Promise`<`string`\>
 
 ---
 
@@ -277,6 +295,19 @@ You have to look original telegram description [telegram!HapticFeedback](https:/
 #### Returns
 
 readonly [[`ImpactOccurredFunction`](README.md#impactoccurredfunction), [`NotificationOccurredFunction`](README.md#notificationoccurredfunction), [`SelectionChangedFunction`](README.md#selectionchangedfunction)]
+
+---
+
+### useReadTextFromClipboard
+
+▸ **useReadTextFromClipboard**(): [`ReadTextFromClipboardFunction`](README.md#readtextfromclipboardfunction)
+
+This hook that provided [ReadTextFromClipboardFunction](README.md#readtextfromclipboardfunction) as Promise function that read text from clipboard.
+You have to look original description readTextFromClipboard in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-web-apps), because hook just implements his.
+
+#### Returns
+
+[`ReadTextFromClipboardFunction`](README.md#readtextfromclipboardfunction)
 
 ---
 

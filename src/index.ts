@@ -24,3 +24,7 @@ export {
   ShowScanQrPopupFunction,
   CloseScanQrPopupFunction,
 } from './useScanQrPopup';
+export {
+  default as useReadTextFromClipboard,
+  ReadTextFromClipboardFunction,
+} from './useReadTextFromClipboard';

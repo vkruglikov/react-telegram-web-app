@@ -58,6 +58,8 @@ const App = () => {
   This hook that provided `colorScheme` and `themeParams` object.
 - [useScanQrPopup](./docs/README.md#usescanqrpopup) -
   This hook that provided `showScanQrPopup` and `closeScanQrPopup` functions.
+- [useReadTextFromClipboard](./docs/README.md#usereadtextfromclipboard) -
+  This hook that provided `readTextFromClipboard` function.
 
 ## 🛣 Roadmap
 
