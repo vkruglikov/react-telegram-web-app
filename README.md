@@ -15,11 +15,11 @@ Also, you can look demo [source code](./demo/src).
 
 ## 🔧 Installation & Get started
 
-1️⃣ **Foremost**, you have to do [initializing web apps](https://core.telegram.org/bots/webapps#initializing-web-apps) step, because package has dependency of Telegram Web App context.
+1️⃣ &nbsp;**Foremost**, you have to do [initializing web apps](https://core.telegram.org/bots/webapps#initializing-web-apps) step, because package has dependency of Telegram Web App context.
 
-2️⃣ **Install** by running: `npm i @vkruglikov/react-telegram-web-app --save`. Today we support React^18.
+2️⃣ &nbsp;**Install** by running: `npm i @vkruglikov/react-telegram-web-app --save`. Today we support React^18.
 
-3️⃣ **Try it out** by writing code.
+3️⃣ &nbsp;**Try it out** by writing code.
 
 ```typescript jsx
 import React from 'react';
@@ -61,7 +61,7 @@ const App = () => {
 - [useReadTextFromClipboard](./docs/README.md#usereadtextfromclipboard) -
   This hook that provided `readTextFromClipboard` function.
 - [useSwitchInlineQuery](./docs/README.md#useswitchinlinequery) -
-  This hook that provided `useSwitchInlineQuery` function.
+  This hook that provided `switchInlineQuery` function.
 
 ## 🛣 Roadmap
 
