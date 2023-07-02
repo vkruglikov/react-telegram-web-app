@@ -32,3 +32,4 @@ export {
   default as useSwitchInlineQuery,
   SwitchInlineQueryFunction,
 } from './useSwitchInlineQuery';
+export { default as unsafe_useExpand } from './useExpand';
