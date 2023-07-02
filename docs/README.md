@@ -33,6 +33,7 @@
 
 ### Hooks
 
+- [useExpand](README.md#useexpand)
 - [useHapticFeedback](README.md#usehapticfeedback)
 - [useReadTextFromClipboard](README.md#usereadtextfromclipboard)
 - [useScanQrPopup](README.md#usescanqrpopup)
@@ -310,6 +311,25 @@ import { MainButton } from '@vkruglikov/react-telegram-web-app';
 Component always returns `null`. Not renders any elements
 
 ## Hooks
+
+### useExpand
+
+▸ **useExpand**(): readonly [`boolean`, `DispatchWithoutAction`]
+
+This hook provided isExpanded state, and expand() handle
+You have to look original description in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-web-apps) for more information\*
+
+```typescript
+import { useExpand } from '@vkruglikov/react-telegram-web-app';
+
+const [isExpanded, expand] = useExpand();
+```
+
+#### Returns
+
+readonly [`boolean`, `DispatchWithoutAction`]
+
+---
 
 ### useHapticFeedback
 

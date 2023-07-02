@@ -1,17 +1,25 @@
-import { useEffect, useState } from 'react';
+import { DispatchWithoutAction, useEffect, useState } from 'react';
 
 const getIsExpanded = () => window.Telegram.WebApp.isExpanded;
-const expand = () => window.Telegram.WebApp.expand();
+const expand: DispatchWithoutAction = () => window.Telegram.WebApp.expand();
 
 /**
+ * This hook provided isExpanded state, and expand() handle
+ * You have to look original description in {@link telegram!WebApp} for more information*
+ *
+ * ```typescript
+ * import { useExpand } from "@vkruglikov/react-telegram-web-app";
+ *
+ * const [isExpanded, expand] = useExpand();
+ * ```
+ *
  * @privateRemarks
  * Api doesn't provide event for listening isExpanded, so we use
  * viewportChanged, but it is an unsafe way
  *
- * @hidden
  * @group Hooks
  */
-const useExpand = (): readonly [boolean, () => void] => {
+const useExpand = (): readonly [boolean, DispatchWithoutAction] => {
   const [isExpanded, setIsExpanded] = useState(getIsExpanded);
 
   useEffect(() => {

@@ -62,6 +62,8 @@ const App = () => {
   This hook that provided `readTextFromClipboard` function.
 - [useSwitchInlineQuery](./docs/README.md#useswitchinlinequery) -
   This hook that provided `switchInlineQuery` function.
+- [useExpand](./docs/README.md#useexpand) -
+  This hook provided isExpanded state, and expand() handle.
 
 ## 🛣 Roadmap
 
