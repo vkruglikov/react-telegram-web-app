@@ -63,7 +63,7 @@ const App = () => {
 - [useSwitchInlineQuery](./docs/README.md#useswitchinlinequery) -
   This hook that provided `switchInlineQuery` function.
 - [useExpand](./docs/README.md#useexpand) -
-  This hook provided isExpanded state, and expand() handle.
+  This hook provided `isExpanded` state, and `expand()` handle.
 
 ## 🛣 Roadmap
 

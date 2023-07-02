@@ -1,8 +1,8 @@
 import { Button, Form, Typography } from 'antd';
-import { unsafe_useExpand } from '@vkruglikov/react-telegram-web-app';
+import { useExpand } from '@vkruglikov/react-telegram-web-app';
 
 const ExpandDemo = () => {
-  const [isExpanded, expand] = unsafe_useExpand();
+  const [isExpanded, expand] = useExpand();
 
   return (
     <>

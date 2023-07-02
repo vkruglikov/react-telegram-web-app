@@ -50,7 +50,6 @@ const DemoApp = () => {
           {isBetaVersion && (
             <div className="betaVersion">
               <h3>WARNING: BETA VERSION</h3>
-              <ExpandDemo />
             </div>
           )}
           <MainButtonDemo />
@@ -58,6 +57,7 @@ const DemoApp = () => {
           <ShowPopupDemo />
           <HapticFeedbackDemo />
           <ScanQrPopupDemo />
+          <ExpandDemo />
         </div>
       </ConfigProvider>
     </div>
