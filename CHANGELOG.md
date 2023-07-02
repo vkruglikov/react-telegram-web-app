@@ -1,5 +1,11 @@
 # @vkruglikov/react-telegram-web-app
 
+## 1.10.1
+
+### Patch Changes
+
+- ef7d3e9: Change readme
+
 ## 1.10.0
 
 ### Minor Changes
