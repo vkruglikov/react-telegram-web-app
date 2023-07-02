@@ -1,5 +1,11 @@
 # @vkruglikov/react-telegram-web-app
 
+## 1.10.0
+
+### Minor Changes
+
+- 8af00e3: Added unsafe_useExpand hook
+
 ## 1.9.1
 
 ### Patch Changes
