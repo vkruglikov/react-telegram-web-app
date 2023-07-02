@@ -1,5 +1,11 @@
 # @vkruglikov/react-telegram-web-app
 
+## 1.11.0
+
+### Minor Changes
+
+- af6ccfb: Added useExpand hook, that hook provided isExpanded state, and expand() handle.
+
 ## 1.10.1
 
 ### Patch Changes
