@@ -17,7 +17,7 @@ import useBetaVersion from './useBetaVersion';
 
 const DemoApp = () => {
   const [colorScheme, themeParams] = useThemeParams();
-  const [isBetaVersion, handleRequestBeta] = useBetaVersion(true);
+  const [isBetaVersion, handleRequestBeta] = useBetaVersion(false);
 
   return (
     <div>

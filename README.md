@@ -9,7 +9,7 @@ React components for Telegram WebApp
 
 ## 🔴 Live Demo & Code Examples
 
-You can try open demo telegram bot with React WebApp [@react_telegram_web_app_bot](https://t.me/react_telegram_web_app_bot).
+You can try open demo telegram bot with React WebApp [@react_telegram_web_app_bot](https://t.me/react_telegram_web_app_bot/demo).
 
 Also, you can look demo [source code](./demo/src).
 

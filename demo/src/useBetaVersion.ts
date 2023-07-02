@@ -19,7 +19,7 @@ const useBetaVersion = (initialState = false) => {
       notification('success');
     }
 
-    if (isDevModeCounter.current > 5) {
+    if (isDevModeCounter.current > 7) {
       showPopup({
         message: `${10 - isDevModeCounter.current}`,
       });
