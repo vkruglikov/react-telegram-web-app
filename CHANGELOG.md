@@ -4,7 +4,7 @@
 
 ### Minor Changes
 
-- af6ccfb: Added useExpand hook, that hook provided isExpanded state, and expand() handle.
+- af6ccfb: Added useExpand hook, that hook provided isExpanded state, and expand() handle. Remove unsafe_useExpand
 
 ## 1.10.1
 

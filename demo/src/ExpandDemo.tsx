@@ -6,7 +6,7 @@ const ExpandDemo = () => {
 
   return (
     <>
-      <Typography.Title level={3}>unsafe_useExpand</Typography.Title>
+      <Typography.Title level={3}>useExpand</Typography.Title>
       <Form
         labelCol={{ span: 6 }}
         name="ExpandDemo"
