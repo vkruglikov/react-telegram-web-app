@@ -42,7 +42,7 @@ const ShowPopupDemo: FC = () => {
       <Typography.Title level={3}>useShowPopup</Typography.Title>
       <Form
         labelCol={{ span: 6 }}
-        name="basic"
+        name="ShowPopupDemo"
         layout="horizontal"
         initialValues={popupState}
         onFinish={onFinish}

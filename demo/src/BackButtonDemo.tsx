@@ -13,7 +13,7 @@ const BackButtonDemo: FC = () => {
       <Typography.Title level={3}>BackButton</Typography.Title>
       <Form
         labelCol={{ span: 6 }}
-        name="basic"
+        name="BackButtonDemo"
         layout="horizontal"
         autoComplete="off"
       >

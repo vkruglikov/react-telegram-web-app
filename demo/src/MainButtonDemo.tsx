@@ -23,7 +23,7 @@ const MainButtonDemo: FC = () => {
       <Typography.Title level={3}>MainButton</Typography.Title>
       <Form
         labelCol={{ span: 6 }}
-        name="basic"
+        name="MainButtonDemo"
         layout="horizontal"
         initialValues={buttonState}
         onFinish={onFinish}

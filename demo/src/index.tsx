@@ -12,9 +12,12 @@ import BackButtonDemo from './BackButtonDemo';
 import ShowPopupDemo from './ShowPopupDemo';
 import HapticFeedbackDemo from './HapticFeedbackDemo';
 import ScanQrPopupDemo from './ScanQrPopupDemo';
+import ExpandDemo from './ExpandDemo';
+import useBetaVersion from './useBetaVersion';
 
 const DemoApp = () => {
   const [colorScheme, themeParams] = useThemeParams();
+  const [isBetaVersion, handleRequestBeta] = useBetaVersion(true);
 
   return (
     <div>
@@ -36,9 +39,20 @@ const DemoApp = () => {
         }
       >
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <img
+            onClick={handleRequestBeta}
+            src={logo}
+            className="App-logo"
+            alt="logo"
+          />
         </header>
         <div className="contentWrapper">
+          {isBetaVersion && (
+            <div className="betaVersion">
+              <h3>WARNING: BETA VERSION</h3>
+              <ExpandDemo />
+            </div>
+          )}
           <MainButtonDemo />
           <BackButtonDemo />
           <ShowPopupDemo />

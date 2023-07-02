@@ -13,7 +13,7 @@ const ScanQrPopupDemo = () => {
       <Typography.Title level={3}>useScanQrPopup</Typography.Title>
       <Form
         labelCol={{ span: 6 }}
-        name="basic"
+        name="ScanQrPopupDemo"
         layout="horizontal"
         autoComplete="off"
       >
