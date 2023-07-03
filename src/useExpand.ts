@@ -7,10 +7,15 @@ const expand: DispatchWithoutAction = () => window.Telegram.WebApp.expand();
  * This hook provided isExpanded state, and expand() handle
  * You have to look original description in {@link telegram!WebApp} for more information*
  *
- * ```typescript
+ * ```tsx
  * import { useExpand } from "@vkruglikov/react-telegram-web-app";
  *
  * const [isExpanded, expand] = useExpand();
+ * const handleClick = () => !isExpanded && expand();
+ *
+ * <button onClick={handleClick}>
+ *     {showTextWhenScreenExpanded && 'expanded' : 'to expand'}
+ * </button>
  * ```
  *
  * @privateRemarks

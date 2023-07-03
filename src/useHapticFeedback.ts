@@ -45,6 +45,18 @@ const selectionChanged: SelectionChangedFunction = () => {
 /**
  * This hook that provided {@link ImpactOccurredFunction}, {@link NotificationOccurredFunction} and {@link SelectionChangedFunction} functions that controls haptic feedback.
  * You have to look original telegram description {@link telegram!HapticFeedback}, because it Hook implementing his.
+ *
+ * ```tsx
+ * import { useHapticFeedback } from "@vkruglikov/react-telegram-web-app";
+ *
+ * const [impactOccurred, notificationOccurred, selectionChanged] =
+ *     useHapticFeedback();
+ * // const [,notificationOccurred] = useHapticFeedback();
+ *
+ * impactOccurred('heavy');
+ * notificationOccurred('success');
+ * ```
+ *
  * @group Hooks
  */
 const useHapticFeedback = (): readonly [

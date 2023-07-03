@@ -51,6 +51,15 @@ export type ShowPopupFunction = (params: ShowPopupParams) => Promise<string>;
 /**
  * The hook provided showPopup function of the type {@link ShowPopupFunction}.
  * The function that shows a native popup described by the params argument of the type {@link ShowPopupParams}.
+ *
+ * ```tsx
+ * import { useShowPopup } from "@vkruglikov/react-telegram-web-app";
+ *
+ * const showPopup = useShowPopup();
+ *
+ * showPopup({ message: 'Hello world' }).then((buttonId) => console.log(buttonId));
+ * ```
+ *
  * @group Hooks
  */
 const useShowPopup: () => ShowPopupFunction = () =>

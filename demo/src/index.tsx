@@ -52,12 +52,12 @@ const DemoApp = () => {
               <h3>WARNING: BETA VERSION</h3>
             </div>
           )}
+          <ExpandDemo />
           <MainButtonDemo />
           <BackButtonDemo />
           <ShowPopupDemo />
           <HapticFeedbackDemo />
           <ScanQrPopupDemo />
-          <ExpandDemo />
         </div>
       </ConfigProvider>
     </div>

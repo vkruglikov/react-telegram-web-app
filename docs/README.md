@@ -319,10 +319,15 @@ Component always returns `null`. Not renders any elements
 This hook provided isExpanded state, and expand() handle
 You have to look original description in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-web-apps) for more information\*
 
-```typescript
-import { useExpand } from '@vkruglikov/react-telegram-web-app';
+```tsx
+import { useExpand } from "@vkruglikov/react-telegram-web-app";
 
 const [isExpanded, expand] = useExpand();
+const handleClick = () => !isExpanded && expand();
+
+<button onClick={handleClick}>
+    {showTextWhenScreenExpanded && 'expanded' : 'to expand'}
+</button>
 ```
 
 #### Returns
@@ -338,6 +343,17 @@ readonly [`boolean`, `DispatchWithoutAction`]
 This hook that provided [ImpactOccurredFunction](README.md#impactoccurredfunction), [NotificationOccurredFunction](README.md#notificationoccurredfunction) and [SelectionChangedFunction](README.md#selectionchangedfunction) functions that controls haptic feedback.
 You have to look original telegram description [telegram!HapticFeedback](https://core.telegram.org/bots/webapps#hapticfeedback), because it Hook implementing his.
 
+```tsx
+import { useHapticFeedback } from '@vkruglikov/react-telegram-web-app';
+
+const [impactOccurred, notificationOccurred, selectionChanged] =
+  useHapticFeedback();
+// const [,notificationOccurred] = useHapticFeedback();
+
+impactOccurred('heavy');
+notificationOccurred('success');
+```
+
 #### Returns
 
 readonly [[`ImpactOccurredFunction`](README.md#impactoccurredfunction), [`NotificationOccurredFunction`](README.md#notificationoccurredfunction), [`SelectionChangedFunction`](README.md#selectionchangedfunction)]
@@ -350,6 +366,16 @@ readonly [[`ImpactOccurredFunction`](README.md#impactoccurredfunction), [`Notifi
 
 This hook that provided [ReadTextFromClipboardFunction](README.md#readtextfromclipboardfunction) Promise function that read text from clipboard.
 You have to look original description readTextFromClipboard in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-web-apps), because hook just implements his.
+
+```tsx
+import { useReadTextFromClipboard } from '@vkruglikov/react-telegram-web-app';
+
+const readText = useReadTextFromClipboard();
+
+readText().then(console.log);
+// or
+await readText();
+```
 
 #### Returns
 
@@ -376,6 +402,14 @@ readonly [[`ShowScanQrPopupFunction`](README.md#showscanqrpopupfunction), [`Clos
 The hook provided showPopup function of the type [ShowPopupFunction](README.md#showpopupfunction).
 The function that shows a native popup described by the params argument of the type [ShowPopupParams](interfaces/ShowPopupParams.md).
 
+```tsx
+import { useShowPopup } from '@vkruglikov/react-telegram-web-app';
+
+const showPopup = useShowPopup();
+
+showPopup({ message: 'Hello world' }).then(buttonId => console.log(buttonId));
+```
+
 #### Returns
 
 [`ShowPopupFunction`](README.md#showpopupfunction)
@@ -400,6 +434,19 @@ You have to look original description switchInlineQuery in [telegram!WebApp](htt
 ▸ **useThemeParams**(): readonly [[`ColorScheme`](README.md#colorscheme), [`ThemeParams`](interfaces/ThemeParams.md)]
 
 The hook provided colorScheme and themeParams values of the type [ColorScheme](README.md#colorscheme) and [ThemeParams](interfaces/ThemeParams.md).
+
+```tsx
+import { useThemeParams } from '@vkruglikov/react-telegram-web-app';
+
+const [colorScheme, themeParams] = useThemeParams();
+
+console.log(colorScheme === 'dark');
+console.log({
+  text_color: themeParams.text_color,
+  button_color: themeParams.button_color,
+  bg_color: themeParams.bg_color,
+});
+```
 
 #### Returns
 

@@ -43,6 +43,19 @@ export type ColorScheme = 'light' | 'dark' | undefined;
 
 /**
  * The hook provided colorScheme and themeParams values of the type {@link ColorScheme} and {@link ThemeParams}.
+ *
+ * ```tsx
+ * import { useThemeParams } from "@vkruglikov/react-telegram-web-app";
+ *
+ * const [colorScheme, themeParams] = useThemeParams();
+ *
+ * console.log(colorScheme === 'dark');
+ * console.log({
+ *     text_color: themeParams.text_color,
+ *     button_color: themeParams.button_color,
+ *     bg_color: themeParams.bg_color,
+ * });
+ * ```
  * @group Hooks
  */
 const useThemeParams: () => readonly [ColorScheme, ThemeParams] = () => {
