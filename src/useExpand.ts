@@ -1,7 +1,5 @@
-import { DispatchWithoutAction, useEffect, useState } from 'react';
-
-const getIsExpanded = () => window.Telegram.WebApp.isExpanded;
-const expand: DispatchWithoutAction = () => window.Telegram.WebApp.expand();
+import { DispatchWithoutAction, useCallback, useEffect, useState } from 'react';
+import { useWebApp } from './WebAppProvider';
 
 /**
  * This hook provided isExpanded state, and expand() handle
@@ -25,21 +23,24 @@ const expand: DispatchWithoutAction = () => window.Telegram.WebApp.expand();
  * @group Hooks
  */
 const useExpand = (): readonly [boolean, DispatchWithoutAction] => {
-  const [isExpanded, setIsExpanded] = useState(getIsExpanded);
+  const WebApp = useWebApp();
+  const [isExpanded, setIsExpanded] = useState(!!WebApp?.isExpanded);
 
   useEffect(() => {
+    if (!WebApp) return;
     const handleEvent = (payload: { isStateStable: boolean }) => {
       if (payload.isStateStable) {
-        setIsExpanded(getIsExpanded());
+        setIsExpanded(!!WebApp.isExpanded);
       }
     };
 
-    window.Telegram.WebApp.onEvent('viewportChanged', handleEvent);
-    return () =>
-      window.Telegram.WebApp.offEvent('viewportChanged', handleEvent);
+    WebApp.onEvent('viewportChanged', handleEvent);
+    return () => WebApp.offEvent('viewportChanged', handleEvent);
   }, []);
 
-  return [isExpanded, expand] as const;
+  const handleExpand = useCallback(() => WebApp?.expand?.(), []);
+
+  return [isExpanded, handleExpand] as const;
 };
 
 export default useExpand;

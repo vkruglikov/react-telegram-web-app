@@ -45,7 +45,7 @@ export declare namespace TelegramWebApps {
      * True if the Web App is expanded to the maximum available height.
      * False, if the Web App occupies part of the screen and can be expanded to the full height using the expand() method.
      */
-    isExpanded: boolean;
+    isExpanded?: boolean;
     /**
      * The current height of the visible area of the Web App.
      * Also available in CSS as the variable var(--tg-viewport-height).
@@ -187,7 +187,7 @@ export declare namespace TelegramWebApps {
     /**
      * A method that expands the Web App to the maximum available height.
      */
-    expand(): void;
+    expand?: () => void;
     /**
      * A method that closes the Web App.
      */

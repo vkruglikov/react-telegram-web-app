@@ -1,4 +1,5 @@
 import { FC, useEffect } from 'react';
+import { useWebApp } from './WebAppProvider';
 
 /**
  * The props type of {@link BackButton | `BackButton`}.
@@ -22,14 +23,16 @@ export interface BackButtonProps {
  * @group React Components
  */
 const BackButton: FC<BackButtonProps> = ({ onClick }) => {
-  const WebAppBackButton =
-    typeof window !== 'undefined' ? window?.Telegram?.WebApp?.BackButton : null;
-  if (!WebAppBackButton) return null;
+  const WebApp = useWebApp();
+  const BackButton = WebApp?.BackButton;
+
+  // Because it is necessary and immutable
+  if (!BackButton) return null;
 
   useEffect(() => {
-    WebAppBackButton.show();
+    BackButton.show();
     return () => {
-      WebAppBackButton.hide();
+      BackButton.hide();
     };
   }, []);
 
@@ -38,9 +41,9 @@ const BackButton: FC<BackButtonProps> = ({ onClick }) => {
       return;
     }
 
-    WebAppBackButton.onClick(onClick);
+    BackButton.onClick(onClick);
     return () => {
-      WebAppBackButton.offClick(onClick);
+      BackButton.offClick(onClick);
     };
   }, [onClick]);
 

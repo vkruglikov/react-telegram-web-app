@@ -1,4 +1,5 @@
 import { FC, useEffect } from 'react';
+import { useWebApp } from './WebAppProvider';
 
 /**
  * The props type of {@link MainButton | `MainButton`}.
@@ -55,40 +56,41 @@ const MainButton: FC<MainButtonProps> = ({
   textColor,
   onClick,
 }): null => {
-  const WebApp = typeof window !== 'undefined' ? window.Telegram.WebApp : null;
-  const WebAppMainButton = WebApp?.MainButton;
+  const WebApp = useWebApp();
+  const MainButton = WebApp?.MainButton;
 
-  if (!WebAppMainButton || !WebApp) return null;
+  // Because it is necessary and immutable
+  if (!MainButton) return null;
 
   useEffect(() => {
-    WebAppMainButton.setParams({
+    MainButton.setParams({
       color: color || WebApp.themeParams.button_color || '#fff',
     });
   }, [color]);
 
   useEffect(() => {
-    WebAppMainButton.setParams({
+    MainButton.setParams({
       text_color: textColor || WebApp.themeParams.button_text_color || '#000',
     });
   }, [textColor]);
 
   useEffect(() => {
-    WebAppMainButton.setText(text);
+    MainButton.setText(text);
   }, [text]);
 
   useEffect(() => {
-    if (WebAppMainButton.isActive && disable) {
-      WebAppMainButton.disable();
-    } else if (!WebAppMainButton.isActive && !disable) {
-      WebAppMainButton.enable();
+    if (MainButton.isActive && disable) {
+      MainButton.disable();
+    } else if (!MainButton.isActive && !disable) {
+      MainButton.enable();
     }
   }, [disable]);
 
   useEffect(() => {
-    if (!WebAppMainButton.isProgressVisible && progress) {
-      WebAppMainButton.showProgress(false);
-    } else if (WebAppMainButton.isProgressVisible && !progress) {
-      WebAppMainButton.hideProgress();
+    if (!MainButton.isProgressVisible && progress) {
+      MainButton.showProgress(false);
+    } else if (MainButton.isProgressVisible && !progress) {
+      MainButton.hideProgress();
     }
   }, [progress]);
 
@@ -97,16 +99,16 @@ const MainButton: FC<MainButtonProps> = ({
       return;
     }
 
-    WebAppMainButton.onClick(onClick);
+    MainButton.onClick(onClick);
     return () => {
-      WebAppMainButton.offClick(onClick);
+      MainButton.offClick(onClick);
     };
   }, [onClick]);
 
   useEffect(() => {
-    WebAppMainButton.show();
+    MainButton.show();
     return () => {
-      WebAppMainButton.hide();
+      MainButton.hide();
     };
   }, []);
 

@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { useThemeParams } from '@vkruglikov/react-telegram-web-app';
+import {
+  useThemeParams,
+  WebAppProvider,
+} from '@vkruglikov/react-telegram-web-app';
 import { ConfigProvider, theme } from 'antd';
 import 'antd/dist/reset.css';
 
@@ -68,4 +71,8 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
 );
 
-root.render(<DemoApp />);
+root.render(
+  <WebAppProvider>
+    <DemoApp />
+  </WebAppProvider>,
+);

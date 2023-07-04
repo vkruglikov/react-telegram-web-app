@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useWebApp } from './WebAppProvider';
 
 /**
  * This object contains the user's current theme settings.
@@ -59,24 +60,22 @@ export type ColorScheme = 'light' | 'dark' | undefined;
  * @group Hooks
  */
 const useThemeParams: () => readonly [ColorScheme, ThemeParams] = () => {
-  const [colorScheme, setColor] = useState<ColorScheme>(
-    typeof window !== 'undefined'
-      ? window.Telegram.WebApp.colorScheme
-      : undefined,
-  );
+  const WebApp = useWebApp();
+  const [colorScheme, setColor] = useState<ColorScheme>(WebApp?.colorScheme);
   const [themeParams, setThemeParams] = useState<ThemeParams>(
-    typeof window !== 'undefined' ? window.Telegram.WebApp.themeParams : {},
+    WebApp?.themeParams || {},
   );
 
   useEffect(() => {
+    if (!WebApp) return;
     const eventHandler = () => {
-      setColor(window.Telegram.WebApp.colorScheme);
-      setThemeParams(window.Telegram.WebApp.themeParams);
+      setColor(WebApp.colorScheme);
+      setThemeParams(WebApp.themeParams);
     };
 
-    window.Telegram.WebApp.onEvent('themeChanged', eventHandler);
+    WebApp.onEvent('themeChanged', eventHandler);
     return () => {
-      window.Telegram.WebApp.offEvent('themeChanged', eventHandler);
+      WebApp.offEvent('themeChanged', eventHandler);
     };
   }, []);
 

@@ -1,3 +1,4 @@
+import { useWebApp } from './WebAppProvider';
 import { useCallback } from 'react';
 
 /**
@@ -30,18 +31,6 @@ export type NotificationOccurredFunction = (
  */
 export type SelectionChangedFunction = () => void;
 
-const impactOccurred: ImpactOccurredFunction = style => {
-  window.Telegram.WebApp.HapticFeedback.impactOccurred(style);
-};
-
-const notificationOccurred: NotificationOccurredFunction = type => {
-  window.Telegram.WebApp.HapticFeedback.notificationOccurred(type);
-};
-
-const selectionChanged: SelectionChangedFunction = () => {
-  window.Telegram.WebApp.HapticFeedback.selectionChanged();
-};
-
 /**
  * This hook that provided {@link ImpactOccurredFunction}, {@link NotificationOccurredFunction} and {@link SelectionChangedFunction} functions that controls haptic feedback.
  * You have to look original telegram description {@link telegram!HapticFeedback}, because it Hook implementing his.
@@ -63,6 +52,24 @@ const useHapticFeedback = (): readonly [
   ImpactOccurredFunction,
   NotificationOccurredFunction,
   SelectionChangedFunction,
-] => [impactOccurred, notificationOccurred, selectionChanged] as const;
+] => {
+  const WebApp = useWebApp();
+  const HapticFeedback = WebApp?.HapticFeedback;
+
+  const impactOccurred: ImpactOccurredFunction = useCallback(
+    (...args) => HapticFeedback?.impactOccurred(...args),
+    [],
+  );
+  const notificationOccurred: NotificationOccurredFunction = useCallback(
+    (...args) => HapticFeedback?.notificationOccurred(...args),
+    [],
+  );
+  const selectionChanged: SelectionChangedFunction = useCallback(
+    (...args) => HapticFeedback?.selectionChanged(...args),
+    [],
+  );
+
+  return [impactOccurred, notificationOccurred, selectionChanged] as const;
+};
 
 export default useHapticFeedback;

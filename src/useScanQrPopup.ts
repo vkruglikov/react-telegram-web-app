@@ -1,3 +1,6 @@
+import { useWebApp } from './WebAppProvider';
+import { useCallback } from 'react';
+
 /**
  * If an optional callback parameter was passed, the callback function will be called and the text from the QR
  * code will be passed as the first argument.
@@ -30,14 +33,6 @@ export type ShowScanQrPopupFunction = (
  */
 export type CloseScanQrPopupFunction = () => void;
 
-const showScanQrPopup: ShowScanQrPopupFunction = (params, callback) => {
-  window.Telegram.WebApp.showScanQrPopup(params, callback);
-};
-
-const closeScanQrPopup: CloseScanQrPopupFunction = () => {
-  window.Telegram.WebApp.closeScanQrPopup();
-};
-
 /**
  * The hook provided showScanQrPopup function of the type {@link ShowScanQrPopupFunction} and closeScanQrPopup {@link CloseScanQrPopupFunction}.
  * @group Hooks
@@ -45,6 +40,19 @@ const closeScanQrPopup: CloseScanQrPopupFunction = () => {
 const useScanQrPopup = (): readonly [
   ShowScanQrPopupFunction,
   CloseScanQrPopupFunction,
-] => [showScanQrPopup, closeScanQrPopup] as const;
+] => {
+  const WebApp = useWebApp();
+
+  const showScanQrPopup: ShowScanQrPopupFunction = useCallback(
+    (...args) => WebApp?.showScanQrPopup(...args),
+    [],
+  );
+  const closeScanQrPopup: CloseScanQrPopupFunction = useCallback(
+    (...args) => WebApp?.closeScanQrPopup(...args),
+    [],
+  );
+
+  return [showScanQrPopup, closeScanQrPopup] as const;
+};
 
 export default useScanQrPopup;
