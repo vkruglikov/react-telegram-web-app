@@ -49,10 +49,17 @@ const Content = () => {
 
 ## ✨ Short Documentation
 
+### Components
+
+- [WebAppProvider](./docs/README.md#webappprovider) -
+  WebAppProvider provide context with WebApp for components and hooks
 - [MainButton](./docs/README.md#mainbutton) -
   The component controls the main button, which is displayed at the bottom of the Web App in the Telegram interface.
 - [BackButton](./docs/README.md#backbutton) -
   This component controls the back button, which can be displayed in the header of the Web App in the Telegram interface.
+
+### Hooks
+
 - [useShowPopup](./docs/README.md#useshowpopup) -
   The hook that provided showPopup function that shows a native popup.
 - [useHapticFeedback](./docs/README.md#usehapticfeedback) -

@@ -70,7 +70,7 @@ const useShowPopup: () => ShowPopupFunction = () => {
     params =>
       new Promise((resolve, reject) => {
         try {
-          WebApp!.showPopup(params, (buttonId: string) => {
+          WebApp?.showPopup(params, (buttonId: string) => {
             resolve(buttonId);
           });
         } catch (e) {
