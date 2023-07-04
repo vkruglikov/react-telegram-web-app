@@ -27,12 +27,6 @@
 - [SwitchInlineQueryFunction](README.md#switchinlinequeryfunction)
 - [WebAppProviderProps](README.md#webappproviderprops)
 
-### React Components
-
-- [BackButton](README.md#backbutton)
-- [MainButton](README.md#mainbutton)
-- [WebAppProvider](README.md#webappprovider)
-
 ### Hooks
 
 - [useExpand](README.md#useexpand)
@@ -42,6 +36,12 @@
 - [useShowPopup](README.md#useshowpopup)
 - [useSwitchInlineQuery](README.md#useswitchinlinequery)
 - [useThemeParams](README.md#usethemeparams)
+
+### React Components
+
+- [BackButton](README.md#backbutton)
+- [MainButton](README.md#mainbutton)
+- [WebAppProvider](README.md#webappprovider)
 
 ## Type Aliases
 
@@ -261,91 +261,6 @@ You have to look original description switchInlineQuery in [telegram!WebApp](htt
 
 Ƭ **WebAppProviderProps**: `PropsWithChildren`
 
-## React Components
-
-### BackButton
-
-▸ **BackButton**(`props`, `context?`): `null` \| `ReactElement`<`any`, `any`\>
-
-Renders a [telegram!BackButton](https://core.telegram.org/bots/webapps#backbutton) component in React app as [react!Component](https://reactjs.org/docs/react-component.html)
-
-```tsx
-import { BackButton } from '@vkruglikov/react-telegram-web-app';
-
-<BackButton onClick={() => console.log('Hello, I am back button!')} />;
-```
-
-#### Parameters
-
-| Name       | Type                                               |
-| :--------- | :------------------------------------------------- |
-| `props`    | [`BackButtonProps`](interfaces/BackButtonProps.md) |
-| `context?` | `any`                                              |
-
-#### Returns
-
-`null` \| `ReactElement`<`any`, `any`\>
-
-Component always returns `null`. Not renders any elements
-
----
-
-### MainButton
-
-▸ **MainButton**(`props`, `context?`): `null` \| `ReactElement`<`any`, `any`\>
-
-Renders a [telegram!MainButton](https://core.telegram.org/bots/webapps#mainbutton) component in React app as [react!Component](https://reactjs.org/docs/react-component.html)
-
-```tsx
-import { MainButton } from '@vkruglikov/react-telegram-web-app';
-
-<MainButton
-  text="CLICK ME"
-  onClick={() => console.log('Hello, I am button!')}
-/>;
-```
-
-#### Parameters
-
-| Name       | Type                                               |
-| :--------- | :------------------------------------------------- |
-| `props`    | [`MainButtonProps`](interfaces/MainButtonProps.md) |
-| `context?` | `any`                                              |
-
-#### Returns
-
-`null` \| `ReactElement`<`any`, `any`\>
-
-Component always returns `null`. Not renders any elements
-
----
-
-### WebAppProvider
-
-▸ **WebAppProvider**(`props`, `context?`): `null` \| `ReactElement`<`any`, `any`\>
-
-WebAppProvider provide context with WebApp for components and hooks
-
-```tsx
-import { WebAppProvider } from '@vkruglikov/react-telegram-web-app';
-
-<WebAppProvider>
-  <YourAppComponent />
-</WebAppProvider>;
-```
-
-#### Parameters
-
-| Name              | Type        |
-| :---------------- | :---------- |
-| `props`           | `Object`    |
-| `props.children?` | `ReactNode` |
-| `context?`        | `any`       |
-
-#### Returns
-
-`null` \| `ReactElement`<`any`, `any`\>
-
 ## Hooks
 
 ### useExpand
@@ -487,3 +402,81 @@ console.log({
 #### Returns
 
 readonly [[`ColorScheme`](README.md#colorscheme), [`ThemeParams`](interfaces/ThemeParams.md)]
+
+## React Components
+
+### BackButton
+
+▸ **BackButton**(`props`): `null`
+
+Renders a [telegram!BackButton](https://core.telegram.org/bots/webapps#backbutton) component in React app as [react!Component](https://reactjs.org/docs/react-component.html)
+
+```tsx
+import { BackButton } from '@vkruglikov/react-telegram-web-app';
+
+<BackButton onClick={() => console.log('Hello, I am back button!')} />;
+```
+
+#### Parameters
+
+| Name    | Type                                               |
+| :------ | :------------------------------------------------- |
+| `props` | [`BackButtonProps`](interfaces/BackButtonProps.md) |
+
+#### Returns
+
+`null`
+
+---
+
+### MainButton
+
+▸ **MainButton**(`props`): `null`
+
+Renders a [telegram!MainButton](https://core.telegram.org/bots/webapps#mainbutton) component in React app as [react!Component](https://reactjs.org/docs/react-component.html)
+
+```tsx
+import { MainButton } from '@vkruglikov/react-telegram-web-app';
+
+<MainButton
+  text="CLICK ME"
+  onClick={() => console.log('Hello, I am button!')}
+/>;
+```
+
+#### Parameters
+
+| Name    | Type                                               |
+| :------ | :------------------------------------------------- |
+| `props` | [`MainButtonProps`](interfaces/MainButtonProps.md) |
+
+#### Returns
+
+`null`
+
+---
+
+### WebAppProvider
+
+▸ **WebAppProvider**(`props`): `ReactElement`<`any`, `string` \| `JSXElementConstructor`<`any`\>\>
+
+WebAppProvider provide context with WebApp for components and hooks
+
+```tsx
+import { WebAppProvider } from '@vkruglikov/react-telegram-web-app';
+
+<WebAppProvider>
+  <YourAppComponent />
+</WebAppProvider>;
+```
+
+#### Parameters
+
+| Name              | Type        |
+| :---------------- | :---------- |
+| `props`           | `Object`    |
+| `props.children?` | `ReactNode` |
+
+#### Returns
+
+`ReactElement`<`any`, `string` \| `JSXElementConstructor`<`any`\>\>

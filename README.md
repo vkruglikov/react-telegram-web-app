@@ -21,7 +21,7 @@ Also, you can look demo [source code](./demo/src).
 
 3️⃣ &nbsp;**Try it out** by writing code.
 
-```typescript jsx
+```jsx
 import {
   MainButton,
   useShowPopup,

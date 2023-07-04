@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react';
+import { FC, ReactElement, useEffect } from 'react';
 import { useWebApp } from './WebAppProvider';
 
 /**
@@ -19,10 +19,10 @@ export interface BackButtonProps {
  *     onClick={() => console.log('Hello, I am back button!')}
  * />
  * ```
- * @returns Component always returns `null`. Not renders any elements
+ * @param props
  * @group React Components
  */
-const BackButton: FC<BackButtonProps> = ({ onClick }) => {
+const BackButton = ({ onClick }: BackButtonProps): null => {
   const WebApp = useWebApp();
   const BackButton = WebApp?.BackButton;
 

@@ -45,17 +45,17 @@ export interface MainButtonProps {
  *     onClick={() => console.log('Hello, I am button!')}
  * />
  * ```
- * @returns Component always returns `null`. Not renders any elements
+ * @param props
  * @group React Components
  */
-const MainButton: FC<MainButtonProps> = ({
+const MainButton = ({
   text = 'CONTINUE',
   progress = false,
   disable = false,
   color,
   textColor,
   onClick,
-}): null => {
+}: MainButtonProps): null => {
   const WebApp = useWebApp();
   const MainButton = WebApp?.MainButton;
 

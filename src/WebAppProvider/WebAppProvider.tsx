@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren } from 'react';
+import React, { FC, PropsWithChildren, ReactElement } from 'react';
 import WebAppContext from './context';
 
 export type WebAppProviderProps = PropsWithChildren;
@@ -16,9 +16,10 @@ const webAppSdk =
  *   <YourAppComponent />
  * </WebAppProvider>
  * ```
+ * @param props
  * @group React Components
  */
-const WebAppProvider: FC<WebAppProviderProps> = ({ children }) => (
+const WebAppProvider = ({ children }: WebAppProviderProps): ReactElement => (
   <WebAppContext.Provider value={webAppSdk}>{children}</WebAppContext.Provider>
 );
 export default WebAppProvider;
