@@ -25,11 +25,13 @@
 - [ShowPopupFunction](README.md#showpopupfunction)
 - [ShowScanQrPopupFunction](README.md#showscanqrpopupfunction)
 - [SwitchInlineQueryFunction](README.md#switchinlinequeryfunction)
+- [WebAppProviderProps](README.md#webappproviderprops)
 
 ### React Components
 
 - [BackButton](README.md#backbutton)
 - [MainButton](README.md#mainbutton)
+- [WebAppProvider](README.md#webappprovider)
 
 ### Hooks
 
@@ -253,6 +255,12 @@ You have to look original description switchInlineQuery in [telegram!WebApp](htt
 
 `void`
 
+---
+
+### WebAppProviderProps
+
+Ƭ **WebAppProviderProps**: `PropsWithChildren`
+
 ## React Components
 
 ### BackButton
@@ -309,6 +317,34 @@ import { MainButton } from '@vkruglikov/react-telegram-web-app';
 `null` \| `ReactElement`<`any`, `any`\>
 
 Component always returns `null`. Not renders any elements
+
+---
+
+### WebAppProvider
+
+▸ **WebAppProvider**(`props`, `context?`): `null` \| `ReactElement`<`any`, `any`\>
+
+WebAppProvider provide context with WebApp for components and hooks
+
+```tsx
+import { WebAppProvider } from '@vkruglikov/react-telegram-web-app';
+
+<WebAppProvider>
+  <YourAppComponent />
+</WebAppProvider>;
+```
+
+#### Parameters
+
+| Name              | Type        |
+| :---------------- | :---------- |
+| `props`           | `Object`    |
+| `props.children?` | `ReactNode` |
+| `context?`        | `any`       |
+
+#### Returns
+
+`null` \| `ReactElement`<`any`, `any`\>
 
 ## Hooks
 

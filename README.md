@@ -22,25 +22,28 @@ Also, you can look demo [source code](./demo/src).
 3️⃣ &nbsp;**Try it out** by writing code.
 
 ```typescript jsx
-import React from 'react';
-import { MainButton, useShowPopup } from '@vkruglikov/react-telegram-web-app';
+import {
+  MainButton,
+  useShowPopup,
+  WebAppProvider,
+} from '@vkruglikov/react-telegram-web-app';
 
-const App = () => {
+/** You need to wrap your application with <WebAppProvider /> */
+const App = () => (
+  <WebAppProvider>
+    <Content />
+  </WebAppProvider>
+);
+
+const Content = () => {
   const showPopup = useShowPopup();
 
-  return (
-    <>
-      Some page content...
-      <MainButton
-        text="SHOW POPUP"
-        onClick={() => {
-          showPopup({
-            message: "Hello, I'am showPopup handle",
-          });
-        }}
-      />
-    </>
-  );
+  const handleClick = () =>
+    showPopup({
+      message: 'Hello, I am popup',
+    });
+
+  return <MainButton text="SHOW POPUP" onClick={handleClick} />;
 };
 ```
 
