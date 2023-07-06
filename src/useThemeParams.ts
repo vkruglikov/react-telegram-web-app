@@ -77,7 +77,7 @@ const useThemeParams: () => readonly [ColorScheme, ThemeParams] = () => {
     return () => {
       WebApp.offEvent('themeChanged', eventHandler);
     };
-  }, []);
+  }, [WebApp]);
 
   return [colorScheme, themeParams] as const;
 };

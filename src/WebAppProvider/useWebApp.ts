@@ -17,7 +17,7 @@ const useWebApp = () => {
       );
       isShowWarning = true;
     }
-  }, []);
+  }, [context]);
 
   return context;
 };

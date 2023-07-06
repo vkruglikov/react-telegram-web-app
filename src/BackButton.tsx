@@ -26,18 +26,15 @@ const BackButton = ({ onClick }: BackButtonProps): null => {
   const WebApp = useWebApp();
   const BackButton = WebApp?.BackButton;
 
-  // Because it is necessary and immutable
-  if (!BackButton) return null;
-
   useEffect(() => {
-    BackButton.show();
+    BackButton?.show();
     return () => {
-      BackButton.hide();
+      BackButton?.hide();
     };
-  }, []);
+  }, [WebApp]);
 
   useEffect(() => {
-    if (!onClick) {
+    if (!onClick || !BackButton) {
       return;
     }
 
@@ -45,7 +42,7 @@ const BackButton = ({ onClick }: BackButtonProps): null => {
     return () => {
       BackButton.offClick(onClick);
     };
-  }, [onClick]);
+  }, [onClick, WebApp]);
 
   return null;
 };

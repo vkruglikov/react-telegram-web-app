@@ -19,7 +19,7 @@ export type SwitchInlineQueryFunction = (
 const useSwitchInlineQuery = (): SwitchInlineQueryFunction => {
   const WebApp = useWebApp();
 
-  return useCallback((...args) => WebApp?.switchInlineQuery(...args), []);
+  return useCallback((...args) => WebApp?.switchInlineQuery(...args), [WebApp]);
 };
 
 export default useSwitchInlineQuery;

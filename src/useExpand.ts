@@ -36,9 +36,9 @@ const useExpand = (): readonly [boolean, DispatchWithoutAction] => {
 
     WebApp.onEvent('viewportChanged', handleEvent);
     return () => WebApp.offEvent('viewportChanged', handleEvent);
-  }, []);
+  }, [WebApp]);
 
-  const handleExpand = useCallback(() => WebApp?.expand?.(), []);
+  const handleExpand = useCallback(() => WebApp?.expand?.(), [WebApp]);
 
   return [isExpanded, handleExpand] as const;
 };

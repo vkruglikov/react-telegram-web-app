@@ -58,15 +58,15 @@ const useHapticFeedback = (): readonly [
 
   const impactOccurred: ImpactOccurredFunction = useCallback(
     (...args) => HapticFeedback?.impactOccurred(...args),
-    [],
+    [WebApp],
   );
   const notificationOccurred: NotificationOccurredFunction = useCallback(
     (...args) => HapticFeedback?.notificationOccurred(...args),
-    [],
+    [WebApp],
   );
   const selectionChanged: SelectionChangedFunction = useCallback(
     (...args) => HapticFeedback?.selectionChanged(...args),
-    [],
+    [WebApp],
   );
 
   return [impactOccurred, notificationOccurred, selectionChanged] as const;

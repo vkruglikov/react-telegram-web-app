@@ -77,7 +77,7 @@ const useShowPopup: () => ShowPopupFunction = () => {
           reject(e);
         }
       }),
-    [],
+    [WebApp],
   );
 };
 

@@ -45,11 +45,11 @@ const useScanQrPopup = (): readonly [
 
   const showScanQrPopup: ShowScanQrPopupFunction = useCallback(
     (...args) => WebApp?.showScanQrPopup(...args),
-    [],
+    [WebApp],
   );
   const closeScanQrPopup: CloseScanQrPopupFunction = useCallback(
     (...args) => WebApp?.closeScanQrPopup(...args),
-    [],
+    [WebApp],
   );
 
   return [showScanQrPopup, closeScanQrPopup] as const;

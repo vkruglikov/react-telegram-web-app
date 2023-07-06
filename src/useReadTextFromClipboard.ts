@@ -32,7 +32,7 @@ const useReadTextFromClipboard = (): ReadTextFromClipboardFunction => {
       new Promise(resolve => {
         WebApp?.readTextFromClipboard(resolve);
       }),
-    [],
+    [WebApp],
   );
 };
 
