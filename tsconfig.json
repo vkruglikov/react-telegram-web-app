@@ -1,5 +1,5 @@
 {
-  "include": ["src", "telegram-web-app.d.ts"],
+  "include": ["src", "global.d.ts"],
   "compilerOptions": {
     "skipLibCheck": true,
     "target": "ESNext",

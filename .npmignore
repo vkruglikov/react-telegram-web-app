@@ -1,7 +1,7 @@
 /node_modules/
 /.idea
 /src
-/telegram-web-app.d.ts
+/global.d.ts
 /.github
 /.nvmrc
 /tsconfig.json
