@@ -1,5 +1,5 @@
-import { FC, ReactElement, useEffect } from 'react';
-import { useWebApp } from './WebAppProvider';
+import { useEffect } from 'react';
+import useWebApp from './useWebApp';
 
 /**
  * The props type of {@link BackButton | `BackButton`}.

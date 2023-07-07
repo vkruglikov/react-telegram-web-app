@@ -2,7 +2,7 @@ import { WebApp } from './src/types';
 
 declare global {
   interface Window {
-    Telegram: {
+    Telegram?: {
       WebApp: WebApp;
     };
   }

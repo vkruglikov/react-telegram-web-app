@@ -1,10 +1,12 @@
-import React, { FC, PropsWithChildren, ReactElement } from 'react';
+import React, { PropsWithChildren, ReactElement } from 'react';
 import WebAppContext from './context';
 
 export type WebAppProviderProps = PropsWithChildren;
 
 const webAppSdk =
-  typeof window !== 'undefined' ? window?.Telegram?.WebApp : null;
+  typeof window !== 'undefined' && window?.Telegram?.WebApp
+    ? window.Telegram.WebApp
+    : null;
 
 /**
  * WebAppProvider provide context with WebApp for components and hooks

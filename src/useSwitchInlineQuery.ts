@@ -1,4 +1,4 @@
-import { useWebApp } from './WebAppProvider';
+import useWebApp from './useWebApp';
 import { useCallback } from 'react';
 
 /**

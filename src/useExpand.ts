@@ -1,9 +1,11 @@
 import { DispatchWithoutAction, useCallback, useEffect, useState } from 'react';
-import { useWebApp } from './WebAppProvider';
+import useWebApp from './useWebApp';
 
 /**
  * This hook provided isExpanded state, and expand() handle
- * You have to look original description in {@link telegram!WebApp} for more information*
+ * You have to look original description in {@link telegram!WebApp} for more information
+ *
+ * `isExpanded` can be `undefined`
  *
  * ```tsx
  * import { useExpand } from "@vkruglikov/react-telegram-web-app";
@@ -22,15 +24,15 @@ import { useWebApp } from './WebAppProvider';
  *
  * @group Hooks
  */
-const useExpand = (): readonly [boolean, DispatchWithoutAction] => {
+const useExpand = (): readonly [boolean | undefined, DispatchWithoutAction] => {
   const WebApp = useWebApp();
-  const [isExpanded, setIsExpanded] = useState(!!WebApp?.isExpanded);
+  const [isExpanded, setIsExpanded] = useState(WebApp?.isExpanded);
 
   useEffect(() => {
     if (!WebApp) return;
     const handleEvent = (payload: { isStateStable: boolean }) => {
       if (payload.isStateStable) {
-        setIsExpanded(!!WebApp.isExpanded);
+        setIsExpanded(WebApp.isExpanded);
       }
     };
 

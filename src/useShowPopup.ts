@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { useWebApp } from './WebAppProvider';
+import useWebApp from './useWebApp';
 
 /**
  * You have to see original interface {@link telegram!PopupButton}.

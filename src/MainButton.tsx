@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useWebApp } from './WebAppProvider';
+import useWebApp from './useWebApp';
 
 /**
  * The props type of {@link MainButton | `MainButton`}.
