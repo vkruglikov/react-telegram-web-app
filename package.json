@@ -19,7 +19,7 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "rm -rf ./lib/*; microbundle build",
-    "dev": "rm -rf ./lib/*; microbundle watch --jsx React.createElement",
+    "dev": "rm -rf ./lib/*; microbundle watch",
     "prepare": "husky install",
     "changeset": "changeset",
     "docs": "typedoc && prettier --write ./docs",
