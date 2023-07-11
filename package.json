@@ -23,9 +23,10 @@
     "prepare": "husky install",
     "changeset": "changeset",
     "docs": "typedoc && prettier --write ./docs",
-    "release": "npm run test && npm run build && npm run test:package && changeset publish",
+    "release": "npm run test:all && npm run build && npm run test:package && changeset publish",
     "format": "prettier --write .",
-    "test": "NODE_ENV=test jest --testPathIgnorePatterns package",
+    "test": "NODE_ENV=test jest",
+    "test:all": "NODE_ENV=test jest --testPathIgnorePatterns package",
     "test:package": "NODE_ENV=test jest  package"
   },
   "repository": {

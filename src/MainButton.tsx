@@ -69,24 +69,24 @@ const MainButton = ({
     MainButton?.setParams({
       text_color: textColor || WebApp?.themeParams.button_text_color || '#000',
     });
-  }, [WebApp]);
+  }, [WebApp, textColor]);
 
   useEffect(() => {
     MainButton?.setText(text);
   }, [text, WebApp]);
 
   useEffect(() => {
-    if (MainButton?.isActive && disable) {
-      MainButton.disable();
-    } else if (!MainButton?.isActive && !disable) {
+    if (disable) {
+      MainButton?.disable();
+    } else if (!disable) {
       MainButton?.enable();
     }
   }, [disable, WebApp]);
 
   useEffect(() => {
-    if (!MainButton?.isProgressVisible && progress) {
+    if (progress) {
       MainButton?.showProgress(false);
-    } else if (MainButton?.isProgressVisible && !progress) {
+    } else if (!progress) {
       MainButton?.hideProgress();
     }
   }, [progress, WebApp]);
