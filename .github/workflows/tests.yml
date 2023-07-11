@@ -3,8 +3,10 @@ on:
   push:
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
+    name: Run tests
+
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
