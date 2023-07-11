@@ -6,7 +6,7 @@ import useWebApp from './useWebApp';
  */
 export interface BackButtonProps {
   /** The back button press event handler */
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 /**

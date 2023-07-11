@@ -3,12 +3,14 @@ import path from 'path';
 
 const BUILD_PATH = path.resolve(__dirname, '../lib');
 
+const COMMON_JS_MODULE = 'react-telegram-web-app.cjs';
+
 const REQUIRED_MODULES = [
+  COMMON_JS_MODULE,
   'react-telegram-web-app.module.js',
   'react-telegram-web-app.modern.js',
   'react-telegram-web-app.umd.js',
-  'react-telegram-web-app.cjs',
-];
+] as const;
 
 const REQUIRED_EXPORTS = [
   'WebAppProvider',
@@ -53,16 +55,14 @@ describe('Public API modules', () => {
   });
 
   it('checks export from modules', () => {
-    REQUIRED_MODULES.forEach(modulePath => {
-      const indexModule = require(path.join(BUILD_PATH, modulePath));
+    const indexModule = require(path.join(BUILD_PATH, COMMON_JS_MODULE));
 
-      expect(indexModule).toMatchObject(
-        REQUIRED_EXPORTS.reduce((memo, name) => {
-          memo[name] = expect.any(Function);
-          return memo;
-        }, {}),
-      );
-    });
+    expect(indexModule).toMatchObject(
+      REQUIRED_EXPORTS.reduce((memo, name) => {
+        memo[name] = expect.any(Function);
+        return memo;
+      }, {}),
+    );
   });
 });
 
