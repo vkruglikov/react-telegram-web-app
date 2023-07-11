@@ -1,5 +1,6 @@
 {
   "include": ["src", "global.d.ts"],
+  "exclude": ["**/__mocks__/**"],
   "compilerOptions": {
     "skipLibCheck": true,
     "target": "ESNext",
