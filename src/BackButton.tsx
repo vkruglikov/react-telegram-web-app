@@ -31,7 +31,7 @@ const BackButton = ({ onClick }: BackButtonProps): null => {
     return () => {
       BackButton?.hide();
     };
-  }, [WebApp]);
+  }, [BackButton]);
 
   useEffect(() => {
     if (!onClick || !BackButton) {
@@ -42,7 +42,7 @@ const BackButton = ({ onClick }: BackButtonProps): null => {
     return () => {
       BackButton.offClick(onClick);
     };
-  }, [onClick, WebApp]);
+  }, [onClick, BackButton]);
 
   return null;
 };

@@ -1,5 +1,5 @@
 {
-  "include": ["src", "global.d.ts"],
+  "include": ["src", "tests", "global.d.ts"],
   "exclude": ["**/__mocks__/**"],
   "compilerOptions": {
     "skipLibCheck": true,
@@ -15,7 +15,6 @@
     "noImplicitAny": true,
     "noUncheckedIndexedAccess": true,
     "importHelpers": true,
-    "strictNullChecks": true,
-    "suppressImplicitAnyIndexErrors": true
+    "strictNullChecks": true
   }
 }

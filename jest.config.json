@@ -1,5 +1,6 @@
 {
   "transform": {
     "\\.[jt]sx?$": "ts-jest"
-  }
+  },
+  "testEnvironment": "jsdom"
 }

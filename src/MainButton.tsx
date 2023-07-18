@@ -58,22 +58,23 @@ const MainButton = ({
 }: MainButtonProps): null => {
   const WebApp = useWebApp();
   const MainButton = WebApp?.MainButton;
+  const themeParams = WebApp?.themeParams;
 
   useEffect(() => {
     MainButton?.setParams({
-      color: color || WebApp?.themeParams.button_color || '#fff',
+      color: color || themeParams?.button_color || '#fff',
     });
-  }, [color, WebApp]);
+  }, [color, themeParams, MainButton]);
 
   useEffect(() => {
     MainButton?.setParams({
-      text_color: textColor || WebApp?.themeParams.button_text_color || '#000',
+      text_color: textColor || themeParams?.button_text_color || '#000',
     });
-  }, [WebApp, textColor]);
+  }, [MainButton, themeParams, textColor]);
 
   useEffect(() => {
     MainButton?.setText(text);
-  }, [text, WebApp]);
+  }, [text, MainButton]);
 
   useEffect(() => {
     if (disable) {
@@ -81,7 +82,7 @@ const MainButton = ({
     } else if (!disable) {
       MainButton?.enable();
     }
-  }, [disable, WebApp]);
+  }, [disable, MainButton]);
 
   useEffect(() => {
     if (progress) {
@@ -89,7 +90,7 @@ const MainButton = ({
     } else if (!progress) {
       MainButton?.hideProgress();
     }
-  }, [progress, WebApp]);
+  }, [progress, MainButton]);
 
   useEffect(() => {
     if (!onClick) {
@@ -100,14 +101,14 @@ const MainButton = ({
     return () => {
       MainButton?.offClick(onClick);
     };
-  }, [onClick, WebApp]);
+  }, [onClick, MainButton]);
 
   useEffect(() => {
     MainButton?.show();
     return () => {
       MainButton?.hide();
     };
-  }, [WebApp]);
+  }, [MainButton]);
 
   return null;
 };

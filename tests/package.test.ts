@@ -61,7 +61,7 @@ describe('Public API modules', () => {
       REQUIRED_EXPORTS.reduce((memo, name) => {
         memo[name] = expect.any(Function);
         return memo;
-      }, {}),
+      }, {} as Record<string, any>),
     );
   });
 });

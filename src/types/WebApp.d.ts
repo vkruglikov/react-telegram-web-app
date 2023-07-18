@@ -104,7 +104,7 @@ export declare namespace TelegramWebApp {
     viewportStableHeight: number;
     MainButton: MainButton;
 
-    sendData(data: any);
+    sendData(data: unknown);
 
     ready();
 

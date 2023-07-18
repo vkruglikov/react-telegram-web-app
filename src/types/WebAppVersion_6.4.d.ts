@@ -9,7 +9,7 @@ export declare namespace TelegramWebAppVersion6_4 {
   }
 
   interface Event {
-    onEvent(eventType: 'qrTextReceived', eventHandler: (payload: any) => void);
+    onEvent(eventType: 'qrTextReceived', eventHandler: (data: string) => void);
 
     onEvent(
       eventType: 'clipboardTextReceived',
@@ -28,9 +28,9 @@ export declare namespace TelegramWebAppVersion6_4 {
     platform: string;
     showScanQrPopup(
       params: ScanQrPopupParams,
-      callback?: (data: any) => void | boolean,
+      callback?: (data: string) => void | boolean,
     );
     closeScanQrPopup();
-    readTextFromClipboard(callback?: (data: any) => void);
+    readTextFromClipboard(callback?: (data: string) => void);
   }
 }

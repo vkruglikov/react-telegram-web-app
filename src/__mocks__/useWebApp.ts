@@ -18,6 +18,10 @@ const WebApp = {
     hideProgress: jest.fn(),
   },
   themeParams: {},
+  onEvent: jest.fn(),
+  offEvent: jest.fn(),
+  isExpanded: undefined,
+  expand: jest.fn(),
 };
 
-export default () => WebApp;
+export default jest.fn(() => WebApp);
