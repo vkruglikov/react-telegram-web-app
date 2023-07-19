@@ -83,8 +83,7 @@ describe('useExpand', () => {
       IsolateMockedWebApp.isExpanded = state;
 
       act(() => {
-        // @ts-ignore
-        (useWebApp()?.onEvent as jest.MockedFn<any>).mock.lastCall?.[1]?.({
+        (useWebApp()?.onEvent as jest.Mock).mock.lastCall?.[1]?.({
           isStateStable: true,
         });
         rerender();

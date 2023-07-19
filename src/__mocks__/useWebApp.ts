@@ -17,6 +17,11 @@ const WebApp = {
     showProgress: jest.fn(),
     hideProgress: jest.fn(),
   },
+  HapticFeedback: {
+    impactOccurred: jest.fn(),
+    selectionChanged: jest.fn(),
+    notificationOccurred: jest.fn(),
+  },
   themeParams: {},
   onEvent: jest.fn(),
   offEvent: jest.fn(),
