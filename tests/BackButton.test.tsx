@@ -26,10 +26,6 @@ const renderComponentTree = (fabric: () => ReactElement) => {
 };
 
 describe('BackButton', () => {
-  beforeEach(() => {
-    jest.clearAllMocks();
-  });
-
   it('checks call show(), hide() WebApp.BackButton api', () => {
     const WebApp = useWebApp();
 

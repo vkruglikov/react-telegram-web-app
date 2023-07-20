@@ -2,5 +2,6 @@
   "transform": {
     "\\.[jt]sx?$": "ts-jest"
   },
-  "testEnvironment": "jsdom"
+  "testEnvironment": "jsdom",
+  "setupFilesAfterEnv": ["./tests/setupTests.ts"]
 }

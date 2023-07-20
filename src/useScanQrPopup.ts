@@ -48,7 +48,7 @@ const useScanQrPopup = (): readonly [
     [WebApp],
   );
   const closeScanQrPopup: CloseScanQrPopupFunction = useCallback(
-    (...args) => WebApp?.closeScanQrPopup?.(...args),
+    () => WebApp?.closeScanQrPopup?.(),
     [WebApp],
   );
 

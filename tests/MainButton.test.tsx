@@ -26,10 +26,6 @@ const renderComponentTree = (fabric: () => ReactElement) => {
 };
 
 describe('MainButton', () => {
-  beforeEach(() => {
-    jest.clearAllMocks();
-  });
-
   it('checks call show(), hide() WebApp.MainButton api', () => {
     const WebApp = useWebApp();
 

@@ -27,6 +27,10 @@ const WebApp = {
   offEvent: jest.fn(),
   isExpanded: undefined,
   expand: jest.fn(),
+  readTextFromClipboard: jest.fn(),
+  showScanQrPopup: jest.fn(),
+  closeScanQrPopup: jest.fn(),
+  showPopup: jest.fn(),
 };
 
 export default jest.fn(() => WebApp);
