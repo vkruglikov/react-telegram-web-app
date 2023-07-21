@@ -1,16 +1,22 @@
+import * as fsAsync from 'fs/promises';
 import * as fs from 'fs';
 import * as path from 'path';
 
 const BUILD_PATH = path.resolve(__dirname, '../lib');
 
-const COMMON_JS_MODULE = 'react-telegram-web-app.cjs';
+const walk = async (dirPath: string): Promise<any> =>
+  Promise.all(
+    await fsAsync.readdir(dirPath, { withFileTypes: true }).then(entries =>
+      entries.map(entry => {
+        const childPath = path.join(dirPath, entry.name);
+        return entry.isDirectory()
+          ? walk(childPath)
+          : childPath.replace(BUILD_PATH, '');
+      }),
+    ),
+  );
 
-const REQUIRED_MODULES = [
-  COMMON_JS_MODULE,
-  'react-telegram-web-app.module.js',
-  'react-telegram-web-app.modern.js',
-  'react-telegram-web-app.umd.js',
-] as const;
+const COMMON_JS_MODULE = 'react-telegram-web-app.cjs';
 
 const REQUIRED_EXPORTS = [
   'WebAppProvider',
@@ -25,33 +31,13 @@ const REQUIRED_EXPORTS = [
   'useExpand',
 ];
 
-const REQUIRED_DTS = [
-  ...REQUIRED_EXPORTS.map(name => `${name}.d.ts`),
-  'useWebApp.d.ts',
-  'context.d.ts',
-  'index.d.ts',
-];
-
-describe('Public API modules', () => {
+describe('package tests', () => {
   beforeEach(() => {
     jest.resetModules();
   });
 
-  it('checks exist lib modules', () => {
-    expect(
-      [
-        ...REQUIRED_MODULES,
-        ...REQUIRED_MODULES.map(module => module + '.map'),
-      ].filter(module => !fs.existsSync(path.join(BUILD_PATH, module))),
-    ).toStrictEqual([]);
-  });
-
-  it('checks exist declaration types', () => {
-    expect(
-      REQUIRED_DTS.filter(
-        module => !fs.existsSync(path.join(BUILD_PATH, module)),
-      ),
-    ).toStrictEqual([]);
+  it('/lib snapshot', async () => {
+    expect(await walk(BUILD_PATH)).toMatchSnapshot();
   });
 
   it('checks export from modules', () => {

@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import MainButton from '../src/MainButton';
-import useWebApp from '../src/useWebApp';
+import useWebApp from '../src/core/useWebApp';
 import { renderComponentTree } from './utils';
 
 describe('MainButton', () => {

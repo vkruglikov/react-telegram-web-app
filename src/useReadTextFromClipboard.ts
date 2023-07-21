@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import useWebApp from './useWebApp';
+import useWebApp from './core/useWebApp';
 
 /**
  * This function provided Promise function that read text from clipboard

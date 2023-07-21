@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 
-import useWebApp from '../src/useWebApp';
+import useWebApp from '../src/core/useWebApp';
 import useSwitchInlineQuery from '../src/useSwitchInlineQuery';
 
 describe('useSwitchInlineQuery', () => {

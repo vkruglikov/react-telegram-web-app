@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 import useScanQrPopup from '../src/useScanQrPopup';
-import useWebApp from '../src/useWebApp';
+import useWebApp from '../src/core/useWebApp';
 
 describe('useScanQrPopup', () => {
   it('checks correct call WebApp.showScanQrPopup api', () => {

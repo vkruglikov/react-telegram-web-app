@@ -1,6 +1,6 @@
 import { act, renderHook } from '@testing-library/react';
 
-import useWebApp from '../src/useWebApp';
+import useWebApp from '../src/core/useWebApp';
 import useThemeParams from '../src/useThemeParams';
 import { WebApp } from '../src/types';
 

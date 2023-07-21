@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 import useShowPopup from '../src/useShowPopup';
-import useWebApp from '../src/useWebApp';
+import useWebApp from '../src/core/useWebApp';
 import { WebApp } from '../src/types';
 
 describe('useShowPopup', () => {

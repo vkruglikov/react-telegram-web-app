@@ -88,7 +88,8 @@ Here's what's coming up:
 
 [MIT](./LICENSE)
 
-## 💻👞🙊📚 Follow me on LinkedIn
+## 💻👞🙊📚 Join to discussions
 
-I publish posts on front-end development, and in particular work with Telegram WebApps
-https://www.linkedin.com/in/kruglikov-valentin/
+Create discussions, ask questions, share experiences and discuss ideas with everyone together
+
+https://github.com/vkruglikov/react-telegram-web-app/discussions

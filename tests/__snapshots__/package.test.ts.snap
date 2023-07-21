@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`package tests /lib snapshot 1`] = `
+[
+  "/BackButton.d.ts",
+  "/MainButton.d.ts",
+  "/WebAppProvider.d.ts",
+  [
+    "/core/context.d.ts",
+    "/core/useWebApp.d.ts",
+  ],
+  "/index.d.ts",
+  "/react-telegram-web-app.cjs",
+  "/react-telegram-web-app.cjs.map",
+  "/react-telegram-web-app.modern.js",
+  "/react-telegram-web-app.modern.js.map",
+  "/react-telegram-web-app.module.js",
+  "/react-telegram-web-app.module.js.map",
+  "/react-telegram-web-app.umd.js",
+  "/react-telegram-web-app.umd.js.map",
+  "/useExpand.d.ts",
+  "/useHapticFeedback.d.ts",
+  "/useReadTextFromClipboard.d.ts",
+  "/useScanQrPopup.d.ts",
+  "/useShowPopup.d.ts",
+  "/useSwitchInlineQuery.d.ts",
+  "/useThemeParams.d.ts",
+]
+`;

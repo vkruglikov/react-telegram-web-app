@@ -1,5 +1,5 @@
 import React, { PropsWithChildren, ReactElement } from 'react';
-import WebAppContext from './context';
+import WebAppContext, { WebAppOptionsContext } from './core/context';
 
 export type WebAppProviderProps = PropsWithChildren;
 
@@ -22,6 +22,10 @@ const webAppSdk =
  * @group React Components
  */
 const WebAppProvider = ({ children }: WebAppProviderProps): ReactElement => (
-  <WebAppContext.Provider value={webAppSdk}>{children}</WebAppContext.Provider>
+  <WebAppOptionsContext.Provider value={''}>
+    <WebAppContext.Provider value={webAppSdk}>
+      {children}
+    </WebAppContext.Provider>
+  </WebAppOptionsContext.Provider>
 );
 export default WebAppProvider;

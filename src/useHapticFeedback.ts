@@ -1,4 +1,4 @@
-import useWebApp from './useWebApp';
+import useWebApp from './core/useWebApp';
 import { useCallback } from 'react';
 
 /**
