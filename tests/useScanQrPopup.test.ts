@@ -2,8 +2,6 @@ import { renderHook } from '@testing-library/react';
 import useScanQrPopup from '../src/useScanQrPopup';
 import useWebApp from '../src/useWebApp';
 
-jest.mock('../src/useWebApp');
-
 describe('useScanQrPopup', () => {
   it('checks correct call WebApp.showScanQrPopup api', () => {
     const { result } = renderHook(useScanQrPopup);

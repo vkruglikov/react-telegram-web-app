@@ -18,7 +18,7 @@
   "unpkg": "lib/react-telegram-web-app.umd.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "build": "rm -rf ./lib/*; microbundle build --tsconfig ./tsconfig.microbundle.json",
+    "build": "rm -rf ./lib/*; microbundle build",
     "dev": "rm -rf ./lib/*; microbundle watch",
     "prepare": "husky install",
     "changeset": "changeset",
@@ -44,7 +44,6 @@
   },
   "homepage": "https://github.com/vkruglikov/react-telegram-web-app#readme",
   "devDependencies": {
-    "@babel/preset-env": "^7.22.7",
     "@changesets/cli": "^2.25.2",
     "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.5.2",

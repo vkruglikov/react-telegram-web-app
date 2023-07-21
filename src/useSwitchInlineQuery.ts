@@ -7,7 +7,7 @@ import { useCallback } from 'react';
  */
 export type SwitchInlineQueryFunction = (
   query: string,
-  chatType: 'users' | 'bots' | 'groups' | 'channels',
+  chatType?: 'users' | 'bots' | 'groups' | 'channels',
 ) => void;
 
 /**

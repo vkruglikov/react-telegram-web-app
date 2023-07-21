@@ -2,17 +2,9 @@ import { act, renderHook } from '@testing-library/react';
 
 import useWebApp from '../src/useWebApp';
 import useExpand from '../src/useExpand';
-
-jest.mock('../src/useWebApp');
+import { WebApp } from '../src/types';
 
 describe('useExpand', () => {
-  const MockedWebApp = useWebApp();
-
-  beforeEach(() => {
-    jest.clearAllMocks();
-    (useWebApp as jest.Mock).mockImplementation(() => MockedWebApp);
-  });
-
   it.each([
     [true, true],
     [false, false],
@@ -20,10 +12,12 @@ describe('useExpand', () => {
   ])(
     'checks WebApp.isExpanded = %p hook return isExpanded default value = %p',
     (isExpanded, expectedIsExpanded) => {
-      (useWebApp as jest.Mock).mockImplementation(() => ({
-        ...MockedWebApp,
-        isExpanded,
-      }));
+      jest.replaceProperty(
+        useWebApp() as WebApp,
+        'isExpanded',
+        isExpanded as boolean,
+      );
+
       const { result } = renderHook(useExpand);
 
       act(() => {
@@ -41,34 +35,33 @@ describe('useExpand', () => {
     act(() => {
       rerender();
     });
-    (useWebApp as jest.Mock).mockImplementation(() => ({
-      ...MockedWebApp,
-    }));
 
     /**
      * After one rerender, should be called onEvent once
      */
     expect(useWebApp()?.onEvent).toBeCalledTimes(1);
     expect(useWebApp()?.offEvent).toBeCalledTimes(0);
+    expect(useWebApp()?.onEvent).toBeCalledWith(
+      'viewportChanged',
+      expect.any(Function),
+    );
+
     (useWebApp()?.onEvent as jest.Mock).mockClear();
 
     act(() => {
       rerender();
     });
-    expect(useWebApp()?.offEvent).toBeCalledTimes(1);
+    expect(useWebApp()?.onEvent).toBeCalledTimes(0);
+    expect(useWebApp()?.offEvent).toBeCalledTimes(0);
     (useWebApp()?.offEvent as jest.Mock).mockClear();
 
     act(() => {
       unmount();
     });
 
-    expect(useWebApp()?.onEvent).toBeCalledTimes(1);
+    expect(useWebApp()?.onEvent).toBeCalledTimes(0);
     expect(useWebApp()?.offEvent).toBeCalledTimes(1);
 
-    expect(useWebApp()?.onEvent).toBeCalledWith(
-      'viewportChanged',
-      expect.any(Function),
-    );
     expect(useWebApp()?.offEvent).toBeCalledWith(
       'viewportChanged',
       expect.any(Function),
@@ -76,11 +69,9 @@ describe('useExpand', () => {
   });
 
   it('checks correct change state isExpanded', () => {
-    const IsolateMockedWebApp = { ...MockedWebApp };
-    IsolateMockedWebApp.isExpanded = true;
-    (useWebApp as jest.Mock).mockImplementation(() => IsolateMockedWebApp);
+    jest.replaceProperty(useWebApp() as WebApp, 'isExpanded', true);
     const fireEventHandler = (state: boolean) => {
-      IsolateMockedWebApp.isExpanded = state;
+      jest.replaceProperty(useWebApp() as WebApp, 'isExpanded', state);
 
       act(() => {
         (useWebApp()?.onEvent as jest.Mock).mock.lastCall?.[1]?.({

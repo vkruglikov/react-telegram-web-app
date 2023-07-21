@@ -1,4 +1,4 @@
-const WebApp = {
+const instance = {
   BackButton: {
     show: jest.fn(),
     hide: jest.fn(),
@@ -31,6 +31,8 @@ const WebApp = {
   showScanQrPopup: jest.fn(),
   closeScanQrPopup: jest.fn(),
   showPopup: jest.fn(),
+  switchInlineQuery: jest.fn(),
+  colorScheme: undefined,
 };
 
-export default jest.fn(() => WebApp);
+export default () => instance;

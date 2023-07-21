@@ -2,8 +2,6 @@ import { act, renderHook } from '@testing-library/react';
 import useHapticFeedback from '../src/useHapticFeedback';
 import useWebApp from '../src/useWebApp';
 
-jest.mock('../src/useWebApp');
-
 describe('useHapticFeedback', () => {
   it('checks correct call WebApp.HapticFeedback api', () => {
     const { result } = renderHook(useHapticFeedback);

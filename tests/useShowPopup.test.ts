@@ -1,17 +1,18 @@
 import { renderHook } from '@testing-library/react';
 import useShowPopup from '../src/useShowPopup';
 import useWebApp from '../src/useWebApp';
-
-jest.mock('../src/useWebApp');
+import { WebApp } from '../src/types';
 
 describe('useShowPopup', () => {
   it('checks correct call WebApp.showPopup api', async () => {
     const { result } = renderHook(useShowPopup);
     const showPopup = result.current;
 
-    (useWebApp()?.showPopup as jest.Mock).mockImplementation((_, resolve) => {
-      resolve('buttonId');
-    });
+    const spyShowPopup = jest
+      .spyOn(useWebApp() as WebApp, 'showPopup')
+      .mockImplementation((_, callback) => {
+        callback!('buttonId');
+      });
 
     const params = {
       title: 'title',
@@ -26,10 +27,7 @@ describe('useShowPopup', () => {
     };
     const button = await showPopup(params);
 
-    expect(useWebApp()?.showPopup as jest.Mock).toBeCalledWith(
-      params,
-      expect.any(Function),
-    );
+    expect(spyShowPopup).toBeCalledWith(params, expect.any(Function));
     expect(button).toBe('buttonId');
   });
 });

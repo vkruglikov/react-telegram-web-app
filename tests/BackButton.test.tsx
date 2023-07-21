@@ -1,29 +1,8 @@
-import React, { ReactElement } from 'react';
+import * as React from 'react';
 
 import BackButton from '../src/BackButton';
 import useWebApp from '../src/useWebApp';
-import renderer, { ReactTestRenderer } from 'react-test-renderer';
-
-jest.mock('../src/useWebApp');
-
-const renderComponentTree = (fabric: () => ReactElement) => {
-  let tree: ReactTestRenderer | undefined = undefined;
-
-  renderer.act(() => {
-    tree = renderer.create(fabric());
-  });
-  renderer.act(() => {
-    tree!.update(React.cloneElement(fabric()));
-  });
-  renderer.act(() => {
-    tree!.update(React.cloneElement(fabric()));
-  });
-  renderer.act(() => {
-    tree!.unmount();
-  });
-
-  return tree as unknown as ReactTestRenderer;
-};
+import { renderComponentTree } from './utils';
 
 describe('BackButton', () => {
   it('checks call show(), hide() WebApp.BackButton api', () => {
