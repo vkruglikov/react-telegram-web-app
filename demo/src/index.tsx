@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import {
   useThemeParams,
   WebAppProvider,
-  Options,
 } from '@vkruglikov/react-telegram-web-app';
 import { ConfigProvider, theme } from 'antd';
 import 'antd/dist/reset.css';
@@ -84,7 +83,7 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-  <WebAppProvider>
+  <WebAppProvider options={{ smoothButtonsTransition: true }}>
     <DemoApp />
   </WebAppProvider>,
 );
