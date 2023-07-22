@@ -14,7 +14,7 @@ The props type of [`BackButton`](../README.md#backbutton).
 
 ### onClick
 
-• **onClick**: () => `void`
+• `Optional` **onClick**: () => `void`
 
 #### Type declaration
 

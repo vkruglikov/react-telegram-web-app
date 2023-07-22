@@ -9,7 +9,6 @@ import {
   DEFAULT_SYSTEM,
 } from './core';
 
-// TODO Дока по options
 export type WebAppProviderProps = PropsWithChildren<{
   options?: Options;
 }>;
@@ -21,6 +20,15 @@ export type WebAppProviderProps = PropsWithChildren<{
  * import { WebAppProvider } from "@vkruglikov/react-telegram-web-app";
  *
  * <WebAppProvider>
+ *   <YourAppComponent />
+ * </WebAppProvider>
+ *
+ * // You can pass options {@link Options}
+ * <WebAppProvider
+ *   options={{
+ *     smoothButtonsTransition: true
+ *   }}
+ * >
  *   <YourAppComponent />
  * </WebAppProvider>
  * ```

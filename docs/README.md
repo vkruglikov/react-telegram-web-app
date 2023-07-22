@@ -19,6 +19,7 @@
 - [ColorScheme](README.md#colorscheme)
 - [ImpactOccurredFunction](README.md#impactoccurredfunction)
 - [NotificationOccurredFunction](README.md#notificationoccurredfunction)
+- [Options](README.md#options)
 - [ReadTextFromClipboardFunction](README.md#readtextfromclipboardfunction)
 - [ScanQrPopupCallback](README.md#scanqrpopupcallback)
 - [SelectionChangedFunction](README.md#selectionchangedfunction)
@@ -123,6 +124,21 @@ A method tells that a task or action has succeeded, failed, or produced a warnin
 ##### Returns
 
 `void`
+
+---
+
+### Options
+
+Ƭ **Options**: `Object`
+
+This object describe options be able to set through WebAppProvider
+
+#### Type declaration
+
+| Name                         | Type      | Description                                                                                               |
+| :--------------------------- | :-------- | :-------------------------------------------------------------------------------------------------------- |
+| `smoothButtonsTransition?`   | `boolean` | When is `true`, we can smooth button transitions due to show(), hide() calls. **`Default Value`** `false` |
+| `smoothButtonsTransitionMs?` | `number`  | **`Default Value`** `50` Why 50? https://w3c.github.io/requestidlecallback/#why50 **`Remarks`**           |
 
 ---
 
@@ -235,21 +251,21 @@ by the params argument of the type [ScanQrPopupParams](interfaces/ScanQrPopupPar
 
 ### SwitchInlineQueryFunction
 
-Ƭ **SwitchInlineQueryFunction**: (`query`: `string`, `chatType`: `"users"` \| `"bots"` \| `"groups"` \| `"channels"`) => `void`
+Ƭ **SwitchInlineQueryFunction**: (`query`: `string`, `chatType?`: `"users"` \| `"bots"` \| `"groups"` \| `"channels"`) => `void`
 
 #### Type declaration
 
-▸ (`query`, `chatType`): `void`
+▸ (`query`, `chatType?`): `void`
 
 This function that inserts the bot's username and the specified inline query in the current chat's input field
 You have to look original description switchInlineQuery in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-web-apps) for more information
 
 ##### Parameters
 
-| Name       | Type                                                |
-| :--------- | :-------------------------------------------------- |
-| `query`    | `string`                                            |
-| `chatType` | `"users"` \| `"bots"` \| `"groups"` \| `"channels"` |
+| Name        | Type                                                |
+| :---------- | :-------------------------------------------------- |
+| `query`     | `string`                                            |
+| `chatType?` | `"users"` \| `"bots"` \| `"groups"` \| `"channels"` |
 
 ##### Returns
 
@@ -259,16 +275,18 @@ You have to look original description switchInlineQuery in [telegram!WebApp](htt
 
 ### WebAppProviderProps
 
-Ƭ **WebAppProviderProps**: `PropsWithChildren`
+Ƭ **WebAppProviderProps**: `PropsWithChildren`<{ `options?`: [`Options`](README.md#options) }\>
 
 ## Hooks
 
 ### useExpand
 
-▸ **useExpand**(): readonly [`boolean`, `DispatchWithoutAction`]
+▸ **useExpand**(): readonly [`undefined` \| `boolean`, `DispatchWithoutAction`]
 
 This hook provided isExpanded state, and expand() handle
-You have to look original description in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-web-apps) for more information\*
+You have to look original description in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-web-apps) for more information
+
+`isExpanded` can be `undefined`
 
 ```tsx
 import { useExpand } from "@vkruglikov/react-telegram-web-app";
@@ -283,7 +301,7 @@ const handleClick = () => !isExpanded && expand();
 
 #### Returns
 
-readonly [`boolean`, `DispatchWithoutAction`]
+readonly [`undefined` \| `boolean`, `DispatchWithoutAction`]
 
 ---
 
@@ -463,19 +481,27 @@ import { MainButton } from '@vkruglikov/react-telegram-web-app';
 WebAppProvider provide context with WebApp for components and hooks
 
 ```tsx
-import { WebAppProvider } from '@vkruglikov/react-telegram-web-app';
+import { WebAppProvider } from "@vkruglikov/react-telegram-web-app";
 
 <WebAppProvider>
   <YourAppComponent />
-</WebAppProvider>;
+</WebAppProvider>
+
+// You can pass options {@link Options}
+<WebAppProvider
+  options={{
+    smoothButtonsTransition: true
+  }}
+>
+  <YourAppComponent />
+</WebAppProvider>
 ```
 
 #### Parameters
 
-| Name              | Type        |
-| :---------------- | :---------- |
-| `props`           | `Object`    |
-| `props.children?` | `ReactNode` |
+| Name    | Type                                                   |
+| :------ | :----------------------------------------------------- |
+| `props` | [`WebAppProviderProps`](README.md#webappproviderprops) |
 
 #### Returns
 

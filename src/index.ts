@@ -33,4 +33,8 @@ export {
   SwitchInlineQueryFunction,
 } from './useSwitchInlineQuery';
 export { default as useExpand } from './useExpand';
-export { default as WebAppProvider } from './WebAppProvider';
+export {
+  default as WebAppProvider,
+  WebAppProviderProps,
+} from './WebAppProvider';
+export type { Options } from './core';

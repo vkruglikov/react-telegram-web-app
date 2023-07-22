@@ -1,5 +1,5 @@
-import { MutableRefObject, useEffect, useId } from 'react';
-import { useWebApp, useSmoothButtonsTransition } from './core';
+import { useContext, useEffect, useId } from 'react';
+import { useWebApp, useSmoothButtonsTransition, systemContext } from './core';
 
 /**
  * The props type of {@link MainButton | `MainButton`}.
@@ -34,10 +34,6 @@ export interface MainButtonProps {
   textColor?: string;
 }
 
-const isShowMainButtonRef: MutableRefObject<null | string> = {
-  current: null,
-};
-
 /**
  * Renders a {@link telegram!MainButton} component in React app as {@link react!Component}
  *
@@ -60,6 +56,7 @@ const MainButton = ({
   textColor,
   onClick,
 }: MainButtonProps): null => {
+  const system = useContext(systemContext);
   const buttonId = useId();
   const WebApp = useWebApp();
   const MainButton = WebApp?.MainButton;
@@ -111,7 +108,7 @@ const MainButton = ({
   useSmoothButtonsTransition({
     show: MainButton?.show,
     hide: MainButton?.hide,
-    currentShowedIdRef: isShowMainButtonRef,
+    currentShowedIdRef: system.MainButton,
     id: buttonId,
   });
 

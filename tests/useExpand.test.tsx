@@ -26,7 +26,7 @@ describe('useExpand', () => {
   );
 
   /**
-   * TODO перенести тест перебинда в тест useWebApp и включить строго react-hooks/exhaustive-deps
+   * TODO перенести тест перебинда в тест useWebApp
    */
   it('checks correct rebind event handler', () => {
     const { rerender, unmount } = renderHook(useExpand);
