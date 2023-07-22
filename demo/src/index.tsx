@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { DispatchWithoutAction, FC, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import {
   useThemeParams,
@@ -18,7 +18,9 @@ import ScanQrPopupDemo from './ScanQrPopupDemo';
 import ExpandDemo from './ExpandDemo';
 import useBetaVersion from './useBetaVersion';
 
-const DemoApp = () => {
+const DemoApp: FC<{
+  onChangeTransition: DispatchWithoutAction;
+}> = ({ onChangeTransition }) => {
   const [colorScheme, themeParams] = useThemeParams();
   const [isBetaVersion, handleRequestBeta] = useBetaVersion(false);
   const [activeBtn, setActiveBtn] = useState(true);
@@ -57,16 +59,26 @@ const DemoApp = () => {
               <button onClick={() => setActiveBtn(state => !state)}>
                 change button
               </button>
+              <button onClick={onChangeTransition}>change </button>
             </div>
           )}
           <ExpandDemo />
           {!activeBtn ? (
             <MainButtonDemo
-              initialValues={{ text: 'SECOND BUTTON', progress: true }}
+              initialValues={{
+                show: isBetaVersion,
+                text: 'SECOND BUTTON',
+                progress: true,
+              }}
               key="1"
             />
           ) : (
-            <MainButtonDemo key="2" />
+            <MainButtonDemo
+              key="2"
+              initialValues={{
+                show: isBetaVersion,
+              }}
+            />
           )}
           <BackButtonDemo />
           <ShowPopupDemo />
@@ -82,8 +94,16 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
 );
 
-root.render(
-  <WebAppProvider options={{ smoothButtonsTransition: true }}>
-    <DemoApp />
-  </WebAppProvider>,
-);
+const App = () => {
+  const [smoothButtonsTransition, setSmoothButtonsTransition] = useState(false);
+
+  return (
+    <WebAppProvider options={{ smoothButtonsTransition }}>
+      <DemoApp
+        onChangeTransition={() => setSmoothButtonsTransition(state => !state)}
+      />
+    </WebAppProvider>
+  );
+};
+
+root.render(<App />);

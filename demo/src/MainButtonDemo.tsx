@@ -6,7 +6,7 @@ import {
 } from '@vkruglikov/react-telegram-web-app';
 
 const MainButtonDemo: FC<{
-  initialValues?: Partial<MainButtonProps>;
+  initialValues?: Partial<MainButtonProps> & { show?: boolean };
 }> = ({ initialValues }) => {
   const [buttonState, setButtonState] = useState<
     {
@@ -14,7 +14,7 @@ const MainButtonDemo: FC<{
     } & Pick<MainButtonProps, 'text' | 'progress' | 'disable'>
   >({
     text: 'BUTTON TEXT',
-    show: true,
+    show: false,
     progress: false,
     disable: false,
     ...initialValues,
