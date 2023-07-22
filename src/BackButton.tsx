@@ -1,11 +1,12 @@
-import { FC, useEffect } from 'react';
+import { useContext, useEffect, useId } from 'react';
+import { useWebApp, useSmoothButtonsTransition, systemContext } from './core';
 
 /**
  * The props type of {@link BackButton | `BackButton`}.
  */
 export interface BackButtonProps {
   /** The back button press event handler */
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 /**
@@ -18,31 +19,32 @@ export interface BackButtonProps {
  *     onClick={() => console.log('Hello, I am back button!')}
  * />
  * ```
- * @returns Component always returns `null`. Not renders any elements
+ * @param props
  * @group React Components
  */
-const BackButton: FC<BackButtonProps> = ({ onClick }) => {
-  const WebAppBackButton =
-    typeof window !== 'undefined' ? window?.Telegram?.WebApp?.BackButton : null;
-  if (!WebAppBackButton) return null;
+const BackButton = ({ onClick }: BackButtonProps): null => {
+  const system = useContext(systemContext);
+  const buttonId = useId();
+  const WebApp = useWebApp();
+  const BackButton = WebApp?.BackButton;
+
+  useSmoothButtonsTransition({
+    show: BackButton?.show,
+    hide: BackButton?.hide,
+    currentShowedIdRef: system.BackButton,
+    id: buttonId,
+  });
 
   useEffect(() => {
-    WebAppBackButton.show();
-    return () => {
-      WebAppBackButton.hide();
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!onClick) {
+    if (!onClick || !BackButton) {
       return;
     }
 
-    WebAppBackButton.onClick(onClick);
+    BackButton.onClick(onClick);
     return () => {
-      WebAppBackButton.offClick(onClick);
+      BackButton.offClick(onClick);
     };
-  }, [onClick]);
+  }, [onClick, BackButton]);
 
   return null;
 };

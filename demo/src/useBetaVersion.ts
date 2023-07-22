@@ -8,7 +8,9 @@ const useBetaVersion = (initialState = false) => {
   const showPopup = useShowPopup();
   const [, notification] = useHapticFeedback();
 
-  const [isBeta, setIsBeta] = useState(initialState);
+  const [isBeta, setIsBeta] = useState(
+    initialState || process.env.NODE_ENV === 'development',
+  );
   const isDevModeCounter = useRef(0);
   const handleRequestBeta = () => {
     if (++isDevModeCounter.current >= 10) {

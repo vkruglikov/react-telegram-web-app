@@ -1,4 +1,5 @@
 import { useCallback } from 'react';
+import { useWebApp } from './core';
 
 /**
  * This function provided Promise function that read text from clipboard
@@ -23,13 +24,16 @@ export type ReadTextFromClipboardFunction = () => Promise<string>;
  * @return {ReadTextFromClipboardFunction}
  * @group Hooks
  */
-const useReadTextFromClipboard = (): ReadTextFromClipboardFunction =>
-  useCallback(
+const useReadTextFromClipboard = (): ReadTextFromClipboardFunction => {
+  const WebApp = useWebApp();
+
+  return useCallback(
     () =>
       new Promise(resolve => {
-        window.Telegram.WebApp.readTextFromClipboard(resolve);
+        WebApp?.readTextFromClipboard?.(resolve);
       }),
-    [],
+    [WebApp],
   );
+};
 
 export default useReadTextFromClipboard;

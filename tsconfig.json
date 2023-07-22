@@ -1,5 +1,6 @@
 {
-  "include": ["src", "telegram-web-app.d.ts"],
+  "include": ["src", "global.d.ts"],
+  "exclude": ["tests"],
   "compilerOptions": {
     "skipLibCheck": true,
     "target": "ESNext",
@@ -7,12 +8,13 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "jsx": "react",
+    "jsxFactory": "React.createElement",
+    "jsxFragmentFactory": "React.Fragment",
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noImplicitAny": true,
     "noUncheckedIndexedAccess": true,
     "importHelpers": true,
-    "strictNullChecks": true,
-    "suppressImplicitAnyIndexErrors": true
+    "strictNullChecks": true
   }
 }

@@ -1,14 +1,14 @@
+import { useWebApp } from './core';
+import { useCallback } from 'react';
+
 /**
  * This function that inserts the bot's username and the specified inline query in the current chat's input field
  * You have to look original description switchInlineQuery in {@link telegram!WebApp} for more information
  */
 export type SwitchInlineQueryFunction = (
   query: string,
-  chatType: 'users' | 'bots' | 'groups' | 'channels',
+  chatType?: 'users' | 'bots' | 'groups' | 'channels',
 ) => void;
-
-const switchInlineQuery: SwitchInlineQueryFunction = (query, chatType) =>
-  window.Telegram.WebApp.switchInlineQuery(query, chatType);
 
 /**
  * This hook that provided {@link SwitchInlineQueryFunction}
@@ -16,6 +16,13 @@ const switchInlineQuery: SwitchInlineQueryFunction = (query, chatType) =>
  * @return {SwitchInlineQueryFunction}
  * @group Hooks
  */
-const useSwitchInlineQuery = (): SwitchInlineQueryFunction => switchInlineQuery;
+const useSwitchInlineQuery = (): SwitchInlineQueryFunction => {
+  const WebApp = useWebApp();
+
+  return useCallback(
+    (...args) => WebApp?.switchInlineQuery?.(...args),
+    [WebApp],
+  );
+};
 
 export default useSwitchInlineQuery;

@@ -18,12 +18,17 @@
   "unpkg": "lib/react-telegram-web-app.umd.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "build": "rm -rf ./lib/*; microbundle build",
+    "build": "rm -rf ./lib/*; microbundle build --sourcemap=false && cp -R src/core/twa-types lib/core/twa-types",
+    "dev": "npm run build && microbundle watch --compress=false",
     "prepare": "husky install",
     "changeset": "changeset",
     "docs": "typedoc && prettier --write ./docs",
-    "release": "npm run build && changeset publish",
-    "format": "prettier --write ."
+    "release": "npm run test:all && npm run build && npm run test:package && changeset publish",
+    "format": "prettier --write .",
+    "eslint": "npx eslint src",
+    "test": "NODE_ENV=test jest",
+    "test:all": "NODE_ENV=test jest --testPathIgnorePatterns package",
+    "test:package": "NODE_ENV=test jest  package"
   },
   "repository": {
     "type": "git",
@@ -40,13 +45,26 @@
   "homepage": "https://github.com/vkruglikov/react-telegram-web-app#readme",
   "devDependencies": {
     "@changesets/cli": "^2.25.2",
+    "@testing-library/react": "^14.0.0",
+    "@types/jest": "^29.5.2",
     "@types/react": "^18",
+    "@types/react-test-renderer": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.1.0",
+    "@typescript-eslint/parser": "^6.1.0",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.2",
+    "jest": "^29.6.1",
+    "jest-environment-jsdom": "^29.6.1",
     "lint-staged": "^13.0.3",
     "microbundle": "^0.15.1",
     "prettier": "2.8.0",
-    "typedoc": "^0.23.21",
-    "typedoc-plugin-markdown": "^3.13.6"
+    "react-test-renderer": "^18.2.0",
+    "ts-jest": "^29.1.1",
+    "typedoc": "^0.24.8",
+    "typedoc-plugin-markdown": "^3.15.3",
+    "typescript": "^5.1.6"
   },
   "peerDependencies": {
     "react": "^18",
@@ -54,25 +72,11 @@
   },
   "lint-staged": {
     "*.(tsx|ts)": [
+      "eslint",
       "prettier --write"
     ],
     "*.md": [
       "prettier --write"
-    ]
-  },
-  "prettier": {
-    "singleQuote": true,
-    "trailingComma": "all",
-    "useTabs": false,
-    "arrowParens": "avoid",
-    "overrides": [
-      {
-        "files": "package.json",
-        "options": {
-          "useTabs": false,
-          "parser": "json-stringify"
-        }
-      }
     ]
   }
 }

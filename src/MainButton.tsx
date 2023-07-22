@@ -1,4 +1,5 @@
-import { FC, useEffect } from 'react';
+import { useContext, useEffect, useId } from 'react';
+import { useWebApp, useSmoothButtonsTransition, systemContext } from './core';
 
 /**
  * The props type of {@link MainButton | `MainButton`}.
@@ -44,71 +45,72 @@ export interface MainButtonProps {
  *     onClick={() => console.log('Hello, I am button!')}
  * />
  * ```
- * @returns Component always returns `null`. Not renders any elements
+ * @param props
  * @group React Components
  */
-const MainButton: FC<MainButtonProps> = ({
+const MainButton = ({
   text = 'CONTINUE',
   progress = false,
   disable = false,
   color,
   textColor,
   onClick,
-}): null => {
-  const WebApp = typeof window !== 'undefined' ? window.Telegram.WebApp : null;
-  const WebAppMainButton = WebApp?.MainButton;
-
-  if (!WebAppMainButton || !WebApp) return null;
+}: MainButtonProps): null => {
+  const system = useContext(systemContext);
+  const buttonId = useId();
+  const WebApp = useWebApp();
+  const MainButton = WebApp?.MainButton;
+  const themeParams = WebApp?.themeParams;
 
   useEffect(() => {
-    WebAppMainButton.setParams({
-      color: color || WebApp.themeParams.button_color || '#fff',
+    MainButton?.setParams({
+      color: color || themeParams?.button_color || '#fff',
     });
-  }, [color]);
+  }, [color, themeParams, MainButton]);
 
   useEffect(() => {
-    WebAppMainButton.setParams({
-      text_color: textColor || WebApp.themeParams.button_text_color || '#000',
+    MainButton?.setParams({
+      text_color: textColor || themeParams?.button_text_color || '#000',
     });
-  }, [textColor]);
+  }, [MainButton, themeParams, textColor]);
 
   useEffect(() => {
-    WebAppMainButton.setText(text);
-  }, [text]);
+    MainButton?.setText(text);
+  }, [text, MainButton]);
 
   useEffect(() => {
-    if (WebAppMainButton.isActive && disable) {
-      WebAppMainButton.disable();
-    } else if (!WebAppMainButton.isActive && !disable) {
-      WebAppMainButton.enable();
+    if (disable) {
+      MainButton?.disable();
+    } else if (!disable) {
+      MainButton?.enable();
     }
-  }, [disable]);
+  }, [disable, MainButton]);
 
   useEffect(() => {
-    if (!WebAppMainButton.isProgressVisible && progress) {
-      WebAppMainButton.showProgress(false);
-    } else if (WebAppMainButton.isProgressVisible && !progress) {
-      WebAppMainButton.hideProgress();
+    if (progress) {
+      MainButton?.showProgress(false);
+    } else if (!progress) {
+      MainButton?.hideProgress();
     }
-  }, [progress]);
+  }, [progress, MainButton]);
 
   useEffect(() => {
     if (!onClick) {
       return;
     }
 
-    WebAppMainButton.onClick(onClick);
+    MainButton?.onClick(onClick);
     return () => {
-      WebAppMainButton.offClick(onClick);
+      MainButton?.offClick(onClick);
     };
-  }, [onClick]);
+  }, [onClick, MainButton]);
 
-  useEffect(() => {
-    WebAppMainButton.show();
-    return () => {
-      WebAppMainButton.hide();
-    };
-  }, []);
+  useSmoothButtonsTransition({
+    show: MainButton?.show,
+    hide: MainButton?.hide,
+    currentShowedIdRef: system.MainButton,
+    id: buttonId,
+  });
 
   return null;
 };

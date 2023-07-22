@@ -1,4 +1,5 @@
 import { useCallback } from 'react';
+import { useWebApp } from './core';
 
 /**
  * You have to see original interface {@link telegram!PopupButton}.
@@ -62,19 +63,22 @@ export type ShowPopupFunction = (params: ShowPopupParams) => Promise<string>;
  *
  * @group Hooks
  */
-const useShowPopup: () => ShowPopupFunction = () =>
-  useCallback(
+const useShowPopup: () => ShowPopupFunction = () => {
+  const WebApp = useWebApp();
+
+  return useCallback(
     params =>
       new Promise((resolve, reject) => {
         try {
-          window.Telegram.WebApp.showPopup(params, (buttonId: string) => {
+          WebApp?.showPopup?.(params, (buttonId: string) => {
             resolve(buttonId);
           });
         } catch (e) {
           reject(e);
         }
       }),
-    [],
+    [WebApp],
   );
+};
 
 export default useShowPopup;

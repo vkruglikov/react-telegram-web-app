@@ -19,17 +19,14 @@
 - [ColorScheme](README.md#colorscheme)
 - [ImpactOccurredFunction](README.md#impactoccurredfunction)
 - [NotificationOccurredFunction](README.md#notificationoccurredfunction)
+- [Options](README.md#options)
 - [ReadTextFromClipboardFunction](README.md#readtextfromclipboardfunction)
 - [ScanQrPopupCallback](README.md#scanqrpopupcallback)
 - [SelectionChangedFunction](README.md#selectionchangedfunction)
 - [ShowPopupFunction](README.md#showpopupfunction)
 - [ShowScanQrPopupFunction](README.md#showscanqrpopupfunction)
 - [SwitchInlineQueryFunction](README.md#switchinlinequeryfunction)
-
-### React Components
-
-- [BackButton](README.md#backbutton)
-- [MainButton](README.md#mainbutton)
+- [WebAppProviderProps](README.md#webappproviderprops)
 
 ### Hooks
 
@@ -40,6 +37,12 @@
 - [useShowPopup](README.md#useshowpopup)
 - [useSwitchInlineQuery](README.md#useswitchinlinequery)
 - [useThemeParams](README.md#usethemeparams)
+
+### React Components
+
+- [BackButton](README.md#backbutton)
+- [MainButton](README.md#mainbutton)
+- [WebAppProvider](README.md#webappprovider)
 
 ## Type Aliases
 
@@ -121,6 +124,21 @@ A method tells that a task or action has succeeded, failed, or produced a warnin
 ##### Returns
 
 `void`
+
+---
+
+### Options
+
+Ƭ **Options**: `Object`
+
+This object describe options be able to set through WebAppProvider
+
+#### Type declaration
+
+| Name                         | Type      | Description                                                                                                                                                                                                                                   |
+| :--------------------------- | :-------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `smoothButtonsTransition?`   | `boolean` | When is `true`, we can smooth button transitions due to show(), hide() calls. So when you use MainButton or BackButton on multiple pages, there will be no noticeable flickering of the button during transitions **`Default Value`** `false` |
+| `smoothButtonsTransitionMs?` | `number`  | **`Default Value`** `50` Why 50? https://w3c.github.io/requestidlecallback/#why50 **`Remarks`**                                                                                                                                               |
 
 ---
 
@@ -233,91 +251,42 @@ by the params argument of the type [ScanQrPopupParams](interfaces/ScanQrPopupPar
 
 ### SwitchInlineQueryFunction
 
-Ƭ **SwitchInlineQueryFunction**: (`query`: `string`, `chatType`: `"users"` \| `"bots"` \| `"groups"` \| `"channels"`) => `void`
+Ƭ **SwitchInlineQueryFunction**: (`query`: `string`, `chatType?`: `"users"` \| `"bots"` \| `"groups"` \| `"channels"`) => `void`
 
 #### Type declaration
 
-▸ (`query`, `chatType`): `void`
+▸ (`query`, `chatType?`): `void`
 
 This function that inserts the bot's username and the specified inline query in the current chat's input field
 You have to look original description switchInlineQuery in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-web-apps) for more information
 
 ##### Parameters
 
-| Name       | Type                                                |
-| :--------- | :-------------------------------------------------- |
-| `query`    | `string`                                            |
-| `chatType` | `"users"` \| `"bots"` \| `"groups"` \| `"channels"` |
+| Name        | Type                                                |
+| :---------- | :-------------------------------------------------- |
+| `query`     | `string`                                            |
+| `chatType?` | `"users"` \| `"bots"` \| `"groups"` \| `"channels"` |
 
 ##### Returns
 
 `void`
 
-## React Components
-
-### BackButton
-
-▸ **BackButton**(`props`, `context?`): `null` \| `ReactElement`<`any`, `any`\>
-
-Renders a [telegram!BackButton](https://core.telegram.org/bots/webapps#backbutton) component in React app as [react!Component](https://reactjs.org/docs/react-component.html)
-
-```tsx
-import { BackButton } from '@vkruglikov/react-telegram-web-app';
-
-<BackButton onClick={() => console.log('Hello, I am back button!')} />;
-```
-
-#### Parameters
-
-| Name       | Type                                               |
-| :--------- | :------------------------------------------------- |
-| `props`    | [`BackButtonProps`](interfaces/BackButtonProps.md) |
-| `context?` | `any`                                              |
-
-#### Returns
-
-`null` \| `ReactElement`<`any`, `any`\>
-
-Component always returns `null`. Not renders any elements
-
 ---
 
-### MainButton
+### WebAppProviderProps
 
-▸ **MainButton**(`props`, `context?`): `null` \| `ReactElement`<`any`, `any`\>
-
-Renders a [telegram!MainButton](https://core.telegram.org/bots/webapps#mainbutton) component in React app as [react!Component](https://reactjs.org/docs/react-component.html)
-
-```tsx
-import { MainButton } from '@vkruglikov/react-telegram-web-app';
-
-<MainButton
-  text="CLICK ME"
-  onClick={() => console.log('Hello, I am button!')}
-/>;
-```
-
-#### Parameters
-
-| Name       | Type                                               |
-| :--------- | :------------------------------------------------- |
-| `props`    | [`MainButtonProps`](interfaces/MainButtonProps.md) |
-| `context?` | `any`                                              |
-
-#### Returns
-
-`null` \| `ReactElement`<`any`, `any`\>
-
-Component always returns `null`. Not renders any elements
+Ƭ **WebAppProviderProps**: `PropsWithChildren`<{ `options?`: [`Options`](README.md#options) }\>
 
 ## Hooks
 
 ### useExpand
 
-▸ **useExpand**(): readonly [`boolean`, `DispatchWithoutAction`]
+▸ **useExpand**(): readonly [`undefined` \| `boolean`, `DispatchWithoutAction`]
 
 This hook provided isExpanded state, and expand() handle
-You have to look original description in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-web-apps) for more information\*
+You have to look original description in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-web-apps) for more information
+
+`isExpanded` can be `undefined`
 
 ```tsx
 import { useExpand } from "@vkruglikov/react-telegram-web-app";
@@ -332,7 +301,7 @@ const handleClick = () => !isExpanded && expand();
 
 #### Returns
 
-readonly [`boolean`, `DispatchWithoutAction`]
+readonly [`undefined` \| `boolean`, `DispatchWithoutAction`]
 
 ---
 
@@ -451,3 +420,90 @@ console.log({
 #### Returns
 
 readonly [[`ColorScheme`](README.md#colorscheme), [`ThemeParams`](interfaces/ThemeParams.md)]
+
+## React Components
+
+### BackButton
+
+▸ **BackButton**(`props`): `null`
+
+Renders a [telegram!BackButton](https://core.telegram.org/bots/webapps#backbutton) component in React app as [react!Component](https://reactjs.org/docs/react-component.html)
+
+```tsx
+import { BackButton } from '@vkruglikov/react-telegram-web-app';
+
+<BackButton onClick={() => console.log('Hello, I am back button!')} />;
+```
+
+#### Parameters
+
+| Name    | Type                                               |
+| :------ | :------------------------------------------------- |
+| `props` | [`BackButtonProps`](interfaces/BackButtonProps.md) |
+
+#### Returns
+
+`null`
+
+---
+
+### MainButton
+
+▸ **MainButton**(`props`): `null`
+
+Renders a [telegram!MainButton](https://core.telegram.org/bots/webapps#mainbutton) component in React app as [react!Component](https://reactjs.org/docs/react-component.html)
+
+```tsx
+import { MainButton } from '@vkruglikov/react-telegram-web-app';
+
+<MainButton
+  text="CLICK ME"
+  onClick={() => console.log('Hello, I am button!')}
+/>;
+```
+
+#### Parameters
+
+| Name    | Type                                               |
+| :------ | :------------------------------------------------- |
+| `props` | [`MainButtonProps`](interfaces/MainButtonProps.md) |
+
+#### Returns
+
+`null`
+
+---
+
+### WebAppProvider
+
+▸ **WebAppProvider**(`props`): `ReactElement`<`any`, `string` \| `JSXElementConstructor`<`any`\>\>
+
+WebAppProvider provide context with WebApp for components and hooks.
+Necessary to use only if you want to override `options`
+
+```tsx
+import { WebAppProvider } from "@vkruglikov/react-telegram-web-app";
+
+<WebAppProvider>
+  <YourAppComponent />
+</WebAppProvider>
+
+// You can pass options {@link Options}
+<WebAppProvider
+  options={{
+    smoothButtonsTransition: true
+  }}
+>
+  <YourAppComponent />
+</WebAppProvider>
+```
+
+#### Parameters
+
+| Name    | Type                                                   |
+| :------ | :----------------------------------------------------- |
+| `props` | [`WebAppProviderProps`](README.md#webappproviderprops) |
+
+#### Returns
+
+`ReactElement`<`any`, `string` \| `JSXElementConstructor`<`any`\>\>

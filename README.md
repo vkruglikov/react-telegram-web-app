@@ -6,6 +6,7 @@ React components for Telegram WebApp
 [![types](https://badgen.net/npm/types/@vkruglikov/react-telegram-web-app)](https://npmjs.org/package/@vkruglikov/react-telegram-web-app)
 [![GitHub Actions CI](https://github.com/vkruglikov/react-telegram-web-app/actions/workflows/release.yml/badge.svg)](https://github.com/vkruglikov/react-telegram-web-app/actions/workflows/release.yml)
 [![License](https://badgen.net/github/license/vkruglikov/react-telegram-web-app)](https://github.com/vkruglikov/react-telegram-web-app/blob/master/LICENSE)
+![Tests](https://github.com/vkruglikov/react-telegram-web-app/actions/workflows/tests.yml/badge.svg)
 
 ## 🔴 Live Demo & Code Examples
 
@@ -21,35 +22,51 @@ Also, you can look demo [source code](./demo/src).
 
 3️⃣ &nbsp;**Try it out** by writing code.
 
-```typescript jsx
-import React from 'react';
+```jsx
 import { MainButton, useShowPopup } from '@vkruglikov/react-telegram-web-app';
 
-const App = () => {
+const Content = () => {
   const showPopup = useShowPopup();
 
-  return (
-    <>
-      Some page content...
-      <MainButton
-        text="SHOW POPUP"
-        onClick={() => {
-          showPopup({
-            message: "Hello, I'am showPopup handle",
-          });
-        }}
-      />
-    </>
-  );
+  const handleClick = () =>
+    showPopup({
+      message: 'Hello, I am popup',
+    });
+
+  return <MainButton text="SHOW POPUP" onClick={handleClick} />;
 };
 ```
 
 ## ✨ Short Documentation
 
+### Components
+
 - [MainButton](./docs/README.md#mainbutton) -
   The component controls the main button, which is displayed at the bottom of the Web App in the Telegram interface.
+
 - [BackButton](./docs/README.md#backbutton) -
   This component controls the back button, which can be displayed in the header of the Web App in the Telegram interface.
+
+- [WebAppProvider](./docs/README.md#webappprovider) -
+  WebAppProvider provide context with WebApp for components and hooks.
+  You can try to pass an object with options
+
+  ```jsx
+  import { WebAppProvider, MainButton, BackButton } from '@vkruglikov/react-telegram-web-app';
+
+  <WebAppProvider
+    options={{
+      smoothButtonsTransition: true,
+    }}
+  >
+    {/** Use components inside provider */}
+    <MainButton {...} />
+    <BackButton {...} />
+  </WebAppProvider>
+  ```
+
+### Hooks
+
 - [useShowPopup](./docs/README.md#useshowpopup) -
   The hook that provided showPopup function that shows a native popup.
 - [useHapticFeedback](./docs/README.md#usehapticfeedback) -
@@ -77,7 +94,8 @@ Here's what's coming up:
 
 [MIT](./LICENSE)
 
-## 💻👞🙊📚 Follow me on LinkedIn
+## 💻👞🙊📚 Join to discussions
 
-I publish posts on front-end development, and in particular work with Telegram WebApps
-https://www.linkedin.com/in/kruglikov-valentin/
+Create discussions, ask questions, share experiences and discuss ideas with everyone together
+
+https://github.com/vkruglikov/react-telegram-web-app/discussions

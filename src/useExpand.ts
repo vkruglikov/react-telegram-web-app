@@ -1,11 +1,11 @@
-import { DispatchWithoutAction, useEffect, useState } from 'react';
-
-const getIsExpanded = () => window.Telegram.WebApp.isExpanded;
-const expand: DispatchWithoutAction = () => window.Telegram.WebApp.expand();
+import { DispatchWithoutAction, useCallback, useEffect, useState } from 'react';
+import { useWebApp } from './core';
 
 /**
  * This hook provided isExpanded state, and expand() handle
- * You have to look original description in {@link telegram!WebApp} for more information*
+ * You have to look original description in {@link telegram!WebApp} for more information
+ *
+ * `isExpanded` can be `undefined`
  *
  * ```tsx
  * import { useExpand } from "@vkruglikov/react-telegram-web-app";
@@ -24,22 +24,25 @@ const expand: DispatchWithoutAction = () => window.Telegram.WebApp.expand();
  *
  * @group Hooks
  */
-const useExpand = (): readonly [boolean, DispatchWithoutAction] => {
-  const [isExpanded, setIsExpanded] = useState(getIsExpanded);
+const useExpand = (): readonly [boolean | undefined, DispatchWithoutAction] => {
+  const WebApp = useWebApp();
+  const [isExpanded, setIsExpanded] = useState(WebApp?.isExpanded);
 
   useEffect(() => {
+    if (!WebApp) return;
     const handleEvent = (payload: { isStateStable: boolean }) => {
       if (payload.isStateStable) {
-        setIsExpanded(getIsExpanded());
+        setIsExpanded(WebApp.isExpanded);
       }
     };
 
-    window.Telegram.WebApp.onEvent('viewportChanged', handleEvent);
-    return () =>
-      window.Telegram.WebApp.offEvent('viewportChanged', handleEvent);
-  }, []);
+    WebApp.onEvent('viewportChanged', handleEvent);
+    return () => WebApp.offEvent('viewportChanged', handleEvent);
+  }, [WebApp]);
 
-  return [isExpanded, expand] as const;
+  const handleExpand = useCallback(() => WebApp?.expand?.(), [WebApp]);
+
+  return [isExpanded, handleExpand] as const;
 };
 
 export default useExpand;
