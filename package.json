@@ -10,6 +10,7 @@
     "telegram-bot"
   ],
   "exports": {
+    "types": "./lib/index.d.ts",
     "require": "./lib/react-telegram-web-app.cjs",
     "default": "./lib/react-telegram-web-app.modern.js"
   },
