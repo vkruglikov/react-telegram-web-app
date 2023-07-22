@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`package tests checks /lib structure 1`] = `
+exports[`Package /lib should have correct /lib structure 1`] = `
 [
   "/BackButton.d.ts",
   "/MainButton.d.ts",
@@ -32,4 +32,19 @@ exports[`package tests checks /lib structure 1`] = `
   "/useSwitchInlineQuery.d.ts",
   "/useThemeParams.d.ts",
 ]
+`;
+
+exports[`Package /lib should have exports from modules 1`] = `
+{
+  "BackButton": [Function],
+  "MainButton": [Function],
+  "WebAppProvider": [Function],
+  "useExpand": [Function],
+  "useHapticFeedback": [Function],
+  "useReadTextFromClipboard": [Function],
+  "useScanQrPopup": [Function],
+  "useShowPopup": [Function],
+  "useSwitchInlineQuery": [Function],
+  "useThemeParams": [Function],
+}
 `;
