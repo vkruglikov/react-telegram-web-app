@@ -6,7 +6,7 @@ import {
   Options,
   DEFAULT_OPTIONS,
   DEFAULT_WEBAPP,
-  DEFAULT_SYSTEM,
+  createSystemContextValue,
 } from './core';
 
 export type WebAppProviderProps = PropsWithChildren<{
@@ -47,9 +47,10 @@ const WebAppProvider = ({
     }),
     [options],
   );
+  const systemValue = useMemo(createSystemContextValue, []);
 
   return (
-    <systemContext.Provider value={DEFAULT_SYSTEM}>
+    <systemContext.Provider value={systemValue}>
       <webAppContext.Provider value={DEFAULT_WEBAPP}>
         <optionsContext.Provider value={mergedOptions}>
           {children}

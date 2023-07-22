@@ -38,8 +38,11 @@ type SystemContext = {
   BackButton: MutableRefObject<null | string>;
 };
 
-export const DEFAULT_SYSTEM = {
+export const createSystemContextValue = () => ({
   MainButton: { current: null },
   BackButton: { current: null },
-};
-export const systemContext = createContext<SystemContext>(DEFAULT_SYSTEM);
+});
+
+export const systemContext = createContext<SystemContext>(
+  createSystemContextValue(),
+);
