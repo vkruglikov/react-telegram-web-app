@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`package tests /lib snapshot 1`] = `
+exports[`package tests checks /lib structure 1`] = `
 [
   "/BackButton.d.ts",
   "/MainButton.d.ts",

@@ -36,7 +36,7 @@ describe('package tests', () => {
     jest.resetModules();
   });
 
-  it('/lib snapshot', async () => {
+  it('checks /lib structure', async () => {
     expect(await walk(BUILD_PATH)).toMatchSnapshot();
   });
 

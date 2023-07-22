@@ -1,6 +1,6 @@
 jest.mock(
   '../src/core/useWebApp',
-  () => require('./__mocks__/useWebApp').default,
+  () => require('./core/__mocks__/useWebApp').default,
 );
 
 global.beforeEach(() => {

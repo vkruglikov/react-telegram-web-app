@@ -3,7 +3,6 @@ import { optionsContext } from './context';
 
 const _noop = () => {};
 
-// TODO write tests
 const useSmoothButtonsTransition = ({
   id,
   show = _noop,
