@@ -1,6 +1,6 @@
 import { act, renderHook } from '@testing-library/react';
 import useHapticFeedback from '../src/useHapticFeedback';
-import useWebApp from '../src/core/useWebApp';
+import { useWebApp } from '../src/core';
 
 describe('useHapticFeedback', () => {
   it('checks correct call WebApp.HapticFeedback api', () => {

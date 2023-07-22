@@ -1,8 +1,7 @@
 import { act, renderHook } from '@testing-library/react';
 
-import useWebApp from '../src/core/useWebApp';
+import { useWebApp, WebApp } from '../src/core';
 import useThemeParams from '../src/useThemeParams';
-import { WebApp } from '../src/types';
 
 describe('useThemeParams', () => {
   it('checks is correct initial value return', () => {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import useWebApp from './core/useWebApp';
+import { useWebApp } from './core';
 
 /**
  * This object contains the user's current theme settings.

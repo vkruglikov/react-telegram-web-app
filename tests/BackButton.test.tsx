@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import BackButton from '../src/BackButton';
-import useWebApp from '../src/core/useWebApp';
+import { useWebApp } from '../src/core';
 import { renderComponentTree } from './utils';
 
 describe('BackButton', () => {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import {
   useThemeParams,
@@ -21,6 +21,7 @@ import useBetaVersion from './useBetaVersion';
 const DemoApp = () => {
   const [colorScheme, themeParams] = useThemeParams();
   const [isBetaVersion, handleRequestBeta] = useBetaVersion(false);
+  const [activeBtn, setActiveBtn] = useState(true);
 
   return (
     <div>
@@ -53,10 +54,20 @@ const DemoApp = () => {
           {isBetaVersion && (
             <div className="betaVersion">
               <h3>WARNING: BETA VERSION</h3>
+              <button onClick={() => setActiveBtn(state => !state)}>
+                change button
+              </button>
             </div>
           )}
           <ExpandDemo />
-          <MainButtonDemo />
+          {!activeBtn ? (
+            <MainButtonDemo
+              initialValues={{ text: 'SECOND BUTTON', progress: true }}
+              key="1"
+            />
+          ) : (
+            <MainButtonDemo key="2" />
+          )}
           <BackButtonDemo />
           <ShowPopupDemo />
           <HapticFeedbackDemo />

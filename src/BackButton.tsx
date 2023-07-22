@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import useWebApp from './core/useWebApp';
+import { MutableRefObject, useEffect, useId } from 'react';
+import { useWebApp, useSmoothButtonsTransition } from './core';
 
 /**
  * The props type of {@link BackButton | `BackButton`}.
@@ -8,6 +8,10 @@ export interface BackButtonProps {
   /** The back button press event handler */
   onClick?: () => void;
 }
+
+const isShowBackButtonRef: MutableRefObject<null | string> = {
+  current: null,
+};
 
 /**
  * Renders a {@link telegram!BackButton} component in React app as {@link react!Component}
@@ -23,15 +27,16 @@ export interface BackButtonProps {
  * @group React Components
  */
 const BackButton = ({ onClick }: BackButtonProps): null => {
+  const buttonId = useId();
   const WebApp = useWebApp();
   const BackButton = WebApp?.BackButton;
 
-  useEffect(() => {
-    BackButton?.show();
-    return () => {
-      BackButton?.hide();
-    };
-  }, [BackButton]);
+  useSmoothButtonsTransition({
+    show: BackButton?.show,
+    hide: BackButton?.hide,
+    currentShowedIdRef: isShowBackButtonRef,
+    id: buttonId,
+  });
 
   useEffect(() => {
     if (!onClick || !BackButton) {

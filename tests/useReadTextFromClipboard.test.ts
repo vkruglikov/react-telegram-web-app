@@ -1,7 +1,6 @@
 import { renderHook } from '@testing-library/react';
 import useReadTextFromClipboard from '../src/useReadTextFromClipboard';
-import useWebApp from '../src/core/useWebApp';
-import { WebApp } from '../src/types';
+import { useWebApp, WebApp } from '../src/core';
 
 describe('useReadTextFromClipboard', () => {
   it('checks correct call WebApp.readTextFromClipboard api', async () => {

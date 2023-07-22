@@ -1,5 +1,5 @@
 import { DispatchWithoutAction, useCallback, useEffect, useState } from 'react';
-import useWebApp from './core/useWebApp';
+import { useWebApp } from './core';
 
 /**
  * This hook provided isExpanded state, and expand() handle

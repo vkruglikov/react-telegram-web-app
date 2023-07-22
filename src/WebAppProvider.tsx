@@ -1,12 +1,18 @@
-import React, { PropsWithChildren, ReactElement } from 'react';
-import WebAppContext, { WebAppOptionsContext } from './core/context';
+import React, { PropsWithChildren, ReactElement, useMemo } from 'react';
+import {
+  webAppContext,
+  optionsContext,
+  systemContext,
+  Options,
+  DEFAULT_OPTIONS,
+  DEFAULT_WEBAPP,
+  DEFAULT_SYSTEM,
+} from './core';
 
-export type WebAppProviderProps = PropsWithChildren;
-
-const webAppSdk =
-  typeof window !== 'undefined' && window?.Telegram?.WebApp
-    ? window.Telegram.WebApp
-    : null;
+// TODO Дока по options
+export type WebAppProviderProps = PropsWithChildren<{
+  options?: Options;
+}>;
 
 /**
  * WebAppProvider provide context with WebApp for components and hooks
@@ -21,11 +27,26 @@ const webAppSdk =
  * @param props
  * @group React Components
  */
-const WebAppProvider = ({ children }: WebAppProviderProps): ReactElement => (
-  <WebAppOptionsContext.Provider value={''}>
-    <WebAppContext.Provider value={webAppSdk}>
-      {children}
-    </WebAppContext.Provider>
-  </WebAppOptionsContext.Provider>
-);
+const WebAppProvider = ({
+  children,
+  options,
+}: WebAppProviderProps): ReactElement => {
+  const mergedOptions = useMemo(
+    () => ({
+      ...DEFAULT_OPTIONS,
+      ...options,
+    }),
+    [options],
+  );
+
+  return (
+    <systemContext.Provider value={DEFAULT_SYSTEM}>
+      <webAppContext.Provider value={DEFAULT_WEBAPP}>
+        <optionsContext.Provider value={mergedOptions}>
+          {children}
+        </optionsContext.Provider>
+      </webAppContext.Provider>
+    </systemContext.Provider>
+  );
+};
 export default WebAppProvider;

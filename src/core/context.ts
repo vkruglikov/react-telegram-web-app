@@ -1,8 +1,33 @@
 import { createContext } from 'react';
-import { WebApp } from '../types';
+import { WebApp } from './twa-types';
 
-const WebAppContext = createContext<WebApp | null>(null);
+export const DEFAULT_WEBAPP =
+  typeof window !== 'undefined' && window?.Telegram?.WebApp
+    ? window.Telegram.WebApp
+    : null;
 
-export const WebAppOptionsContext = createContext({});
+export const webAppContext = createContext<WebApp | null>(DEFAULT_WEBAPP);
 
-export default WebAppContext;
+export type Options = {
+  smoothButtonsTransition?: boolean;
+  smoothButtonsTransitionMs?: number;
+};
+
+export const DEFAULT_OPTIONS: Options = {
+  smoothButtonsTransition: false,
+  /** @link https://w3c.github.io/requestidlecallback/#why50 */
+  smoothButtonsTransitionMs: 50,
+};
+
+export const optionsContext = createContext<Options>(DEFAULT_OPTIONS);
+
+type SystemContext = {
+  currentMainButtonShow: null | string;
+  currentBackButtonShow: null | string;
+};
+
+export const DEFAULT_SYSTEM = {
+  currentMainButtonShow: null,
+  currentBackButtonShow: null,
+};
+export const systemContext = createContext<SystemContext>(DEFAULT_SYSTEM);
