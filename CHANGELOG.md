@@ -1,5 +1,11 @@
 # @vkruglikov/react-telegram-web-app
 
+## 2.0.1
+
+### Patch Changes
+
+- 24545c3: Fix package missed export types
+
 ## 2.0.0
 
 ### Major Changes
