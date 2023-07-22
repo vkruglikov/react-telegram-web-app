@@ -1,5 +1,23 @@
 # @vkruglikov/react-telegram-web-app
 
+## 2.0.0
+
+### Major Changes
+
+- 4084742: - Have added necessary context provider `WebAppProvider`
+  - Have added `useWebApp` hook
+  - Fixed demo app and have used provider
+  - Fixed all components to works inside `WebAppProvider`
+
+### Patch Changes
+
+- 3221966: Support dynamic webApp in context
+- 5e82b6c: Fix documentation format
+- 0bc91cf: Fix structure and types context
+- c402a76: Added documentation for WebAppProvider
+- 4f18299: Describe all WebApp types
+- 111549b: Added jest tests for package and public api
+
 ## 1.11.0
 
 ### Minor Changes
