@@ -4,10 +4,10 @@
 
 ### Major Changes
 
-- 4084742: - Have added necessary context provider `WebAppProvider`
-  - Have added `useWebApp` hook
-  - Fixed demo app and have used provider
+- 4084742: - Have added unnecessary provider `WebAppProvider`
   - Fixed all components to works inside `WebAppProvider`
+  - Fix incorrect types `useExpand`
+  - Added `smoothButtonsTransition` options to `WebAppProvider`
 
 ### Patch Changes
 
