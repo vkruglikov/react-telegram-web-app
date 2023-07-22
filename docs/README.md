@@ -135,10 +135,10 @@ This object describe options be able to set through WebAppProvider
 
 #### Type declaration
 
-| Name                         | Type      | Description                                                                                               |
-| :--------------------------- | :-------- | :-------------------------------------------------------------------------------------------------------- |
-| `smoothButtonsTransition?`   | `boolean` | When is `true`, we can smooth button transitions due to show(), hide() calls. **`Default Value`** `false` |
-| `smoothButtonsTransitionMs?` | `number`  | **`Default Value`** `50` Why 50? https://w3c.github.io/requestidlecallback/#why50 **`Remarks`**           |
+| Name                         | Type      | Description                                                                                                                                                                                                                                   |
+| :--------------------------- | :-------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `smoothButtonsTransition?`   | `boolean` | When is `true`, we can smooth button transitions due to show(), hide() calls. So when you use MainButton or BackButton on multiple pages, there will be no noticeable flickering of the button during transitions **`Default Value`** `false` |
+| `smoothButtonsTransitionMs?` | `number`  | **`Default Value`** `50` Why 50? https://w3c.github.io/requestidlecallback/#why50 **`Remarks`**                                                                                                                                               |
 
 ---
 
@@ -478,7 +478,8 @@ import { MainButton } from '@vkruglikov/react-telegram-web-app';
 
 ▸ **WebAppProvider**(`props`): `ReactElement`<`any`, `string` \| `JSXElementConstructor`<`any`\>\>
 
-WebAppProvider provide context with WebApp for components and hooks
+WebAppProvider provide context with WebApp for components and hooks.
+Necessary to use only if you want to override `options`
 
 ```tsx
 import { WebAppProvider } from "@vkruglikov/react-telegram-web-app";

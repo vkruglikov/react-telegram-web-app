@@ -14,7 +14,8 @@ export type WebAppProviderProps = PropsWithChildren<{
 }>;
 
 /**
- * WebAppProvider provide context with WebApp for components and hooks
+ * WebAppProvider provide context with WebApp for components and hooks.
+ * Necessary to use only if you want to override `options`
  *
  * ```tsx
  * import { WebAppProvider } from "@vkruglikov/react-telegram-web-app";

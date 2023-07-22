@@ -23,18 +23,7 @@ Also, you can look demo [source code](./demo/src).
 3️⃣ &nbsp;**Try it out** by writing code.
 
 ```jsx
-import {
-  MainButton,
-  useShowPopup,
-  WebAppProvider,
-} from '@vkruglikov/react-telegram-web-app';
-
-/** You need to wrap your application with <WebAppProvider /> */
-const App = () => (
-  <WebAppProvider>
-    <Content />
-  </WebAppProvider>
-);
+import { MainButton, useShowPopup } from '@vkruglikov/react-telegram-web-app';
 
 const Content = () => {
   const showPopup = useShowPopup();
@@ -53,9 +42,24 @@ const Content = () => {
 ### Components
 
 - [WebAppProvider](./docs/README.md#webappprovider) -
-  WebAppProvider provide context with WebApp for components and hooks
+  WebAppProvider provide context with WebApp for components and hooks.
+  You can try to pass an object with options
+
+  ```jsx
+  <WebAppProvider
+    options={{
+      smoothButtonsTransition: true,
+    }}
+  >
+    {/** Use components inside provider */}
+    <MainButton />
+    <BackButton />
+  </WebAppProvider>
+  ```
+
 - [MainButton](./docs/README.md#mainbutton) -
   The component controls the main button, which is displayed at the bottom of the Web App in the Telegram interface.
+
 - [BackButton](./docs/README.md#backbutton) -
   This component controls the back button, which can be displayed in the header of the Web App in the Telegram interface.
 
