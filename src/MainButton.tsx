@@ -16,10 +16,16 @@ export interface MainButtonProps {
    */
   progress?: boolean;
   /**
+   * Just an alias on the {@link MainButtonProps.disabled}
+   * @deprecated Use {@link MainButtonProps.disabled} instead, will be removed
+   * @ignore
+   */
+  disable?: boolean;
+  /**
    * The button disable state.
    * @defaultValue Set to `false` y defaults
    */
-  disable?: boolean;
+  disabled?: boolean;
   /** The button press event handler */
   onClick?: () => void;
   /**
@@ -51,7 +57,8 @@ export interface MainButtonProps {
 const MainButton = ({
   text = 'CONTINUE',
   progress = false,
-  disable = false,
+  disable: disable_old,
+  disabled: disable_new = false,
   color,
   textColor,
   onClick,
@@ -61,6 +68,7 @@ const MainButton = ({
   const WebApp = useWebApp();
   const MainButton = WebApp?.MainButton;
   const themeParams = WebApp?.themeParams;
+  const disabled = disable_old || disable_new;
 
   useEffect(() => {
     MainButton?.setParams({
@@ -79,12 +87,12 @@ const MainButton = ({
   }, [text, MainButton]);
 
   useEffect(() => {
-    if (disable) {
+    if (disabled) {
       MainButton?.disable();
-    } else if (!disable) {
+    } else if (!disabled) {
       MainButton?.enable();
     }
-  }, [disable, MainButton]);
+  }, [disabled, MainButton]);
 
   useEffect(() => {
     if (progress) {

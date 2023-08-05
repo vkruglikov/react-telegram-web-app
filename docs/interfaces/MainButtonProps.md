@@ -9,7 +9,7 @@ The props type of [`MainButton`](../README.md#mainbutton).
 ### Properties
 
 - [color](MainButtonProps.md#color)
-- [disable](MainButtonProps.md#disable)
+- [disabled](MainButtonProps.md#disabled)
 - [onClick](MainButtonProps.md#onclick)
 - [progress](MainButtonProps.md#progress)
 - [text](MainButtonProps.md#text)
@@ -29,9 +29,9 @@ Set to themeParams.button_color by default
 
 ---
 
-### disable
+### disabled
 
-• `Optional` **disable**: `boolean`
+• `Optional` **disabled**: `boolean`
 
 The button disable state.
 
