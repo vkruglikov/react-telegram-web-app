@@ -20,7 +20,7 @@ export type Options = {
    */
   smoothButtonsTransition?: boolean;
   /**
-   * @defaultValue `50` Why 50? https://w3c.github.io/requestidlecallback/#why50
+   * @defaultValue `10`
    * @remarks
    */
   smoothButtonsTransitionMs?: number;
@@ -28,7 +28,7 @@ export type Options = {
 
 export const DEFAULT_OPTIONS: Options = {
   smoothButtonsTransition: false,
-  smoothButtonsTransitionMs: 50,
+  smoothButtonsTransitionMs: 10,
 };
 
 export const optionsContext = createContext<Options>(DEFAULT_OPTIONS);

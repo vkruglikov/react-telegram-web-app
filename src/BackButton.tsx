@@ -28,13 +28,6 @@ const BackButton = ({ onClick }: BackButtonProps): null => {
   const WebApp = useWebApp();
   const BackButton = WebApp?.BackButton;
 
-  useSmoothButtonsTransition({
-    show: BackButton?.show,
-    hide: BackButton?.hide,
-    currentShowedIdRef: system.BackButton,
-    id: buttonId,
-  });
-
   useEffect(() => {
     if (!onClick || !BackButton) {
       return;
@@ -45,6 +38,13 @@ const BackButton = ({ onClick }: BackButtonProps): null => {
       BackButton.offClick(onClick);
     };
   }, [onClick, BackButton]);
+
+  useSmoothButtonsTransition({
+    show: BackButton?.show,
+    hide: BackButton?.hide,
+    currentShowedIdRef: system.BackButton,
+    id: buttonId,
+  });
 
   return null;
 };

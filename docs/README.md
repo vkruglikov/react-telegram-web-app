@@ -138,7 +138,7 @@ This object describe options be able to set through WebAppProvider
 | Name                         | Type      | Description                                                                                                                                                                                                                                   |
 | :--------------------------- | :-------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `smoothButtonsTransition?`   | `boolean` | When is `true`, we can smooth button transitions due to show(), hide() calls. So when you use MainButton or BackButton on multiple pages, there will be no noticeable flickering of the button during transitions **`Default Value`** `false` |
-| `smoothButtonsTransitionMs?` | `number`  | **`Default Value`** `50` Why 50? https://w3c.github.io/requestidlecallback/#why50 **`Remarks`**                                                                                                                                               |
+| `smoothButtonsTransitionMs?` | `number`  | **`Default Value`** `10` **`Remarks`**                                                                                                                                                                                                        |
 
 ---
 
