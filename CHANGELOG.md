@@ -1,5 +1,16 @@
 # @vkruglikov/react-telegram-web-app
 
+## 2.1.0
+
+### Minor Changes
+
+- bcf3a0e: Added props `disabled` to MainButton component. It is just an alias on the `MainButtonProps.disable`
+  Props `disable` marked as deprecated and will be removed
+
+### Patch Changes
+
+- 05d7b34: - Reduced default value for `smoothButtonsTransitionMs`
+
 ## 2.0.1
 
 ### Patch Changes
