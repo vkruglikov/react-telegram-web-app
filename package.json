@@ -14,6 +14,9 @@
     "require": "./lib/react-telegram-web-app.cjs",
     "default": "./lib/react-telegram-web-app.modern.js"
   },
+  "files": [
+    "/lib"
+  ],
   "main": "lib/react-telegram-web-app.cjs",
   "module": "lib/react-telegram-web-app.module.js",
   "unpkg": "lib/react-telegram-web-app.umd.js",
