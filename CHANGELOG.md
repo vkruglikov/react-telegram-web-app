@@ -1,5 +1,11 @@
 # @vkruglikov/react-telegram-web-app
 
+## 2.1.1
+
+### Patch Changes
+
+- 54f5400: Fix smoothButtonsTransition restore state after refresh page
+
 ## 2.1.0
 
 ### Minor Changes
