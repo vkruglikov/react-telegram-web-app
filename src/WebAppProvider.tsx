@@ -1,4 +1,9 @@
-import React, { PropsWithChildren, ReactElement, useMemo } from 'react';
+import React, {
+  PropsWithChildren,
+  ReactElement,
+  useEffect,
+  useMemo,
+} from 'react';
 import {
   webAppContext,
   optionsContext,
@@ -48,6 +53,17 @@ const WebAppProvider = ({
     [options],
   );
   const systemValue = useMemo(createSystemContextValue, []);
+
+  useEffect(() => {
+    if (!options?.smoothButtonsTransition) return;
+    const forceHideButtons = () => {
+      DEFAULT_WEBAPP?.MainButton?.hide();
+      DEFAULT_WEBAPP?.BackButton?.hide();
+    };
+
+    window.addEventListener('beforeunload', forceHideButtons);
+    return () => window.removeEventListener('beforeunload', forceHideButtons);
+  }, [options?.smoothButtonsTransition]);
 
   return (
     <systemContext.Provider value={systemValue}>
