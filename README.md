@@ -68,19 +68,23 @@ const Content = () => {
 ### Hooks
 
 - [useShowPopup](./docs/README.md#useshowpopup) -
-  The hook that provided showPopup function that shows a native popup.
+  This hook provides `showPopup` function that shows a native popup.
 - [useHapticFeedback](./docs/README.md#usehapticfeedback) -
-  This hook that provided `impactOccurred`, `notificationOccurred` and `selectionChanged` functions that controls haptic feedback.
+  This hook provides `impactOccurred`, `notificationOccurred` and `selectionChanged` functions that controls haptic feedback.
 - [useThemeParams](./docs/README.md#usethemeparams) -
-  This hook that provided `colorScheme` and `themeParams` object.
+  This hook provides `colorScheme` and `themeParams` object.
 - [useScanQrPopup](./docs/README.md#usescanqrpopup) -
-  This hook that provided `showScanQrPopup` and `closeScanQrPopup` functions.
+  This hook provides `showScanQrPopup` and `closeScanQrPopup` functions.
 - [useReadTextFromClipboard](./docs/README.md#usereadtextfromclipboard) -
-  This hook that provided `readTextFromClipboard` function.
+  This hook provides `readTextFromClipboard` function.
 - [useSwitchInlineQuery](./docs/README.md#useswitchinlinequery) -
-  This hook that provided `switchInlineQuery` function.
+  This hook provides `switchInlineQuery` function.
 - [useExpand](./docs/README.md#useexpand) -
-  This hook provided `isExpanded` state, and `expand()` handle.
+  This hook provides `isExpanded` state, and `expand()` handle.
+- [useCloudStorage](./docs/README.md#usecloudstorage) -
+  This hook provides `CloudStorage` object as Promise functions
+- [useInitData](./docs/README.md#useinitdata) -
+  This hook provides `InitDataUnsafe` and `InitData` object
 
 ## 🛣 Roadmap
 
