@@ -46,4 +46,11 @@ export {
   default as WebAppProvider,
   WebAppProviderProps,
 } from './WebAppProvider';
+export {
+  default as useInitData,
+  WebAppChat,
+  WebAppUser,
+  InitData,
+  InitDataUnsafe,
+} from './useInitData';
 export type { Options } from './core';

@@ -1,6 +1,29 @@
 import { TelegramWebAppVersion6_7 } from './WebAppVersion_6.7';
+import { TelegramWebAppVersion6_2 } from './WebAppVersion_6.2';
 
 export declare namespace TelegramWebAppVersion6_9 {
+  interface WebAppUser extends TelegramWebAppVersion6_2.WebAppUser {
+    added_to_attachment_menu?: true;
+    allows_write_to_pm?: true;
+  }
+
+  interface Event {
+    onEvent(
+      eventType: 'writeAccessRequested',
+      eventHandler: (data: { status: 'allowed' | 'cancelled' }) => void,
+    );
+
+    onEvent(
+      eventType: 'contactRequested',
+      eventHandler: (payload: { data: 'sent' | 'cancelled' }) => void,
+    );
+
+    offEvent(
+      eventType: 'writeAccessRequested' | 'contactRequested',
+      eventHandler: (...args: any[]) => void,
+    );
+  }
+
   type StorageKey = string;
   type CloudStorageCallback<T> =
     | ((error: Error) => void)
@@ -28,7 +51,7 @@ export declare namespace TelegramWebAppVersion6_9 {
     getKeys(callback: CloudStorageCallback<string[]>): void;
   }
 
-  interface WebApp extends TelegramWebAppVersion6_7.WebApp {
+  interface WebApp extends TelegramWebAppVersion6_7.WebApp, Event {
     CloudStorage: CloudStorage;
   }
 }

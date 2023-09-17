@@ -21,6 +21,8 @@
 - [GetItemsFunction](README.md#getitemsfunction)
 - [GetKeysFunction](README.md#getkeysfunction)
 - [ImpactOccurredFunction](README.md#impactoccurredfunction)
+- [InitData](README.md#initdata)
+- [InitDataUnsafe](README.md#initdataunsafe)
 - [NotificationOccurredFunction](README.md#notificationoccurredfunction)
 - [Options](README.md#options)
 - [ReadTextFromClipboardFunction](README.md#readtextfromclipboardfunction)
@@ -32,13 +34,16 @@
 - [ShowPopupFunction](README.md#showpopupfunction)
 - [ShowScanQrPopupFunction](README.md#showscanqrpopupfunction)
 - [SwitchInlineQueryFunction](README.md#switchinlinequeryfunction)
+- [WebAppChat](README.md#webappchat)
 - [WebAppProviderProps](README.md#webappproviderprops)
+- [WebAppUser](README.md#webappuser)
 
 ### Hooks
 
 - [useCloudStorage](README.md#usecloudstorage)
 - [useExpand](README.md#useexpand)
 - [useHapticFeedback](README.md#usehapticfeedback)
+- [useInitData](README.md#useinitdata)
 - [useReadTextFromClipboard](README.md#usereadtextfromclipboard)
 - [useScanQrPopup](README.md#usescanqrpopup)
 - [useShowPopup](README.md#useshowpopup)
@@ -170,6 +175,35 @@ A method tells that an impact occurred. The Telegram app may play the appropriat
 ##### Returns
 
 `void`
+
+---
+
+### InitData
+
+Ƭ **InitData**: `string`
+
+---
+
+### InitDataUnsafe
+
+Ƭ **InitDataUnsafe**: `Object`
+
+[telegram!WebAppInitData](https://core.telegram.org/bots/webapps#webappinitdata)
+
+#### Type declaration
+
+| Name              | Type                                                                    |
+| :---------------- | :---------------------------------------------------------------------- |
+| `auth_date`       | `number`                                                                |
+| `can_send_after?` | `number`                                                                |
+| `chat?`           | [`WebAppChat`](README.md#webappchat)                                    |
+| `chat_instance?`  | `string`                                                                |
+| `chat_type?`      | `"sender"` \| `"private"` \| `"group"` \| `"supergroup"` \| `"channel"` |
+| `hash`            | `string`                                                                |
+| `query_id?`       | `string`                                                                |
+| `receiver?`       | [`WebAppUser`](README.md#webappuser)                                    |
+| `start_param?`    | `string`                                                                |
+| `user?`           | [`WebAppUser`](README.md#webappuser)                                    |
 
 ---
 
@@ -419,9 +453,49 @@ You have to look original description switchInlineQuery in [telegram!WebApp](htt
 
 ---
 
+### WebAppChat
+
+Ƭ **WebAppChat**: `Object`
+
+[telegram!WebAppChat](https://core.telegram.org/bots/webapps#webappchat)
+
+#### Type declaration
+
+| Name         | Type                                       |
+| :----------- | :----------------------------------------- |
+| `id`         | `number`                                   |
+| `photo_url?` | `string`                                   |
+| `title`      | `string`                                   |
+| `type`       | `"group"` \| `"supergroup"` \| `"channel"` |
+| `username?`  | `string`                                   |
+
+---
+
 ### WebAppProviderProps
 
 Ƭ **WebAppProviderProps**: `PropsWithChildren`<{ `options?`: [`Options`](README.md#options) }\>
+
+---
+
+### WebAppUser
+
+Ƭ **WebAppUser**: `Object`
+
+[telegram!WebAppUser](https://core.telegram.org/bots/webapps#webappuser)
+
+#### Type declaration
+
+| Name                        | Type      |
+| :-------------------------- | :-------- |
+| `added_to_attachment_menu?` | `true`    |
+| `allows_write_to_pm?`       | `true`    |
+| `first_name`                | `string`  |
+| `id`                        | `number`  |
+| `is_bot?`                   | `boolean` |
+| `language_code?`            | `string`  |
+| `last_name?`                | `string`  |
+| `photo_url?`                | `true`    |
+| `username?`                 | `string`  |
 
 ## Hooks
 
@@ -494,6 +568,26 @@ notificationOccurred('success');
 #### Returns
 
 readonly [[`ImpactOccurredFunction`](README.md#impactoccurredfunction), [`NotificationOccurredFunction`](README.md#notificationoccurredfunction), [`SelectionChangedFunction`](README.md#selectionchangedfunction)]
+
+---
+
+### useInitData
+
+▸ **useInitData**(): readonly [[`InitDataUnsafe`](README.md#initdataunsafe), `string`]
+
+This hook provides `initDataUnsafe` and `initData`
+You have to look original description in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-web-apps), because hook just return this.
+
+```tsx
+import { useInitData } from '@vkruglikov/react-telegram-web-app';
+
+const [initDataUnsafe] = useInitData();
+const [initDataUnsafe, initData] = useInitData();
+```
+
+#### Returns
+
+readonly [[`InitDataUnsafe`](README.md#initdataunsafe), `string`]
 
 ---
 

@@ -15,7 +15,10 @@
       "PopupButton": "https://core.telegram.org/bots/webapps#popupbutton",
       "HapticFeedback": "https://core.telegram.org/bots/webapps#hapticfeedback",
       "ThemeParams": "https://core.telegram.org/bots/webapps#themeparams",
-      "WebApp": "https://core.telegram.org/bots/webapps#initializing-web-apps"
+      "WebApp": "https://core.telegram.org/bots/webapps#initializing-web-apps",
+      "WebAppInitData": "https://core.telegram.org/bots/webapps#webappinitdata",
+      "WebAppUser": "https://core.telegram.org/bots/webapps#webappuser",
+      "WebAppChat": "https://core.telegram.org/bots/webapps#webappchat"
     },
     "react": {
       "Component": "https://reactjs.org/docs/react-component.html"
