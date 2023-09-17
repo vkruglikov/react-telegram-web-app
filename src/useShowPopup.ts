@@ -43,7 +43,7 @@ export interface ShowPopupParams extends Record<string, unknown> {
 }
 
 /**
- * Then function provided Promise, and resolve the field id of the pressed button will be passed.
+ * This function provides Promise, and resolve the field id of the pressed button will be passed.
  * @return Button id as string, it was described by {@link ShowPopupButton}
  * @throws
  */

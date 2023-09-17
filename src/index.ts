@@ -34,6 +34,15 @@ export {
 } from './useSwitchInlineQuery';
 export { default as useExpand } from './useExpand';
 export {
+  default as useCloudStorage,
+  GetKeysFunction,
+  GetItemFunction,
+  GetItemsFunction,
+  RemoveItemFunction,
+  SetItemFunction,
+  RemoveItemsFunction,
+} from './useCloudStorage';
+export {
   default as WebAppProvider,
   WebAppProviderProps,
 } from './WebAppProvider';

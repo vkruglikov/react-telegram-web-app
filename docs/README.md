@@ -17,12 +17,18 @@
 
 - [CloseScanQrPopupFunction](README.md#closescanqrpopupfunction)
 - [ColorScheme](README.md#colorscheme)
+- [GetItemFunction](README.md#getitemfunction)
+- [GetItemsFunction](README.md#getitemsfunction)
+- [GetKeysFunction](README.md#getkeysfunction)
 - [ImpactOccurredFunction](README.md#impactoccurredfunction)
 - [NotificationOccurredFunction](README.md#notificationoccurredfunction)
 - [Options](README.md#options)
 - [ReadTextFromClipboardFunction](README.md#readtextfromclipboardfunction)
+- [RemoveItemFunction](README.md#removeitemfunction)
+- [RemoveItemsFunction](README.md#removeitemsfunction)
 - [ScanQrPopupCallback](README.md#scanqrpopupcallback)
 - [SelectionChangedFunction](README.md#selectionchangedfunction)
+- [SetItemFunction](README.md#setitemfunction)
 - [ShowPopupFunction](README.md#showpopupfunction)
 - [ShowScanQrPopupFunction](README.md#showscanqrpopupfunction)
 - [SwitchInlineQueryFunction](README.md#switchinlinequeryfunction)
@@ -30,6 +36,7 @@
 
 ### Hooks
 
+- [useCloudStorage](README.md#usecloudstorage)
 - [useExpand](README.md#useexpand)
 - [useHapticFeedback](README.md#usehapticfeedback)
 - [useReadTextFromClipboard](README.md#usereadtextfromclipboard)
@@ -68,6 +75,72 @@ A method that closes the native popup for scanning a QR code opened with the sho
 
 The color scheme currently used in the Telegram app. Either “light” or “dark”.
 Can `undefined`, if `window` is undefined.
+
+---
+
+### GetItemFunction
+
+Ƭ **GetItemFunction**: (`key`: `string`) => `Promise`<`string`\>
+
+#### Type declaration
+
+▸ (`key`): `Promise`<`string`\>
+
+This function provides `getItem` method from [telegram!CloudStorage](https://core.telegram.org/bots/webapps#cloudstorage) as Promise
+
+**`Throws`**
+
+##### Parameters
+
+| Name  | Type     |
+| :---- | :------- |
+| `key` | `string` |
+
+##### Returns
+
+`Promise`<`string`\>
+
+---
+
+### GetItemsFunction
+
+Ƭ **GetItemsFunction**: (`keys`: `string`[]) => `Promise`<`string`[]\>
+
+#### Type declaration
+
+▸ (`keys`): `Promise`<`string`[]\>
+
+This function provides `getItems` method from [telegram!CloudStorage](https://core.telegram.org/bots/webapps#cloudstorage) as Promise
+
+**`Throws`**
+
+##### Parameters
+
+| Name   | Type       |
+| :----- | :--------- |
+| `keys` | `string`[] |
+
+##### Returns
+
+`Promise`<`string`[]\>
+
+---
+
+### GetKeysFunction
+
+Ƭ **GetKeysFunction**: () => `Promise`<`string`[]\>
+
+#### Type declaration
+
+▸ (): `Promise`<`string`[]\>
+
+This function provides `getKeys` method from [telegram!CloudStorage](https://core.telegram.org/bots/webapps#cloudstorage) as Promise
+
+**`Throws`**
+
+##### Returns
+
+`Promise`<`string`[]\>
 
 ---
 
@@ -158,6 +231,54 @@ This function provided Promise function that read text from clipboard
 
 ---
 
+### RemoveItemFunction
+
+Ƭ **RemoveItemFunction**: (`key`: `string`) => `Promise`<`void`\>
+
+#### Type declaration
+
+▸ (`key`): `Promise`<`void`\>
+
+This function provides `removeItem` method from [telegram!CloudStorage](https://core.telegram.org/bots/webapps#cloudstorage) as Promise
+
+**`Throws`**
+
+##### Parameters
+
+| Name  | Type     |
+| :---- | :------- |
+| `key` | `string` |
+
+##### Returns
+
+`Promise`<`void`\>
+
+---
+
+### RemoveItemsFunction
+
+Ƭ **RemoveItemsFunction**: (`key`: `string`[]) => `Promise`<`void`\>
+
+#### Type declaration
+
+▸ (`key`): `Promise`<`void`\>
+
+This function provides `removeItems` method from [telegram!CloudStorage](https://core.telegram.org/bots/webapps#cloudstorage) as Promise
+
+**`Throws`**
+
+##### Parameters
+
+| Name  | Type       |
+| :---- | :--------- |
+| `key` | `string`[] |
+
+##### Returns
+
+`Promise`<`void`\>
+
+---
+
 ### ScanQrPopupCallback
 
 Ƭ **ScanQrPopupCallback**: (`text`: `string`) => `true` \| `void`
@@ -199,6 +320,31 @@ A method tells that the user has changed a selection. The Telegram app may play 
 
 ---
 
+### SetItemFunction
+
+Ƭ **SetItemFunction**: (`key`: `string`, `value`: `string`) => `Promise`<`void`\>
+
+#### Type declaration
+
+▸ (`key`, `value`): `Promise`<`void`\>
+
+This function provides `setItem` method from [telegram!CloudStorage](https://core.telegram.org/bots/webapps#cloudstorage) as Promise
+
+**`Throws`**
+
+##### Parameters
+
+| Name    | Type     |
+| :------ | :------- |
+| `key`   | `string` |
+| `value` | `string` |
+
+##### Returns
+
+`Promise`<`void`\>
+
+---
+
 ### ShowPopupFunction
 
 Ƭ **ShowPopupFunction**: (`params`: [`ShowPopupParams`](interfaces/ShowPopupParams.md)) => `Promise`<`string`\>
@@ -207,7 +353,7 @@ A method tells that the user has changed a selection. The Telegram app may play 
 
 ▸ (`params`): `Promise`<`string`\>
 
-Then function provided Promise, and resolve the field id of the pressed button will be passed.
+This function provides Promise, and resolve the field id of the pressed button will be passed.
 
 **`Throws`**
 
@@ -278,6 +424,28 @@ You have to look original description switchInlineQuery in [telegram!WebApp](htt
 Ƭ **WebAppProviderProps**: `PropsWithChildren`<{ `options?`: [`Options`](README.md#options) }\>
 
 ## Hooks
+
+### useCloudStorage
+
+▸ **useCloudStorage**(): `Object`
+
+This hook provides [telegram!CloudStorage](https://core.telegram.org/bots/webapps#cloudstorage) object with promises functions,
+so you don't have to pass `callback` argument
+You have to look original description CloudStorage object in [telegram!CloudStorage](https://core.telegram.org/bots/webapps#cloudstorage)
+
+#### Returns
+
+`Object`
+
+| Name         | Type                                                 |
+| :----------- | :--------------------------------------------------- |
+| `getItem`    | [`GetItemFunction`](README.md#getitemfunction)       |
+| `getItems`   | [`GetItemsFunction`](README.md#getitemsfunction)     |
+| `getKeys`    | [`GetKeysFunction`](README.md#getkeysfunction)       |
+| `removeItem` | [`RemoveItemFunction`](README.md#removeitemfunction) |
+| `setItem`    | [`SetItemFunction`](README.md#setitemfunction)       |
+
+---
 
 ### useExpand
 
