@@ -1,5 +1,12 @@
 # @vkruglikov/react-telegram-web-app
 
+## 2.2.0
+
+### Minor Changes
+
+- 0339c94: Added `useCloudStorage` that provides `CloudStorage` object as Promise functions
+- 1589011: Added useInitData hook
+
 ## 2.1.1
 
 ### Patch Changes
