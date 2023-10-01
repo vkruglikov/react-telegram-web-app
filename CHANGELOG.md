@@ -1,5 +1,11 @@
 # @vkruglikov/react-telegram-web-app
 
+## 2.3.0
+
+### Minor Changes
+
+- c28cc2e: useWebApp hook
+
 ## 2.2.0
 
 ### Minor Changes
