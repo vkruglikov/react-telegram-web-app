@@ -12,6 +12,6 @@ import { useWebApp as _useWebApp } from './core';
  * ```
  * @group Hooks
  */
-const useWebApp = () => _useWebApp() as unknown;
+const useWebApp = () => _useWebApp() as any;
 
 export default useWebApp;
