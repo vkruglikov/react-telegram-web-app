@@ -1,5 +1,11 @@
 # @vkruglikov/react-telegram-web-app
 
+## 2.1.2
+
+### Patch Changes
+
+- e856e14: Fix bug with types
+
 ## 2.3.0
 
 ### Minor Changes
