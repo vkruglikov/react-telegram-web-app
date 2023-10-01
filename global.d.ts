@@ -1,4 +1,4 @@
-import { WebApp } from './src/core';
+import { WebApp } from './twa-types';
 
 declare global {
   interface Window {

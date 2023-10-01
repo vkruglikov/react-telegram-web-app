@@ -54,3 +54,4 @@ export {
   InitDataUnsafe,
 } from './useInitData';
 export type { Options } from './core';
+export { default as useWebApp } from './useWebApp';

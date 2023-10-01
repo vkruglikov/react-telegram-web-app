@@ -22,7 +22,7 @@
   "unpkg": "lib/react-telegram-web-app.umd.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "build": "rm -rf ./lib/*; microbundle build --sourcemap=false && cp -R src/core/twa-types lib/core/twa-types",
+    "build": "rm -rf ./lib/*; microbundle build --sourcemap=false",
     "dev": "npm run build && microbundle watch --compress=false",
     "prepare": "husky install",
     "changeset": "changeset",

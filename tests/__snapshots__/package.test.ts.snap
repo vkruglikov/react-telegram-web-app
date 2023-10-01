@@ -8,15 +8,6 @@ exports[`Package /lib should have correct /lib structure 1`] = `
   [
     "/core/context.d.ts",
     "/core/index.d.ts",
-    [
-      "/core/twa-types/WebApp.d.ts",
-      "/core/twa-types/WebAppVersion_6.1.d.ts",
-      "/core/twa-types/WebAppVersion_6.2.d.ts",
-      "/core/twa-types/WebAppVersion_6.4.d.ts",
-      "/core/twa-types/WebAppVersion_6.7.d.ts",
-      "/core/twa-types/WebAppVersion_6.9.d.ts",
-      "/core/twa-types/index.d.ts",
-    ],
     "/core/useSmoothButtonsTransition.d.ts",
     "/core/useWebApp.d.ts",
   ],
@@ -34,6 +25,7 @@ exports[`Package /lib should have correct /lib structure 1`] = `
   "/useShowPopup.d.ts",
   "/useSwitchInlineQuery.d.ts",
   "/useThemeParams.d.ts",
+  "/useWebApp.d.ts",
 ]
 `;
 
@@ -51,5 +43,6 @@ exports[`Package /lib should have exports from modules 1`] = `
   "useShowPopup": [Function],
   "useSwitchInlineQuery": [Function],
   "useThemeParams": [Function],
+  "useWebApp": [Function],
 }
 `;
