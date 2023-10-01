@@ -1,5 +1,11 @@
 # @vkruglikov/react-telegram-web-app
 
+## 2.1.4
+
+### Patch Changes
+
+- f705506: Fix signature bug
+
 ## 2.1.3
 
 ### Patch Changes
