@@ -49,6 +49,7 @@
 - [useShowPopup](README.md#useshowpopup)
 - [useSwitchInlineQuery](README.md#useswitchinlinequery)
 - [useThemeParams](README.md#usethemeparams)
+- [useWebApp](README.md#usewebapp)
 
 ### React Components
 
@@ -682,6 +683,26 @@ console.log({
 #### Returns
 
 readonly [[`ColorScheme`](README.md#colorscheme), [`ThemeParams`](interfaces/ThemeParams.md)]
+
+---
+
+### useWebApp
+
+▸ **useWebApp**(): `null` \| `WebApp`
+
+This hook just provides native [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-web-apps) object
+
+```tsx
+import { useWebApp } from '@vkruglikov/react-telegram-web-app';
+
+const WebApp = useWebApp();
+
+console.log(WebApp.version);
+```
+
+#### Returns
+
+`null` \| `WebApp`
 
 ## React Components
 
