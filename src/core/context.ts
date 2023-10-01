@@ -1,12 +1,12 @@
 import { createContext, MutableRefObject } from 'react';
-import { WebApp } from './twa-types';
 
 export const DEFAULT_WEBAPP =
   typeof window !== 'undefined' && window?.Telegram?.WebApp
     ? window.Telegram.WebApp
     : null;
 
-export const webAppContext = createContext<WebApp | null>(DEFAULT_WEBAPP);
+export const webAppContext =
+  createContext<typeof DEFAULT_WEBAPP>(DEFAULT_WEBAPP);
 
 /**
  * This object describe options be able to set through WebAppProvider

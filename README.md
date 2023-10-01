@@ -85,6 +85,8 @@ const Content = () => {
   This hook provides `CloudStorage` object as Promise functions
 - [useInitData](./docs/README.md#useinitdata) -
   This hook provides `InitDataUnsafe` and `InitData` object
+- [useWebApp](./docs/README.md#usewebapp) -
+  This hook just provides native `WebApp` object
 
 ## 🛣 Roadmap
 
