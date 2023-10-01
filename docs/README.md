@@ -688,7 +688,7 @@ readonly [[`ColorScheme`](README.md#colorscheme), [`ThemeParams`](interfaces/The
 
 ### useWebApp
 
-▸ **useWebApp**(): `null` \| `WebApp`
+▸ **useWebApp**(): `unknown`
 
 This hook just provides native [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-web-apps) object
 
@@ -702,7 +702,7 @@ console.log(WebApp.version);
 
 #### Returns
 
-`null` \| `WebApp`
+`unknown`
 
 ## React Components
 

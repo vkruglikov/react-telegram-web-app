@@ -1,6 +1,6 @@
 {
   "name": "@vkruglikov/react-telegram-web-app",
-  "version": "2.3.0",
+  "version": "2.1.1",
   "description": "React components for Telegram WebApp",
   "source": "./src/index.ts",
   "type": "module",
@@ -22,7 +22,7 @@
   "unpkg": "lib/react-telegram-web-app.umd.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "build": "rm -rf ./lib/*; microbundle build --sourcemap=false",
+    "build": "rm -rf ./lib/*; microbundle build --sourcemap=false && cp -R src/core/twa-types lib/core/twa-types",
     "dev": "npm run build && microbundle watch --compress=false",
     "prepare": "husky install",
     "changeset": "changeset",

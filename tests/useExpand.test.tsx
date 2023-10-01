@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react';
 
 import { useWebApp } from '../src/core';
-import { WebApp } from '../twa-types';
+import { WebApp } from '../src/core/twa-types';
 import useExpand from '../src/useExpand';
 
 describe('useExpand', () => {
