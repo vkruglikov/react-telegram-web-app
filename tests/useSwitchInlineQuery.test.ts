@@ -11,11 +11,10 @@ describe('useSwitchInlineQuery', () => {
     switchInlineQuery('Test string');
     expect(useWebApp()!.switchInlineQuery).toBeCalledWith('Test string');
 
-    switchInlineQuery('Test string 2', 'groups');
-    expect(useWebApp()!.switchInlineQuery).toBeCalledWith(
-      'Test string 2',
+    switchInlineQuery('Test string 2', ['groups']);
+    expect(useWebApp()!.switchInlineQuery).toBeCalledWith('Test string 2', [
       'groups',
-    );
+    ]);
 
     expect(useWebApp()!.switchInlineQuery).toBeCalledTimes(2);
   });

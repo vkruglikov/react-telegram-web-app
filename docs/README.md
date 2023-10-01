@@ -432,7 +432,7 @@ by the params argument of the type [ScanQrPopupParams](interfaces/ScanQrPopupPar
 
 ### SwitchInlineQueryFunction
 
-Ƭ **SwitchInlineQueryFunction**: (`query`: `string`, `chatType?`: `"users"` \| `"bots"` \| `"groups"` \| `"channels"`) => `void`
+Ƭ **SwitchInlineQueryFunction**: (`query`: `string`, `chatType?`: (`"users"` \| `"bots"` \| `"groups"` \| `"channels"`)[]) => `void`
 
 #### Type declaration
 
@@ -443,10 +443,10 @@ You have to look original description switchInlineQuery in [telegram!WebApp](htt
 
 ##### Parameters
 
-| Name        | Type                                                |
-| :---------- | :-------------------------------------------------- |
-| `query`     | `string`                                            |
-| `chatType?` | `"users"` \| `"bots"` \| `"groups"` \| `"channels"` |
+| Name        | Type                                                    |
+| :---------- | :------------------------------------------------------ |
+| `query`     | `string`                                                |
+| `chatType?` | (`"users"` \| `"bots"` \| `"groups"` \| `"channels"`)[] |
 
 ##### Returns
 
