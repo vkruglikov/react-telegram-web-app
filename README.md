@@ -1,6 +1,6 @@
 # react-telegram-web-app
 
-React components for Telegram WebApp
+React components for Telegram Mini Apps
 
 [![npm](https://img.shields.io/npm/v/@vkruglikov/react-telegram-web-app.svg)](https://www.npmjs.com/package/@vkruglikov/react-telegram-web-app)
 [![types](https://badgen.net/npm/types/@vkruglikov/react-telegram-web-app)](https://npmjs.org/package/@vkruglikov/react-telegram-web-app)
