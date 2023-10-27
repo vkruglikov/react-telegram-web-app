@@ -439,7 +439,7 @@ by the params argument of the type [ScanQrPopupParams](interfaces/ScanQrPopupPar
 ▸ (`query`, `chatType?`): `void`
 
 This function that inserts the bot's username and the specified inline query in the current chat's input field
-You have to look original description switchInlineQuery in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-web-apps) for more information
+You have to look original description switchInlineQuery in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-mini-apps) for more information
 
 ##### Parameters
 
@@ -527,7 +527,7 @@ You have to look original description CloudStorage object in [telegram!CloudStor
 ▸ **useExpand**(): readonly [`undefined` \| `boolean`, `DispatchWithoutAction`]
 
 This hook provided isExpanded state, and expand() handle
-You have to look original description in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-web-apps) for more information
+You have to look original description in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-mini-apps) for more information
 
 `isExpanded` can be `undefined`
 
@@ -577,7 +577,7 @@ readonly [[`ImpactOccurredFunction`](README.md#impactoccurredfunction), [`Notifi
 ▸ **useInitData**(): readonly [[`InitDataUnsafe`](README.md#initdataunsafe), `string`]
 
 This hook provides `initDataUnsafe` and `initData`
-You have to look original description in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-web-apps), because hook just return this.
+You have to look original description in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-mini-apps), because hook just return this.
 
 ```tsx
 import { useInitData } from '@vkruglikov/react-telegram-web-app';
@@ -597,7 +597,7 @@ readonly [[`InitDataUnsafe`](README.md#initdataunsafe), `string`]
 ▸ **useReadTextFromClipboard**(): [`ReadTextFromClipboardFunction`](README.md#readtextfromclipboardfunction)
 
 This hook that provided [ReadTextFromClipboardFunction](README.md#readtextfromclipboardfunction) Promise function that read text from clipboard.
-You have to look original description readTextFromClipboard in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-web-apps), because hook just implements his.
+You have to look original description readTextFromClipboard in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-mini-apps), because hook just implements his.
 
 ```tsx
 import { useReadTextFromClipboard } from '@vkruglikov/react-telegram-web-app';
@@ -653,7 +653,7 @@ showPopup({ message: 'Hello world' }).then(buttonId => console.log(buttonId));
 ▸ **useSwitchInlineQuery**(): [`SwitchInlineQueryFunction`](README.md#switchinlinequeryfunction)
 
 This hook that provided [SwitchInlineQueryFunction](README.md#switchinlinequeryfunction)
-You have to look original description switchInlineQuery in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-web-apps), because hook just implements his.
+You have to look original description switchInlineQuery in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-mini-apps), because hook just implements his.
 
 #### Returns
 
@@ -690,7 +690,7 @@ readonly [[`ColorScheme`](README.md#colorscheme), [`ThemeParams`](interfaces/The
 
 ▸ **useWebApp**(): `any`
 
-This hook just provides native [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-web-apps) object
+This hook just provides native [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-mini-apps) object
 
 ```tsx
 import { useWebApp } from '@vkruglikov/react-telegram-web-app';

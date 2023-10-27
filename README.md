@@ -1,6 +1,4 @@
-# react-telegram-web-app
-
-React components for Telegram Mini Apps
+# React components for Telegram MiniApp
 
 [![npm](https://img.shields.io/npm/v/@vkruglikov/react-telegram-web-app.svg)](https://www.npmjs.com/package/@vkruglikov/react-telegram-web-app)
 [![types](https://badgen.net/npm/types/@vkruglikov/react-telegram-web-app)](https://npmjs.org/package/@vkruglikov/react-telegram-web-app)
@@ -16,7 +14,7 @@ Also, you can look demo [source code](./demo/src).
 
 ## 🔧 Installation & Get started
 
-1️⃣ &nbsp;**Foremost**, you have to do [initializing web apps](https://core.telegram.org/bots/webapps#initializing-web-apps) step, because package has dependency of Telegram Web App context.
+1️⃣ &nbsp;**Foremost**, you have to do [initializing web apps](https://core.telegram.org/bots/webapps#initializing-mini-apps) step, because package has dependency of Telegram Web App context.
 
 2️⃣ &nbsp;**Install** by running: `npm i @vkruglikov/react-telegram-web-app --save`. Today we support React^18.
 
