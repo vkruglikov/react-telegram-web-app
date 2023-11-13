@@ -44,7 +44,6 @@
 - [useExpand](README.md#useexpand)
 - [useHapticFeedback](README.md#usehapticfeedback)
 - [useInitData](README.md#useinitdata)
-- [useIsVersionAtLeast](README.md#useIsVersionAtLeast)
 - [useReadTextFromClipboard](README.md#usereadtextfromclipboard)
 - [useScanQrPopup](README.md#usescanqrpopup)
 - [useShowPopup](README.md#useshowpopup)
@@ -596,28 +595,9 @@ readonly [[`InitDataUnsafe`](README.md#initdataunsafe), `string`]
 
 ---
 
-### useIsVersionAtLeast
-
-▸ **useIsVersionAtLeast**(): (version: string | number) => boolean
-
-This hook provides `isVersionAtLeast` function
-You have to look original description in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-mini-apps), because hook just return this.
-
-```tsx
-import { useIsVersionAtLeast } from '@altiore/twa';
-
-const isVersionAtLeast = useIsVersionAtLeast();
-
-if (isVersionAtLeast('6.5')) {
-	return <p>Version is at least 6.5</p>;
-}
-```
-
----
-
 ### useVersionAtLeast
 
-▸ **useVersionAtLeast**(): readonly boolean
+▸ **useVersionAtLeast**(version?: string | number): readonly boolean
 
 This hook provides `isVersionAtLeast` function result
 You have to look original description in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-mini-apps), because hook just return this.
@@ -625,9 +605,9 @@ You have to look original description in [telegram!WebApp](https://core.telegram
 ```tsx
 import { useVersionAtLeast } from '@altiore/twa';
 
-const isCorrectVersion = useIsVersionAtLeast('6.5');
+const isCorrectVersion = useVersionAtLeast('6.9');
 if (isCorrectVersion) {
-	return <p>Version is at least 6.5</p>;
+	return <p>Version is at least 6.9</p>;
 }
 ```
 
@@ -647,7 +627,7 @@ if (isLoading) {
 	return <p>TWA script still loading</p>;
 }
 if (isLoaded) {
-	return <p>TWA script loaded</p>;
+	return <p>TWA Application ready to use</p>;
 }
 ```
 
@@ -828,11 +808,9 @@ Renders its props depends on was TWA loaded or not
 import { TwaLoader } from '@altiore/twa';
 
 <TwaLoader
-	loading={<p>This will be shown while TWA script is loading</p>}
-	isTWApp={
-		<p>This will be shown if TWA was loaded in Telegram and available</p>
-	}
-	noTWApp={<p>This will be shown is this is not a Telegram environment</p>}
+	loading={<p>...loading</p>}
+	isTWApp={<p>I am a Telegram App!</p>}
+	noTWApp={<p>I am non Telegram App (simple web app)</p>}
 />;
 ```
 

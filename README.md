@@ -84,12 +84,10 @@ const Content = () => {
   This hook provides `CloudStorage` object as Promise functions
 - [useInitData](./docs/README.md#useinitdata) -
   This hook provides `InitDataUnsafe` and `InitData` object
-- [useIsVersionAtLeast](./docs/README.md#useisversionatleast) -
-  This hook provides `isVersionAtLeast` function
 - [useVersionAtLeast](./docs/README.md#useversionatleast) -
-  This hook provides `isVersionAtLeast` result which is boolean
+  This hook provides `isVersionAtLeast` function result which is always boolean
 - [useTwa](./docs/README.md#usetwa) -
-  This hook provides boolean values indicates was TWA script loaded or not
+  This hook provides boolean values indicating whether the Telegram Web App is ready for use (loaded) or not (still loading).
 - [useWebApp](./docs/README.md#usewebapp) -
   This hook just provides native `WebApp` object
 

@@ -31,13 +31,6 @@ export const TwaLoader: FC<IProps> = ({
 		minVersion ? String(minVersion) : undefined,
 	);
 
-	console.log('TwaLoader state:', {
-		isCorrectVersion,
-		isLoading,
-		isLoaded,
-		minVersion,
-	});
-
 	if (isLoading) {
 		return loading;
 	}
