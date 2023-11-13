@@ -807,12 +807,22 @@ Renders its props depends on was TWA loaded or not
 ```tsx
 import { TwaLoader } from '@altiore/twa';
 
-<TwaLoader
-	loading={<p>...loading</p>}
-	isTWApp={<p>I am a Telegram App!</p>}
-	noTWApp={<p>I am non Telegram App (simple web app)</p>}
-/>;
+return (
+	<TwaLoader
+		isTWApp={<p>Telegram App!</p>}
+		loading={<p>...loading</p>}
+		noTWApp={<p>Regular web application</p>}
+		oldTWApp={<p>Telegram App (OLD non supportedversion)</p>}
+		versionAtLeast={'6.9'}
+	/>
+);
 ```
+
+#### Parameters
+
+| Name    | Type                                             |
+| :------ | :----------------------------------------------- |
+| `props` | [`TwaLoaderProps`](interfaces/TwaLoaderProps.md) |
 
 #### Returns
 

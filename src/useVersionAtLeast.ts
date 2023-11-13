@@ -15,8 +15,13 @@ export const useVersionAtLeast = (
 ): boolean => {
 	const WebApp = useWebApp();
 
+	const isVersionAtLeast = useMemo(() => WebApp?.isVersionAtLeast, [WebApp]);
+
 	return useMemo<boolean>(
-		() => (version ? Boolean(WebApp?.isVersionAtLeast?.(version)) : false),
-		[WebApp, version],
+		() =>
+			version && isVersionAtLeast
+				? Boolean(isVersionAtLeast?.(String(version)))
+				: false,
+		[isVersionAtLeast, version],
 	);
 };

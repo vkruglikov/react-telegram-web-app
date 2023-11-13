@@ -1,6 +1,6 @@
 {
   "name": "@altiore/twa",
-  "version": "2.4.16",
+  "version": "2.4.19",
   "description": "React components for Telegram WebApp",
   "source": "./src/index.ts",
   "type": "module",
