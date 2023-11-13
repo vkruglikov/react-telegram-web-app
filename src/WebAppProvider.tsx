@@ -100,6 +100,7 @@ const WebAppProvider = ({
 				setIsLoading(false);
 			});
 		} catch (err) {
+			console.error(err);
 			setIsLoaded(false);
 			setIsLoading(false);
 		}

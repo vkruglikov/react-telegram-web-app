@@ -1,18 +1,21 @@
-import useWebApp from './useWebApp';
-import React, { FC, useContext, useEffect } from 'react';
+import React, { FC, useEffect } from 'react';
 
-import { systemContext } from './core';
+import { useTwa } from './useTwa';
+import { useVersionAtLeast } from './useVersionAtLeast';
+import useWebApp from './useWebApp';
 
 interface IProps {
 	loading?: React.JSX.Element;
 	isTWApp?: React.JSX.Element;
 	noTWApp?: React.JSX.Element;
+	minVersion?: string | number;
 }
 
 export const TwaLoader: FC<IProps> = ({
 	loading = null,
 	isTWApp = null,
 	noTWApp = null,
+	minVersion = null,
 }): React.JSX.Element | null => {
 	useEffect(() => {
 		if (!loading && !isTWApp && !noTWApp) {
@@ -23,21 +26,18 @@ export const TwaLoader: FC<IProps> = ({
 		}
 	}, [loading, isTWApp, noTWApp]);
 
-	const system = useContext(systemContext);
+	const { isLoaded, isLoading } = useTwa();
+
+	const isCorrectVersion = useVersionAtLeast(minVersion ?? '6.2');
 
 	const webApp = useWebApp();
 
-	if (system.isTwaLoading) {
+	if (isLoading) {
 		return loading;
 	}
 
-	// Вызов инициализации SDK еще не происходил. Нам пока нечего показать.
-	if (system.isTwaLoaded) {
-		if (webApp) {
-			return isTWApp;
-		}
-
-		return loading;
+	if (isLoaded && webApp && (!minVersion || isCorrectVersion)) {
+		return isTWApp;
 	}
 
 	return noTWApp;

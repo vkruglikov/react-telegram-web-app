@@ -1,5 +1,5 @@
 import { systemContext } from './core';
-import { useContext, useMemo } from 'react';
+import { useContext } from 'react';
 
 /**
  * A hook that shows version minimum check
@@ -11,10 +11,7 @@ export type VersionAtLeastFunction = (version: string | number) => boolean;
  * @group Hooks
  */
 export const useTwa = (): { isLoading: boolean; isLoaded: boolean } => {
-	const system = useContext(systemContext);
+	const { isTwaLoaded, isTwaLoading } = useContext(systemContext);
 
-	const isLoading = useMemo(() => system.isTwaLoading, [system]);
-	const isLoaded = useMemo(() => system.isTwaLoaded, [system]);
-
-	return { isLoading, isLoaded };
+	return { isLoading: isTwaLoading, isLoaded: isTwaLoaded };
 };
