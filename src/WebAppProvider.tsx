@@ -71,7 +71,7 @@ const WebAppProvider = ({
 		return () => window.removeEventListener('beforeunload', forceHideButtons);
 	}, [options?.smoothButtonsTransition, webApp]);
 
-	const [isLoading, setIsLoading] = useState(true);
+	const [isLoading, setIsLoading] = useState(false);
 	const [isLoaded, setIsLoaded] = useState(false);
 
 	const subscribeScriptLoading = useCallback(
@@ -94,11 +94,17 @@ const WebAppProvider = ({
 				};
 
 				scriptEle.addEventListener('load', successListener);
-
 				scriptEle.addEventListener('error', errorListener);
+
+				return () => {
+					scriptEle.removeEventListener('load', successListener);
+					scriptEle.removeEventListener('error', errorListener);
+				};
 			} catch (err) {
 				console.error(err);
 			}
+
+			return () => {};
 		},
 		[setIsLoaded, setIsLoading, setWebApp],
 	);
@@ -110,7 +116,7 @@ const WebAppProvider = ({
 			}
 			setIsLoading(true);
 			const existingScripts: NodeListOf<HTMLScriptElement> =
-				window.document.querySelectorAll(`script[src~='${SCRIPT}']`);
+				window.document.querySelectorAll(`script[src='${SCRIPT}']`);
 			if (existingScripts[0]) {
 				return subscribeScriptLoading(existingScripts[0]);
 			}
@@ -129,6 +135,8 @@ const WebAppProvider = ({
 			setIsLoaded(false);
 			setIsLoading(false);
 		}
+
+		return () => {};
 	}, [subscribeScriptLoading, isLoading, isLoaded]);
 
 	const systemValue = useMemo(createSystemContextValue, []);
