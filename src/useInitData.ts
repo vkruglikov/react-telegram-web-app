@@ -56,10 +56,10 @@ export type InitDataUnsafe = {
  * ```
  * @group Hooks
  */
-const useInitData = (): { initUnsafe: InitDataUnsafe; init: InitData } => {
+const useInitData = (): { initUnsafe?: InitDataUnsafe; init?: InitData } => {
 	const WebApp = useWebApp();
 
-	return { initUnsafe: WebApp!.initDataUnsafe, init: WebApp!.initData };
+	return { initUnsafe: WebApp?.initDataUnsafe, init: WebApp?.initData };
 };
 
 export default useInitData;
