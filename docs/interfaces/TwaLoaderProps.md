@@ -2,7 +2,7 @@
 
 # Interface: TwaLoaderProps
 
-The props type of [`TwaLoader`](../README.md#twaloader).
+The props type of [TwaLoaderProps](TwaLoaderProps.md).
 
 ## Table of contents
 
@@ -18,50 +18,54 @@ The props type of [`TwaLoader`](../README.md#twaloader).
 
 ### isTWApp
 
-• `Optional` **isTWApp**: `React.JSX.Element`
-
-#### Type declaration
-
-▸ React.JSX.Element
+• `Optional` **isTWApp**: `null` \| `Element`
 
 React Element will be shown in case if Telegram Web Application was successfully loaded and ready to use
 
+**`Default Value`**
+
+Set to `null` by default
+
+---
+
 ### loading
 
-• `Optional` **loading**: `React.JSX.Element`
-
-#### Type declaration
-
-▸ React.JSX.Element
+• `Optional` **loading**: `null` \| `Element`
 
 React Element will be shown wile Telegram Web Application loading (preparing for usage)
 
+**`Default Value`**
+
+Set to `null` by default
+
+---
+
 ### noTWApp
 
-• `Optional` **noTWApp**: `React.JSX.Element`
-
-#### Type declaration
-
-▸ React.JSX.Element
+• `Optional` **noTWApp**: `null` \| `Element`
 
 React Element will be shown in case if application was loaded outside Telegram
 
+**`Default Value`**
+
+Set to `null` by default
+
+---
+
 ### oldTWApp
 
-• `Optional` **oldTWApp**: `React.JSX.Element`
-
-#### Type declaration
-
-▸ React.JSX.Element
+• `Optional` **oldTWApp**: `null` \| `Element`
 
 React Element will be shown in case if Telegram Web Application non-supported version (less, then versionAtLeast provided)
 
+**`Default Value`**
+
+Set to `null` by default
+
+---
+
 ### versionAtLeast
 
-• `Optional` **versionAtLeast**: `string` | `number`
+• `Optional` **versionAtLeast**: `string` \| `number`
 
-#### Type declaration
-
-▸ `string` | `number`
-
-Minimum supported version by current application. Using for [isTWApp](TwaLoaderProps.md#istwapp)|[oldTWApp](TwaLoaderProps.md#oldtwapp) components
+Minimum supported version by current application. Using for [isTWApp](TwaLoaderProps.md#istwapp)|[noTWApp](TwaLoaderProps.md#notwapp) components

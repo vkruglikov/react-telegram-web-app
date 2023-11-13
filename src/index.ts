@@ -57,4 +57,4 @@ export type { Options } from './core';
 export { default as useWebApp } from './useWebApp';
 export { useVersionAtLeast } from './useVersionAtLeast';
 export { useTwa } from './useTwa';
-export { TwaLoader } from './TwaLoader';
+export { TwaLoader, TwaLoaderProps } from './TwaLoader';

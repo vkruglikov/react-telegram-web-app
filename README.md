@@ -2,9 +2,9 @@
 
 [![npm](https://img.shields.io/npm/v/@altiore/twa.svg)](https://www.npmjs.com/package/@altiore/twa)
 [![types](https://badgen.net/npm/types/@altiore/twa)](https://npmjs.org/package/@altiore/twa)
-[![GitHub Actions CI](https://github.com/vkruglikov/react-telegram-web-app/actions/workflows/release.yml/badge.svg)](https://github.com/vkruglikov/react-telegram-web-app/actions/workflows/release.yml)
-[![License](https://badgen.net/github/license/vkruglikov/react-telegram-web-app)](https://github.com/vkruglikov/react-telegram-web-app/blob/master/LICENSE)
-![Tests](https://github.com/vkruglikov/react-telegram-web-app/actions/workflows/tests.yml/badge.svg)
+[![GitHub Actions CI](https://github.com/altiore/twa/actions/workflows/release.yml/badge.svg)](https://github.com/altiore/twa/actions/workflows/release.yml)
+[![License](https://badgen.net/github/license/altiore/twa)](https://github.com/altiore/twa/blob/master/LICENSE)
+![Tests](https://github.com/altiore/twa/actions/workflows/tests.yml/badge.svg)
 
 ## 🔴 Live Demo & Code Examples
 
@@ -14,7 +14,7 @@ Also, you can look demo [source code](./demo/src).
 
 ## 🔧 Installation & Get started
 
-1️⃣ &nbsp;**Install** by running: `npm i @altiore/twa --save`. Today we support React^18.
+1️⃣ &nbsp;**Install** by running: `npm i @altiore/twa -SE`. We support React^18.
 
 2️⃣ &nbsp;**Try it out** by writing code.
 
@@ -107,4 +107,4 @@ Here's what's coming up:
 
 Create discussions, ask questions, share experiences and discuss ideas with everyone together
 
-https://github.com/vkruglikov/react-telegram-web-app/discussions
+https://github.com/altiore/twa/discussions

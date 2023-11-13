@@ -12,6 +12,7 @@
 - [ShowPopupButton](interfaces/ShowPopupButton.md)
 - [ShowPopupParams](interfaces/ShowPopupParams.md)
 - [ThemeParams](interfaces/ThemeParams.md)
+- [TwaLoaderProps](interfaces/TwaLoaderProps.md)
 
 ### Type Aliases
 
@@ -49,15 +50,14 @@
 - [useShowPopup](README.md#useshowpopup)
 - [useSwitchInlineQuery](README.md#useswitchinlinequery)
 - [useThemeParams](README.md#usethemeparams)
-- [useTwa](README.md#useTwa)
-- [useVersionAtLeast](README.md#useVersionAtLeast)
-- [useWebApp](README.md#usewebapp)
+- [useTwa](README.md#usetwa)
+- [useVersionAtLeast](README.md#useversionatleast)
 
 ### React Components
 
 - [BackButton](README.md#backbutton)
 - [MainButton](README.md#mainbutton)
-- [TwaLoader](README.md#TwaLoader)
+- [TwaLoader](README.md#twaloader)
 - [WebAppProvider](README.md#webappprovider)
 
 ## Type Aliases
@@ -161,7 +161,8 @@ This function provides `getKeys` method from [telegram!CloudStorage](https://cor
 
 ▸ (`style`): `void`
 
-A method tells that an impact occurred. The Telegram app may play the appropriate haptics based on style value passed. Style can be one of these values:
+A method tells that an impact occurred. The Telegram app may play the appropriate haptics based
+on style value passed. Style can be one of these values:
 
 - light, indicates a collision between small or lightweight UI objects,
 - medium, indicates a collision between medium-sized or medium-weight UI objects,
@@ -219,7 +220,9 @@ A method tells that an impact occurred. The Telegram app may play the appropriat
 
 ▸ (`type`): `void`
 
-A method tells that a task or action has succeeded, failed, or produced a warning. The Telegram app may play the appropriate haptics based on type value passed. Type can be one of these values:
+A method tells that a task or action has succeeded, failed, or produced a warning. The Telegram
+app may play the appropriate haptics based on type value passed. Type can be one of these
+values:
 
 - error, indicates that a task or action has failed,
 - success, indicates that a task or action has completed successfully,
@@ -349,7 +352,8 @@ Returning true inside this callback function causes the popup to be closed.
 
 ▸ (): `void`
 
-A method tells that the user has changed a selection. The Telegram app may play the appropriate haptics.
+A method tells that the user has changed a selection. The Telegram app may play the appropriate
+haptics.
 [telegram!HapticFeedback](https://core.telegram.org/bots/webapps#hapticfeedback)
 
 ##### Returns
@@ -553,17 +557,18 @@ readonly [`undefined` \| `boolean`, `DispatchWithoutAction`]
 
 ### useHapticFeedback
 
-▸ **useHapticFeedback**(): readonly [[`ImpactOccurredFunction`](README.md#impactoccurredfunction), [`NotificationOccurredFunction`](README.md#notificationoccurredfunction), [`SelectionChangedFunction`](README.md#selectionchangedfunction)]
+▸ **useHapticFeedback**(): `Object`
 
-This hook that provided [ImpactOccurredFunction](README.md#impactoccurredfunction), [NotificationOccurredFunction](README.md#notificationoccurredfunction) and [SelectionChangedFunction](README.md#selectionchangedfunction) functions that controls haptic feedback.
-You have to look original telegram description [telegram!HapticFeedback](https://core.telegram.org/bots/webapps#hapticfeedback), because it Hook implementing his.
+This hook that provided [ImpactOccurredFunction](README.md#impactoccurredfunction), [NotificationOccurredFunction](README.md#notificationoccurredfunction) and
+[SelectionChangedFunction](README.md#selectionchangedfunction) functions that controls haptic feedback. You have to look
+original telegram description [telegram!HapticFeedback](https://core.telegram.org/bots/webapps#hapticfeedback), because it Hook implementing his.
 
 ```tsx
 import { useHapticFeedback } from '@altiore/twa';
 
-const [impactOccurred, notificationOccurred, selectionChanged] =
+const { impactOccurred, notificationOccurred, selectionChanged } =
 	useHapticFeedback();
-// const [,notificationOccurred] = useHapticFeedback();
+// const {notificationOccurred} = useHapticFeedback();
 
 impactOccurred('heavy');
 notificationOccurred('success');
@@ -571,13 +576,19 @@ notificationOccurred('success');
 
 #### Returns
 
-readonly [[`ImpactOccurredFunction`](README.md#impactoccurredfunction), [`NotificationOccurredFunction`](README.md#notificationoccurredfunction), [`SelectionChangedFunction`](README.md#selectionchangedfunction)]
+`Object`
+
+| Name                   | Type                                                                     |
+| :--------------------- | :----------------------------------------------------------------------- |
+| `impactOccurred`       | [`ImpactOccurredFunction`](README.md#impactoccurredfunction)             |
+| `notificationOccurred` | [`NotificationOccurredFunction`](README.md#notificationoccurredfunction) |
+| `selectionChanged`     | [`SelectionChangedFunction`](README.md#selectionchangedfunction)         |
 
 ---
 
 ### useInitData
 
-▸ **useInitData**(): readonly [[`InitDataUnsafe`](README.md#initdataunsafe), `string`]
+▸ **useInitData**(): `Object`
 
 This hook provides `initDataUnsafe` and `initData`
 You have to look original description in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-mini-apps), because hook just return this.
@@ -585,51 +596,17 @@ You have to look original description in [telegram!WebApp](https://core.telegram
 ```tsx
 import { useInitData } from '@altiore/twa';
 
-const [initDataUnsafe] = useInitData();
-const [initDataUnsafe, initData] = useInitData();
+const { init, initUnsafe } = useInitData();
 ```
 
 #### Returns
 
-readonly [[`InitDataUnsafe`](README.md#initdataunsafe), `string`]
+`Object`
 
----
-
-### useVersionAtLeast
-
-▸ **useVersionAtLeast**(version?: string | number): readonly boolean
-
-This hook provides `isVersionAtLeast` function result
-You have to look original description in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-mini-apps), because hook just return this.
-
-```tsx
-import { useVersionAtLeast } from '@altiore/twa';
-
-const isCorrectVersion = useVersionAtLeast('6.9');
-if (isCorrectVersion) {
-	return <p>Version is at least 6.9</p>;
-}
-```
-
----
-
-### useTwa
-
-▸ **useTwa**(): readonly {isLoaded: boolean; isLoading: boolean}
-
-This hook provides information was TWA loaded or not
-
-```tsx
-import { useTwa } from '@altiore/twa';
-
-const { isLoaded, isLoading } = useTwa();
-if (isLoading) {
-	return <p>TWA script still loading</p>;
-}
-if (isLoaded) {
-	return <p>TWA Application ready to use</p>;
-}
-```
+| Name          | Type                                         |
+| :------------ | :------------------------------------------- |
+| `init?`       | `string`                                     |
+| `initUnsafe?` | [`InitDataUnsafe`](README.md#initdataunsafe) |
 
 ---
 
@@ -727,23 +704,38 @@ readonly [[`ColorScheme`](README.md#colorscheme), [`ThemeParams`](interfaces/The
 
 ---
 
-### useWebApp
+### useTwa
 
-▸ **useWebApp**(): `any`
+▸ **useTwa**(): `Object`
 
-This hook just provides native [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-mini-apps) object
-
-```tsx
-import { useWebApp } from '@altiore/twa';
-
-const WebApp = useWebApp();
-
-console.log(WebApp.version);
-```
+The hook provided isVersionAtLeast function of the type VersionAtLeastFunction
 
 #### Returns
 
-`any`
+`Object`
+
+| Name        | Type      |
+| :---------- | :-------- |
+| `isLoaded`  | `boolean` |
+| `isLoading` | `boolean` |
+
+---
+
+### useVersionAtLeast
+
+▸ **useVersionAtLeast**(`version?`): `boolean`
+
+The hook provided isVersionAtLeast function of the type VersionAtLeastFunction
+
+#### Parameters
+
+| Name       | Type                           |
+| :--------- | :----------------------------- |
+| `version?` | `null` \| `string` \| `number` |
+
+#### Returns
+
+`boolean`
 
 ## React Components
 
@@ -800,22 +792,20 @@ import { MainButton } from '@altiore/twa';
 
 ### TwaLoader
 
-▸ **TwaLoader**(`props`): `null`
+▸ **TwaLoader**(`props`): `null` \| `Element`
 
-Renders its props depends on was TWA loaded or not
+Renders a [TwaLoader](README.md#twaloader) component in React app as [react!Component](https://reactjs.org/docs/react-component.html)
 
 ```tsx
 import { TwaLoader } from '@altiore/twa';
 
-return (
-	<TwaLoader
-		isTWApp={<p>Telegram App!</p>}
-		loading={<p>...loading</p>}
-		noTWApp={<p>Regular web application</p>}
-		oldTWApp={<p>Telegram App (OLD non supportedversion)</p>}
-		versionAtLeast={'6.9'}
-	/>
-);
+<TwaLoader
+	isTWApp={<p>Telegram App!</p>}
+	loading={<p>...loading</p>}
+	noTWApp={<p>Regular web application</p>}
+	oldTWApp={<p>Telegram App (OLD non-supported version)</p>}
+	versionAtLeast={'6.9'}
+/>;
 ```
 
 #### Parameters
@@ -826,7 +816,7 @@ return (
 
 #### Returns
 
-one of provided prop
+`null` \| `Element`
 
 ---
 
