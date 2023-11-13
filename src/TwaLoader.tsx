@@ -18,7 +18,7 @@ export const TwaLoader: FC<IProps> = ({
 	loading = null,
 	isTWApp = null,
 	noTWApp = null,
-	minVersion = null,
+	minVersion,
 	showNotification = false,
 }): React.JSX.Element | null => {
 	useEffect(() => {
@@ -32,7 +32,7 @@ export const TwaLoader: FC<IProps> = ({
 
 	const { isLoaded, isLoading } = useTwa();
 
-	const isCorrectVersion = useVersionAtLeast(minVersion ?? '6.2');
+	const isCorrectVersion = useVersionAtLeast(minVersion);
 
 	const isVersionAtLeast = useIsVersionAtLeast();
 
