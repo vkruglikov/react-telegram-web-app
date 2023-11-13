@@ -1,10 +1,10 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC, useEffect, useMemo } from 'react';
 
 import { useTwa } from './useTwa';
 import { useVersionAtLeast } from './useVersionAtLeast';
-import useWebApp from './useWebApp';
 import { useIsVersionAtLeast } from './useIsVersionAtLeast';
 import useShowPopup from './useShowPopup';
+import useInitData from './useInitData';
 
 interface IProps {
 	loading?: React.JSX.Element;
@@ -38,10 +38,18 @@ export const TwaLoader: FC<IProps> = ({
 
 	const showPopup = useShowPopup();
 
+	const { initUnsafe } = useInitData();
+
+	const isUserExists = useMemo(
+		() => Boolean(initUnsafe?.user),
+		[initUnsafe?.user],
+	);
+
 	useEffect(() => {
 		if (
 			showNotification &&
 			isLoaded &&
+			isUserExists &&
 			minVersion &&
 			isVersionAtLeast('6.2') &&
 			!isCorrectVersion
@@ -53,21 +61,20 @@ export const TwaLoader: FC<IProps> = ({
 				.catch(console.error);
 		}
 	}, [
-		isVersionAtLeast,
-		showPopup,
-		isLoaded,
 		isCorrectVersion,
-		showNotification,
+		isLoaded,
+		isUserExists,
+		isVersionAtLeast,
 		minVersion,
+		showNotification,
+		showPopup,
 	]);
-
-	const webApp = useWebApp();
 
 	if (isLoading) {
 		return loading;
 	}
 
-	if (isLoaded && webApp && (!minVersion || isCorrectVersion)) {
+	if (isLoaded && initUnsafe?.user && (!minVersion || isCorrectVersion)) {
 		return isTWApp;
 	}
 
