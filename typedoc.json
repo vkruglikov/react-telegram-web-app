@@ -1,27 +1,27 @@
 {
-  "entryPoints": ["src/index.ts"],
-  "githubPages": true,
-  "plugin": ["typedoc-plugin-markdown"],
-  "out": "docs",
-  "readme": "none",
-  "disableSources": true,
-  "externalSymbolLinkMappings": {
-    "telegram": {
-      "CloudStorage": "https://core.telegram.org/bots/webapps#cloudstorage",
-      "MainButton": "https://core.telegram.org/bots/webapps#mainbutton",
-      "ScanQrPopupParams": "https://core.telegram.org/bots/webapps#scanqrpopupparams",
-      "BackButton": "https://core.telegram.org/bots/webapps#backbutton",
-      "PopupParams": "https://core.telegram.org/bots/webapps#popupparams",
-      "PopupButton": "https://core.telegram.org/bots/webapps#popupbutton",
-      "HapticFeedback": "https://core.telegram.org/bots/webapps#hapticfeedback",
-      "ThemeParams": "https://core.telegram.org/bots/webapps#themeparams",
-      "WebApp": "https://core.telegram.org/bots/webapps#initializing-mini-apps",
-      "WebAppInitData": "https://core.telegram.org/bots/webapps#webappinitdata",
-      "WebAppUser": "https://core.telegram.org/bots/webapps#webappuser",
-      "WebAppChat": "https://core.telegram.org/bots/webapps#webappchat"
-    },
-    "react": {
-      "Component": "https://reactjs.org/docs/react-component.html"
-    }
-  }
+	"entryPoints": ["src/index.ts"],
+	"githubPages": true,
+	"plugin": ["typedoc-plugin-markdown"],
+	"out": "docs",
+	"readme": "none",
+	"disableSources": true,
+	"externalSymbolLinkMappings": {
+		"telegram": {
+			"CloudStorage": "https://core.telegram.org/bots/webapps#cloudstorage",
+			"MainButton": "https://core.telegram.org/bots/webapps#mainbutton",
+			"ScanQrPopupParams": "https://core.telegram.org/bots/webapps#scanqrpopupparams",
+			"BackButton": "https://core.telegram.org/bots/webapps#backbutton",
+			"PopupParams": "https://core.telegram.org/bots/webapps#popupparams",
+			"PopupButton": "https://core.telegram.org/bots/webapps#popupbutton",
+			"HapticFeedback": "https://core.telegram.org/bots/webapps#hapticfeedback",
+			"ThemeParams": "https://core.telegram.org/bots/webapps#themeparams",
+			"WebApp": "https://core.telegram.org/bots/webapps#initializing-mini-apps",
+			"WebAppInitData": "https://core.telegram.org/bots/webapps#webappinitdata",
+			"WebAppUser": "https://core.telegram.org/bots/webapps#webappuser",
+			"WebAppChat": "https://core.telegram.org/bots/webapps#webappchat"
+		},
+		"react": {
+			"Component": "https://reactjs.org/docs/react-component.html"
+		}
+	}
 }

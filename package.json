@@ -1,6 +1,6 @@
 {
-  "name": "@vkruglikov/react-telegram-web-app",
-  "version": "2.1.5",
+  "name": "@altiore/twa",
+  "version": "0.0.1",
   "description": "React components for Telegram WebApp",
   "source": "./src/index.ts",
   "type": "module",
@@ -36,39 +36,50 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vkruglikov/react-telegram-web-app.git"
+    "url": "git+https://github.com/altiore/twa.git"
   },
   "publishConfig": {
     "access": "public"
   },
-  "author": "Valentin Kruglikov dev.n@bk.ru",
+  "contributors": [
+    {
+      "name": "Valentin Kruglikov",
+      "email": "dev.n@bk.ru",
+      "url": "https://github.com/vkruglikov"
+    },
+    {
+      "name": "Valentin Kruglikov",
+      "email": "dev.n@bk.ru",
+      "url": "https://github.com/vkruglikov"
+    }
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vkruglikov/react-telegram-web-app/issues"
+    "url": "https://github.com/altiore/twa/issues"
   },
-  "homepage": "https://github.com/vkruglikov/react-telegram-web-app#readme",
+  "homepage": "https://github.com/altiore/twa#readme",
   "devDependencies": {
-    "@changesets/cli": "^2.25.2",
-    "@testing-library/react": "^14.0.0",
-    "@types/jest": "^29.5.2",
-    "@types/react": "^18",
-    "@types/react-test-renderer": "^18.0.0",
-    "@typescript-eslint/eslint-plugin": "^6.1.0",
-    "@typescript-eslint/parser": "^6.1.0",
-    "eslint": "^8.45.0",
-    "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "husky": "^8.0.2",
-    "jest": "^29.6.1",
-    "jest-environment-jsdom": "^29.6.1",
-    "lint-staged": "^13.0.3",
-    "microbundle": "^0.15.1",
+    "@changesets/cli": "2.25.2",
+    "@testing-library/react": "14.0.0",
+    "@types/jest": "29.5.2",
+    "@types/react": "18.2.37",
+    "@types/react-test-renderer": "18.0.0",
+    "@typescript-eslint/eslint-plugin": "6.1.0",
+    "@typescript-eslint/parser": "6.1.0",
+    "eslint": "8.45.0",
+    "eslint-plugin-react": "7.32.2",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "husky": "8.0.2",
+    "jest": "29.6.1",
+    "jest-environment-jsdom": "29.6.1",
+    "lint-staged": "13.0.3",
+    "microbundle": "0.15.1",
     "prettier": "2.8.0",
-    "react-test-renderer": "^18.2.0",
-    "ts-jest": "^29.1.1",
-    "typedoc": "^0.24.8",
-    "typedoc-plugin-markdown": "^3.15.3",
-    "typescript": "^5.1.6"
+    "react-test-renderer": "18.2.0",
+    "ts-jest": "29.1.1",
+    "typedoc": "0.24.8",
+    "typedoc-plugin-markdown": "3.15.3",
+    "typescript": "5.1.6"
   },
   "peerDependencies": {
     "react": "^18",
@@ -76,7 +87,8 @@
   },
   "lint-staged": {
     "*.(tsx|ts)": [
-      "eslint",
+      "bash -c tsc --noEmit",
+      "eslint --fix --max-warnings=0",
       "prettier --write"
     ],
     "*.md": [

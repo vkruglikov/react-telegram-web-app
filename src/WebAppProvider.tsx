@@ -1,21 +1,21 @@
 import React, {
-  PropsWithChildren,
-  ReactElement,
-  useEffect,
-  useMemo,
+	PropsWithChildren,
+	ReactElement,
+	useEffect,
+	useMemo,
 } from 'react';
 import {
-  webAppContext,
-  optionsContext,
-  systemContext,
-  Options,
-  DEFAULT_OPTIONS,
-  DEFAULT_WEBAPP,
-  createSystemContextValue,
+	webAppContext,
+	optionsContext,
+	systemContext,
+	Options,
+	DEFAULT_OPTIONS,
+	DEFAULT_WEBAPP,
+	createSystemContextValue,
 } from './core';
 
 export type WebAppProviderProps = PropsWithChildren<{
-  options?: Options;
+	options?: Options;
 }>;
 
 /**
@@ -42,37 +42,37 @@ export type WebAppProviderProps = PropsWithChildren<{
  * @group React Components
  */
 const WebAppProvider = ({
-  children,
-  options,
+	children,
+	options,
 }: WebAppProviderProps): ReactElement => {
-  const mergedOptions = useMemo(
-    () => ({
-      ...DEFAULT_OPTIONS,
-      ...options,
-    }),
-    [options],
-  );
-  const systemValue = useMemo(createSystemContextValue, []);
+	const mergedOptions = useMemo(
+		() => ({
+			...DEFAULT_OPTIONS,
+			...options,
+		}),
+		[options],
+	);
+	const systemValue = useMemo(createSystemContextValue, []);
 
-  useEffect(() => {
-    if (!options?.smoothButtonsTransition) return;
-    const forceHideButtons = () => {
-      DEFAULT_WEBAPP?.MainButton?.hide();
-      DEFAULT_WEBAPP?.BackButton?.hide();
-    };
+	useEffect(() => {
+		if (!options?.smoothButtonsTransition) return;
+		const forceHideButtons = () => {
+			DEFAULT_WEBAPP?.MainButton?.hide();
+			DEFAULT_WEBAPP?.BackButton?.hide();
+		};
 
-    window.addEventListener('beforeunload', forceHideButtons);
-    return () => window.removeEventListener('beforeunload', forceHideButtons);
-  }, [options?.smoothButtonsTransition]);
+		window.addEventListener('beforeunload', forceHideButtons);
+		return () => window.removeEventListener('beforeunload', forceHideButtons);
+	}, [options?.smoothButtonsTransition]);
 
-  return (
-    <systemContext.Provider value={systemValue}>
-      <webAppContext.Provider value={DEFAULT_WEBAPP}>
-        <optionsContext.Provider value={mergedOptions}>
-          {children}
-        </optionsContext.Provider>
-      </webAppContext.Provider>
-    </systemContext.Provider>
-  );
+	return (
+		<systemContext.Provider value={systemValue}>
+			<webAppContext.Provider value={DEFAULT_WEBAPP}>
+				<optionsContext.Provider value={mergedOptions}>
+					{children}
+				</optionsContext.Provider>
+			</webAppContext.Provider>
+		</systemContext.Provider>
+	);
 };
 export default WebAppProvider;

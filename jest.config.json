@@ -1,7 +1,7 @@
 {
-  "transform": {
-    "\\.[jt]sx?$": "ts-jest"
-  },
-  "testEnvironment": "jsdom",
-  "setupFilesAfterEnv": ["./tests/setupTests.ts"]
+	"transform": {
+		"\\.[jt]sx?$": "ts-jest"
+	},
+	"testEnvironment": "jsdom",
+	"setupFilesAfterEnv": ["./tests/setupTests.ts"]
 }

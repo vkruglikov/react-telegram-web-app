@@ -1,9 +1,9 @@
 jest.mock(
-  '../src/core/useWebApp',
-  () => require('./core/__mocks__/useWebApp').default,
+	'../src/core/useWebApp',
+	() => require('./core/__mocks__/useWebApp').default,
 );
 
 global.beforeEach(() => {
-  jest.clearAllMocks();
-  jest.restoreAllMocks();
+	jest.clearAllMocks();
+	jest.restoreAllMocks();
 });

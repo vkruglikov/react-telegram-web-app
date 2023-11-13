@@ -6,9 +6,7 @@ import { webAppContext } from './context';
  * @ignore
  */
 const useWebApp = () => {
-  const context = useContext(webAppContext);
-
-  return context;
+	return useContext(webAppContext);
 };
 
 export default useWebApp;

@@ -559,7 +559,7 @@ You have to look original telegram description [telegram!HapticFeedback](https:/
 import { useHapticFeedback } from '@vkruglikov/react-telegram-web-app';
 
 const [impactOccurred, notificationOccurred, selectionChanged] =
-  useHapticFeedback();
+	useHapticFeedback();
 // const [,notificationOccurred] = useHapticFeedback();
 
 impactOccurred('heavy');
@@ -674,9 +674,9 @@ const [colorScheme, themeParams] = useThemeParams();
 
 console.log(colorScheme === 'dark');
 console.log({
-  text_color: themeParams.text_color,
-  button_color: themeParams.button_color,
-  bg_color: themeParams.bg_color,
+	text_color: themeParams.text_color,
+	button_color: themeParams.button_color,
+	bg_color: themeParams.bg_color,
 });
 ```
 
@@ -740,8 +740,8 @@ Renders a [telegram!MainButton](https://core.telegram.org/bots/webapps#mainbutto
 import { MainButton } from '@vkruglikov/react-telegram-web-app';
 
 <MainButton
-  text="CLICK ME"
-  onClick={() => console.log('Hello, I am button!')}
+	text="CLICK ME"
+	onClick={() => console.log('Hello, I am button!')}
 />;
 ```
 

@@ -6,8 +6,8 @@ import { useCallback } from 'react';
  * You have to look original description switchInlineQuery in {@link telegram!WebApp} for more information
  */
 export type SwitchInlineQueryFunction = (
-  query: string,
-  chatType?: ('users' | 'bots' | 'groups' | 'channels')[],
+	query: string,
+	chatType?: ('users' | 'bots' | 'groups' | 'channels')[],
 ) => void;
 
 /**
@@ -17,12 +17,12 @@ export type SwitchInlineQueryFunction = (
  * @group Hooks
  */
 const useSwitchInlineQuery = (): SwitchInlineQueryFunction => {
-  const WebApp = useWebApp();
+	const WebApp = useWebApp();
 
-  return useCallback(
-    (...args) => WebApp?.switchInlineQuery?.(...args),
-    [WebApp],
-  );
+	return useCallback(
+		(...args) => WebApp?.switchInlineQuery?.(...args),
+		[WebApp],
+	);
 };
 
 export default useSwitchInlineQuery;

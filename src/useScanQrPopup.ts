@@ -13,10 +13,10 @@ export type ScanQrPopupCallback = (text: string) => true | void;
  * You have to see original interface {@link telegram!ScanQrPopupParams}.
  */
 export interface ScanQrPopupParams {
-  /**
-   * The text to be displayed under the 'Scan QR' heading, 0-64 characters.
-   */
-  text: string;
+	/**
+	 * The text to be displayed under the 'Scan QR' heading, 0-64 characters.
+	 */
+	text: string;
 }
 
 /**
@@ -24,8 +24,8 @@ export interface ScanQrPopupParams {
  * by the params argument of the type {@link ScanQrPopupParams}.
  */
 export type ShowScanQrPopupFunction = (
-  params: ScanQrPopupParams,
-  callback?: ScanQrPopupCallback,
+	params: ScanQrPopupParams,
+	callback?: ScanQrPopupCallback,
 ) => void;
 
 /**
@@ -38,21 +38,21 @@ export type CloseScanQrPopupFunction = () => void;
  * @group Hooks
  */
 const useScanQrPopup = (): readonly [
-  ShowScanQrPopupFunction,
-  CloseScanQrPopupFunction,
+	ShowScanQrPopupFunction,
+	CloseScanQrPopupFunction,
 ] => {
-  const WebApp = useWebApp();
+	const WebApp = useWebApp();
 
-  const showScanQrPopup: ShowScanQrPopupFunction = useCallback(
-    (...args) => WebApp?.showScanQrPopup?.(...args),
-    [WebApp],
-  );
-  const closeScanQrPopup: CloseScanQrPopupFunction = useCallback(
-    () => WebApp?.closeScanQrPopup?.(),
-    [WebApp],
-  );
+	const showScanQrPopup: ShowScanQrPopupFunction = useCallback(
+		(...args) => WebApp?.showScanQrPopup?.(...args),
+		[WebApp],
+	);
+	const closeScanQrPopup: CloseScanQrPopupFunction = useCallback(
+		() => WebApp?.closeScanQrPopup?.(),
+		[WebApp],
+	);
 
-  return [showScanQrPopup, closeScanQrPopup] as const;
+	return [showScanQrPopup, closeScanQrPopup] as const;
 };
 
 export default useScanQrPopup;

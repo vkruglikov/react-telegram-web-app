@@ -1,78 +1,78 @@
 :root {
-  --tg-theme-bg-color: #fff;
-  --tg-theme-text-color: #0a0a0a;
-  --tg-theme-hint-color: #929292;
-  --tg-theme-link-color: #207ae4;
-  --tg-theme-button-color: #5bc8fb;
-  --tg-theme-button-text-color: #fffeec;
-  --tg-theme-secondary-bg-color: #f3f2f9;
+	--tg-theme-bg-color: #fff;
+	--tg-theme-text-color: #0a0a0a;
+	--tg-theme-hint-color: #929292;
+	--tg-theme-link-color: #207ae4;
+	--tg-theme-button-color: #5bc8fb;
+	--tg-theme-button-text-color: #fffeec;
+	--tg-theme-secondary-bg-color: #f3f2f9;
 
-  --default-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol';
+	--default-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+		'Segoe UI Symbol';
 }
 
 body {
-  background: var(--tg-theme-secondary-bg-color);
-  padding: 20px 20px;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	background: var(--tg-theme-secondary-bg-color);
+	padding: 20px 20px;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+		monospace;
 }
 
 .App-logo {
-  height: 40vmin;
+	height: 40vmin;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+	.App-logo {
+		animation: App-logo-spin infinite 20s linear;
+	}
 }
 
 .betaVersion {
-  padding: 10px 10px;
-  margin-bottom: 20px;
-  border: 1px solid #1777ff;
+	padding: 10px 10px;
+	margin-bottom: 20px;
+	border: 1px solid #1777ff;
 }
 
 .App-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
 }
 
 .contentWrapper {
-  background: var(--tg-theme-bg-color);
-  color: var(--tg-theme-text-color) !important;
-  border-radius: 10px;
-  margin: 5px 0;
-  padding: 20px;
-  box-sizing: border-box;
+	background: var(--tg-theme-bg-color);
+	color: var(--tg-theme-text-color) !important;
+	border-radius: 10px;
+	margin: 5px 0;
+	padding: 20px;
+	box-sizing: border-box;
 }
 
 .ant-input,
 .ant-select,
 .ant-select-item {
-  background-color: unset !important;
+	background-color: unset !important;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }

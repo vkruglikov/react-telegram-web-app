@@ -6,34 +6,34 @@ import { useWebApp } from './core';
  * This object implement original Telegram WebApp type of {@link telegram!ThemeParams}
  */
 export interface ThemeParams {
-  /**
-   * Background color in the #RRGGBB format.
-   */
-  bg_color?: string;
-  /**
-   * Main text color in the #RRGGBB format.
-   */
-  text_color?: string;
-  /**
-   * Hint text color in the #RRGGBB format.
-   */
-  hint_color?: string;
-  /**
-   * Link color in the #RRGGBB format.
-   */
-  link_color?: string;
-  /**
-   * Button color in the #RRGGBB format.
-   */
-  button_color?: string;
-  /**
-   * Button text color in the #RRGGBB format.
-   */
-  button_text_color?: string;
-  /**
-   * Secondary background color in the #RRGGBB format.
-   */
-  secondary_bg_color?: string;
+	/**
+	 * Background color in the #RRGGBB format.
+	 */
+	bg_color?: string;
+	/**
+	 * Main text color in the #RRGGBB format.
+	 */
+	text_color?: string;
+	/**
+	 * Hint text color in the #RRGGBB format.
+	 */
+	hint_color?: string;
+	/**
+	 * Link color in the #RRGGBB format.
+	 */
+	link_color?: string;
+	/**
+	 * Button color in the #RRGGBB format.
+	 */
+	button_color?: string;
+	/**
+	 * Button text color in the #RRGGBB format.
+	 */
+	button_text_color?: string;
+	/**
+	 * Secondary background color in the #RRGGBB format.
+	 */
+	secondary_bg_color?: string;
 }
 
 /**
@@ -60,26 +60,26 @@ export type ColorScheme = 'light' | 'dark' | undefined;
  * @group Hooks
  */
 const useThemeParams: () => readonly [ColorScheme, ThemeParams] = () => {
-  const WebApp = useWebApp();
-  const [colorScheme, setColor] = useState<ColorScheme>(WebApp?.colorScheme);
-  const [themeParams, setThemeParams] = useState<ThemeParams>(
-    WebApp?.themeParams || {},
-  );
+	const WebApp = useWebApp();
+	const [colorScheme, setColor] = useState<ColorScheme>(WebApp?.colorScheme);
+	const [themeParams, setThemeParams] = useState<ThemeParams>(
+		WebApp?.themeParams || {},
+	);
 
-  useEffect(() => {
-    if (!WebApp) return;
-    const eventHandler = () => {
-      setColor(WebApp.colorScheme);
-      setThemeParams(WebApp.themeParams);
-    };
+	useEffect(() => {
+		if (!WebApp) return;
+		const eventHandler = () => {
+			setColor(WebApp.colorScheme);
+			setThemeParams(WebApp.themeParams);
+		};
 
-    WebApp.onEvent('themeChanged', eventHandler);
-    return () => {
-      WebApp.offEvent('themeChanged', eventHandler);
-    };
-  }, [WebApp]);
+		WebApp.onEvent('themeChanged', eventHandler);
+		return () => {
+			WebApp.offEvent('themeChanged', eventHandler);
+		};
+	}, [WebApp]);
 
-  return [colorScheme, themeParams] as const;
+	return [colorScheme, themeParams] as const;
 };
 
 export default useThemeParams;

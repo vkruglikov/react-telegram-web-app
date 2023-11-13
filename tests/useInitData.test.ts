@@ -3,7 +3,7 @@ import useCloudStorage from '../src/useCloudStorage';
 
 // TODO Написать юниты на хук
 describe('useInitData', () => {
-  it('TODO', () => {
-    renderHook(useCloudStorage);
-  });
+	it('TODO', () => {
+		renderHook(useCloudStorage);
+	});
 });

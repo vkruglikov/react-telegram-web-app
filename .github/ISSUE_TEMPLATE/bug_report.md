@@ -4,7 +4,6 @@ about: Create a report to help us improve
 title: ''
 labels: ''
 assignees: ''
-
 ---
 
 <!--
@@ -13,8 +12,8 @@ assignees: ''
   @vkruglikov/react-telegram-web-app package to make sure your issue has not already been fixed.
 -->
 
-Package version: 
-React version: 
+Package version:
+React version:
 Telegram.WebApp version: <!--If the error occurs in the WebApp -->
 
 ## Steps To Reproduce
@@ -28,7 +27,7 @@ Telegram.WebApp version: <!--If the error occurs in the WebApp -->
   code examples may be immediately closed as not actionable.
 -->
 
-Link to code example: 
+Link to code example:
 
 <!--
   Please provide a CodeSandbox (https://codesandbox.io/s/new), a link to a
@@ -39,6 +38,5 @@ Link to code example:
 -->
 
 ## The current behavior
-
 
 ## The expected behavior

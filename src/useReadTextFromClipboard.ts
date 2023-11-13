@@ -25,15 +25,15 @@ export type ReadTextFromClipboardFunction = () => Promise<string>;
  * @group Hooks
  */
 const useReadTextFromClipboard = (): ReadTextFromClipboardFunction => {
-  const WebApp = useWebApp();
+	const WebApp = useWebApp();
 
-  return useCallback(
-    () =>
-      new Promise(resolve => {
-        WebApp?.readTextFromClipboard?.(resolve);
-      }),
-    [WebApp],
-  );
+	return useCallback(
+		() =>
+			new Promise(resolve => {
+				WebApp?.readTextFromClipboard?.(resolve);
+			}),
+		[WebApp],
+	);
 };
 
 export default useReadTextFromClipboard;

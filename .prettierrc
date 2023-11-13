@@ -1,15 +1,15 @@
 {
-  "singleQuote": true,
-  "trailingComma": "all",
-  "useTabs": false,
-  "arrowParens": "avoid",
-  "overrides": [
-    {
-      "files": "package.json",
-      "options": {
-        "useTabs": false,
-        "parser": "json-stringify"
-      }
-    }
-  ]
+	"singleQuote": true,
+	"trailingComma": "all",
+	"useTabs": true,
+	"arrowParens": "avoid",
+	"overrides": [
+		{
+			"files": "package.json",
+			"options": {
+				"useTabs": false,
+				"parser": "json-stringify"
+			}
+		}
+	]
 }
