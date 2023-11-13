@@ -96,16 +96,9 @@ const WebAppProvider = ({
 				scriptEle.addEventListener('load', successListener);
 
 				scriptEle.addEventListener('error', errorListener);
-
-				return () => {
-					scriptEle.removeEventListener('load', successListener);
-					scriptEle.removeEventListener('error', errorListener);
-				};
 			} catch (err) {
 				console.error(err);
 			}
-
-			return () => {};
 		},
 		[setIsLoaded, setIsLoading, setWebApp],
 	);
@@ -136,8 +129,6 @@ const WebAppProvider = ({
 			setIsLoaded(false);
 			setIsLoading(false);
 		}
-
-		return () => {};
 	}, [subscribeScriptLoading, isLoading, isLoaded]);
 
 	const systemValue = useMemo(createSystemContextValue, []);
