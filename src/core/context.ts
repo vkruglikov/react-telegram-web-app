@@ -36,11 +36,30 @@ export const optionsContext = createContext<Options>(DEFAULT_OPTIONS);
 type SystemContext = {
 	MainButton: MutableRefObject<null | string>;
 	BackButton: MutableRefObject<null | string>;
+	/**
+	 * When is `true`, it means, that script https://telegram.org/js/telegram-web-app.js
+	 * was successfully loaded and ready to use
+	 * @defaultValue `false`
+	 */
+	isTwaLoaded: boolean;
+	/**
+	 * When is `true`, it means, that script https://telegram.org/js/telegram-web-app.js
+	 * is loading right now
+	 * @defaultValue `true`
+	 */
+	isTwaLoading: boolean;
 };
 
 export const createSystemContextValue = () => ({
 	MainButton: { current: null },
 	BackButton: { current: null },
+	/**
+	 * When is `true`, it means, that script https://telegram.org/js/telegram-web-app.js
+	 * was successfully loaded and ready to use
+	 * @defaultValue `false`
+	 */
+	isTwaLoaded: false,
+	isTwaLoading: true,
 });
 
 export const systemContext = createContext<SystemContext>(

@@ -43,9 +43,9 @@ export type SelectionChangedFunction = () => void;
  * ```tsx
  * import { useHapticFeedback } from "@altiore/twa";
  *
- * const [impactOccurred, notificationOccurred, selectionChanged] =
+ * const {impactOccurred, notificationOccurred, selectionChanged} =
  *     useHapticFeedback();
- * // const [,notificationOccurred] = useHapticFeedback();
+ * // const {notificationOccurred} = useHapticFeedback();
  *
  * impactOccurred('heavy');
  * notificationOccurred('success');

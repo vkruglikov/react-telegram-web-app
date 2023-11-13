@@ -29,8 +29,11 @@ const useReadTextFromClipboard = (): ReadTextFromClipboardFunction => {
 
 	return useCallback(
 		() =>
-			new Promise(resolve => {
-				WebApp?.readTextFromClipboard?.(resolve);
+			new Promise((resolve, reject) => {
+				if (WebApp) {
+					return WebApp?.readTextFromClipboard?.(resolve);
+				}
+				reject('WebApp not available');
 			}),
 		[WebApp],
 	);

@@ -66,7 +66,7 @@ const MainButton = ({
 	const system = useContext(systemContext);
 	const buttonId = useId();
 	const WebApp = useWebApp();
-	const MainButton = useMemo(() => WebApp?.MainButton, [WebApp]);
+	const mainBtn = useMemo(() => WebApp?.MainButton, [WebApp]);
 	const themeParams = useMemo(() => WebApp?.themeParams, [WebApp]);
 	const disabled = useMemo(
 		() => disable_old || disable_new,
@@ -74,51 +74,51 @@ const MainButton = ({
 	);
 
 	useEffect(() => {
-		MainButton?.setParams({
+		mainBtn?.setParams({
 			color: color || themeParams?.button_color || '#fff',
 		});
-	}, [color, themeParams, MainButton]);
+	}, [color, themeParams, mainBtn]);
 
 	useEffect(() => {
-		MainButton?.setParams({
+		mainBtn?.setParams({
 			text_color: textColor || themeParams?.button_text_color || '#000',
 		});
-	}, [MainButton, themeParams, textColor]);
+	}, [mainBtn, themeParams, textColor]);
 
 	useEffect(() => {
-		MainButton?.setText(text);
-	}, [text, MainButton]);
+		mainBtn?.setText(text);
+	}, [text, mainBtn]);
 
 	useEffect(() => {
 		if (disabled) {
-			MainButton?.disable();
+			mainBtn?.disable();
 		} else if (!disabled) {
-			MainButton?.enable();
+			mainBtn?.enable();
 		}
-	}, [disabled, MainButton]);
+	}, [disabled, mainBtn]);
 
 	useEffect(() => {
 		if (progress) {
-			MainButton?.showProgress(false);
+			mainBtn?.showProgress(false);
 		} else if (!progress) {
-			MainButton?.hideProgress();
+			mainBtn?.hideProgress();
 		}
-	}, [progress, MainButton]);
+	}, [progress, mainBtn]);
 
 	useEffect(() => {
 		if (!onClick) {
 			return;
 		}
 
-		MainButton?.onClick(onClick);
+		mainBtn?.onClick(onClick);
 		return () => {
-			MainButton?.offClick(onClick);
+			mainBtn?.offClick(onClick);
 		};
-	}, [onClick, MainButton]);
+	}, [onClick, mainBtn]);
 
 	useSmoothButtonsTransition({
-		show: MainButton?.show,
-		hide: MainButton?.hide,
+		show: mainBtn?.show,
+		hide: mainBtn?.hide,
 		currentShowedIdRef: system.MainButton,
 		id: buttonId,
 	});

@@ -26,22 +26,22 @@ const BackButton = ({ onClick }: BackButtonProps): null => {
 	const system = useContext(systemContext);
 	const buttonId = useId();
 	const WebApp = useWebApp();
-	const BackButton = useMemo(() => WebApp?.BackButton, [WebApp]);
+	const backBtn = useMemo(() => WebApp?.BackButton, [WebApp]);
 
 	useEffect(() => {
-		if (!onClick || !BackButton) {
+		if (!onClick || !backBtn) {
 			return;
 		}
 
-		BackButton.onClick(onClick);
+		backBtn.onClick(onClick);
 		return () => {
-			BackButton.offClick(onClick);
+			backBtn.offClick(onClick);
 		};
-	}, [onClick, BackButton]);
+	}, [onClick, backBtn]);
 
 	useSmoothButtonsTransition({
-		show: BackButton?.show,
-		hide: BackButton?.hide,
+		show: backBtn?.show,
+		hide: backBtn?.hide,
 		currentShowedIdRef: system.BackButton,
 		id: buttonId,
 	});

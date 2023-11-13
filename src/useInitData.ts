@@ -51,16 +51,15 @@ export type InitDataUnsafe = {
  * ```tsx
  * import { useInitData } from "@altiore/twa";
  *
- * const [initDataUnsafe] = useInitData();
- * const [initDataUnsafe, initData] = useInitData();
+ * const {init, initUnsafe} = useInitData();
  *
  * ```
  * @group Hooks
  */
-const useInitData = (): readonly [InitDataUnsafe, InitData] => {
+const useInitData = (): { initUnsafe: InitDataUnsafe; init: InitData } => {
 	const WebApp = useWebApp();
 
-	return [WebApp!.initDataUnsafe, WebApp!.initData] as const;
+	return { initUnsafe: WebApp!.initDataUnsafe, init: WebApp!.initData };
 };
 
 export default useInitData;
