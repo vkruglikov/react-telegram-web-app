@@ -1,17 +1,13 @@
-import React, { FC, useEffect, useMemo } from 'react';
+import React, { FC, useEffect } from 'react';
 
 import { useTwa } from './useTwa';
 import { useVersionAtLeast } from './useVersionAtLeast';
-import { useIsVersionAtLeast } from './useIsVersionAtLeast';
-import useShowPopup from './useShowPopup';
-import useInitData from './useInitData';
 
 interface IProps {
 	loading?: React.JSX.Element;
 	isTWApp?: React.JSX.Element;
 	noTWApp?: React.JSX.Element;
 	minVersion?: string | number;
-	showNotification?: boolean;
 }
 
 export const TwaLoader: FC<IProps> = ({
@@ -19,7 +15,6 @@ export const TwaLoader: FC<IProps> = ({
 	isTWApp = null,
 	noTWApp = null,
 	minVersion,
-	showNotification = false,
 }): React.JSX.Element | null => {
 	useEffect(() => {
 		if (!loading && !isTWApp && !noTWApp) {
@@ -36,47 +31,17 @@ export const TwaLoader: FC<IProps> = ({
 		minVersion ? String(minVersion) : undefined,
 	);
 
-	const isVersionAtLeast = useIsVersionAtLeast();
-
-	const showPopup = useShowPopup();
-
-	const { initUnsafe } = useInitData();
-
-	const isUserExists = useMemo(
-		() => Boolean(initUnsafe?.user),
-		[initUnsafe?.user],
-	);
-
-	useEffect(() => {
-		if (
-			showNotification &&
-			isLoaded &&
-			isUserExists &&
-			minVersion &&
-			isVersionAtLeast('6.2') &&
-			!isCorrectVersion
-		) {
-			showPopup({
-				message: `Please update your Telegram app to the latest version to use this app. Minimum supported version is "${minVersion}"`,
-			})
-				.then()
-				.catch(console.error);
-		}
-	}, [
+	console.log('TwaLoader state:', {
 		isCorrectVersion,
+		isLoading,
 		isLoaded,
-		isUserExists,
-		isVersionAtLeast,
-		minVersion,
-		showNotification,
-		showPopup,
-	]);
+	});
 
 	if (isLoading) {
 		return loading;
 	}
 
-	if (isLoaded && initUnsafe?.user && (!minVersion || isCorrectVersion)) {
+	if (isLoaded && (!minVersion || isCorrectVersion)) {
 		return isTWApp;
 	}
 

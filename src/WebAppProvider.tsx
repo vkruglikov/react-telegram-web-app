@@ -72,30 +72,35 @@ const WebAppProvider = ({
 	}, [options?.smoothButtonsTransition, webApp]);
 
 	const [isLoading, setIsLoading] = useState(true);
-	const [isLoaded, setIsLoaded] = useState(false);
 
 	useEffect(() => {
 		loadScript(SCRIPT)
 			.then(() => {
-				setIsLoaded(true);
-				setIsLoading(false);
-				setWebApp(
+				const _webApp =
 					typeof window !== 'undefined' && window?.Telegram?.WebApp
 						? window.Telegram.WebApp
-						: null,
-				);
+						: null;
+				if (_webApp?.initDataUnsafe?.user) {
+					setWebApp(_webApp);
+				}
 			})
-			.catch(() => {
-				setIsLoaded(false);
-				setIsLoading(false);
+			.catch(console.error)
+			.finally(() => {
+				setTimeout(() => {
+					setIsLoading(false);
+				}, 0);
 			});
-	}, [setIsLoading, setIsLoaded]);
+	}, [setIsLoading]);
 
 	const systemValue = useMemo(createSystemContextValue, []);
 
 	const fullSystemValue = useMemo(
-		() => ({ ...systemValue, isTwaLoaded: isLoaded, isTwaLoading: isLoading }),
-		[systemValue, isLoading, isLoaded],
+		() => ({
+			...systemValue,
+			isTwaLoaded: Boolean(webApp?.initDataUnsafe?.user),
+			isTwaLoading: isLoading,
+		}),
+		[systemValue, isLoading, webApp?.initDataUnsafe],
 	);
 
 	return (
