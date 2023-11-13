@@ -1,4 +1,4 @@
-# @vkruglikov/react-telegram-web-app
+# @altiore/twa
 
 ## 2.1.5
 

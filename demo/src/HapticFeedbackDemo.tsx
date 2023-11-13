@@ -4,7 +4,7 @@ import {
 	ImpactOccurredFunction,
 	NotificationOccurredFunction,
 	useHapticFeedback,
-} from '@vkruglikov/react-telegram-web-app';
+} from '@altiore/twa';
 
 const HapticFeedbackDemo: FC = () => {
 	const [impactOccurred, notificationOccurred, selectionChanged] =

@@ -23,7 +23,7 @@ export type WebAppProviderProps = PropsWithChildren<{
  * Necessary to use only if you want to override `options`
  *
  * ```tsx
- * import { WebAppProvider } from "@vkruglikov/react-telegram-web-app";
+ * import { WebAppProvider } from "@altiore/twa";
  *
  * <WebAppProvider>
  *   <YourAppComponent />

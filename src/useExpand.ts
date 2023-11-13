@@ -8,7 +8,7 @@ import { useWebApp } from './core';
  * `isExpanded` can be `undefined`
  *
  * ```tsx
- * import { useExpand } from "@vkruglikov/react-telegram-web-app";
+ * import { useExpand } from "@altiore/twa";
  *
  * const [isExpanded, expand] = useExpand();
  * const handleClick = () => !isExpanded && expand();

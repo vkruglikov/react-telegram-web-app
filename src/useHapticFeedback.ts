@@ -41,7 +41,7 @@ export type SelectionChangedFunction = () => void;
  * original telegram description {@link telegram!HapticFeedback}, because it Hook implementing his.
  *
  * ```tsx
- * import { useHapticFeedback } from "@vkruglikov/react-telegram-web-app";
+ * import { useHapticFeedback } from "@altiore/twa";
  *
  * const [impactOccurred, notificationOccurred, selectionChanged] =
  *     useHapticFeedback();

@@ -49,7 +49,7 @@ export type InitDataUnsafe = {
  * You have to look original description in {@link telegram!WebApp}, because hook just return this.
  *
  * ```tsx
- * import { useInitData } from "@vkruglikov/react-telegram-web-app";
+ * import { useInitData } from "@altiore/twa";
  *
  * const [initDataUnsafe] = useInitData();
  * const [initDataUnsafe, initData] = useInitData();

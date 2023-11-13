@@ -6,7 +6,7 @@
     "@types/node": "^16.18.3",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.9",
-    "@vkruglikov/react-telegram-web-app": "^2.1.1",
+    "@altiore/twa": "^2.1.1",
     "antd": "^5.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

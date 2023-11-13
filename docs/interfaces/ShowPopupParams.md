@@ -1,4 +1,4 @@
-[@vkruglikov/react-telegram-web-app](../README.md) / ShowPopupParams
+[@altiore/twa](../README.md) / ShowPopupParams
 
 # Interface: ShowPopupParams
 

@@ -1,4 +1,4 @@
-[@vkruglikov/react-telegram-web-app](../README.md) / ScanQrPopupParams
+[@altiore/twa](../README.md) / ScanQrPopupParams
 
 # Interface: ScanQrPopupParams
 

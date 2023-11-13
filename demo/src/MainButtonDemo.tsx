@@ -3,7 +3,7 @@ import { FC, useState } from 'react';
 import {
 	MainButton,
 	MainButtonProps,
-} from '@vkruglikov/react-telegram-web-app';
+} from '@altiore/twa';
 
 const MainButtonDemo: FC<{
 	initialValues?: Partial<MainButtonProps> & { show?: boolean };

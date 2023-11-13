@@ -1,4 +1,4 @@
-[@vkruglikov/react-telegram-web-app](../README.md) / ShowPopupButton
+[@altiore/twa](../README.md) / ShowPopupButton
 
 # Interface: ShowPopupButton
 

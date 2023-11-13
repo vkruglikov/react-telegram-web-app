@@ -12,7 +12,7 @@ export type ReadTextFromClipboardFunction = () => Promise<string>;
  * You have to look original description readTextFromClipboard in {@link telegram!WebApp}, because hook just implements his.
  *
  * ```tsx
- * import { useReadTextFromClipboard } from "@vkruglikov/react-telegram-web-app";
+ * import { useReadTextFromClipboard } from "@altiore/twa";
  *
  * const readText = useReadTextFromClipboard();
  *

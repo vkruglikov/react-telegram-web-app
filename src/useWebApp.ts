@@ -4,7 +4,7 @@ import { useWebApp as _useWebApp } from './core';
  * This hook just provides native {@link telegram!WebApp} object
  *
  * ```tsx
- * import { useWebApp } from "@vkruglikov/react-telegram-web-app";
+ * import { useWebApp } from "@altiore/twa";
  *
  * const WebApp = useWebApp();
  *

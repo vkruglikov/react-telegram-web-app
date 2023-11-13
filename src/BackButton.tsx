@@ -13,7 +13,7 @@ export interface BackButtonProps {
  * Renders a {@link telegram!BackButton} component in React app as {@link react!Component}
  *
  * ```tsx
- * import { BackButton } from "@vkruglikov/react-telegram-web-app";
+ * import { BackButton } from "@altiore/twa";
  *
  * <BackButton
  *     onClick={() => console.log('Hello, I am back button!')}

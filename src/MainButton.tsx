@@ -44,7 +44,7 @@ export interface MainButtonProps {
  * Renders a {@link telegram!MainButton} component in React app as {@link react!Component}
  *
  * ```tsx
- * import { MainButton } from "@vkruglikov/react-telegram-web-app";
+ * import { MainButton } from "@altiore/twa";
  *
  * <MainButton
  *     text="CLICK ME"

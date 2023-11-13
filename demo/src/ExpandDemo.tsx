@@ -1,5 +1,5 @@
 import { Button, Form, Typography } from 'antd';
-import { useExpand } from '@vkruglikov/react-telegram-web-app';
+import { useExpand } from '@altiore/twa';
 
 const ExpandDemo = () => {
 	const [isExpanded, expand] = useExpand();

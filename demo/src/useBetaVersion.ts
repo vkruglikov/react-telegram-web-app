@@ -1,7 +1,7 @@
 import {
 	useHapticFeedback,
 	useShowPopup,
-} from '@vkruglikov/react-telegram-web-app';
+} from '@altiore/twa';
 import { useRef, useState } from 'react';
 
 const useBetaVersion = (initialState = false) => {

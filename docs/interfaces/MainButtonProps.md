@@ -1,4 +1,4 @@
-[@vkruglikov/react-telegram-web-app](../README.md) / MainButtonProps
+[@altiore/twa](../README.md) / MainButtonProps
 
 # Interface: MainButtonProps
 

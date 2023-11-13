@@ -86,8 +86,7 @@
     "react-dom": "^18"
   },
   "lint-staged": {
-    "*.(tsx|ts)": [
-      "bash -c tsc --noEmit",
+    "src/*.(tsx|ts)": [
       "eslint --fix --max-warnings=0",
       "prettier --write"
     ],

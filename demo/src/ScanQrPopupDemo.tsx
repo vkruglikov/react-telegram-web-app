@@ -2,7 +2,7 @@ import { Button, Form, Typography } from 'antd';
 import {
 	useScanQrPopup,
 	useShowPopup,
-} from '@vkruglikov/react-telegram-web-app';
+} from '@altiore/twa';
 
 const ScanQrPopupDemo = () => {
 	const [showQrPopup, closeQrPopup] = useScanQrPopup();

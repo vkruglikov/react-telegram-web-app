@@ -1,7 +1,7 @@
 # React components for Telegram MiniApp
 
-[![npm](https://img.shields.io/npm/v/@vkruglikov/react-telegram-web-app.svg)](https://www.npmjs.com/package/@vkruglikov/react-telegram-web-app)
-[![types](https://badgen.net/npm/types/@vkruglikov/react-telegram-web-app)](https://npmjs.org/package/@vkruglikov/react-telegram-web-app)
+[![npm](https://img.shields.io/npm/v/@altiore/twa.svg)](https://www.npmjs.com/package/@altiore/twa)
+[![types](https://badgen.net/npm/types/@altiore/twa)](https://npmjs.org/package/@altiore/twa)
 [![GitHub Actions CI](https://github.com/vkruglikov/react-telegram-web-app/actions/workflows/release.yml/badge.svg)](https://github.com/vkruglikov/react-telegram-web-app/actions/workflows/release.yml)
 [![License](https://badgen.net/github/license/vkruglikov/react-telegram-web-app)](https://github.com/vkruglikov/react-telegram-web-app/blob/master/LICENSE)
 ![Tests](https://github.com/vkruglikov/react-telegram-web-app/actions/workflows/tests.yml/badge.svg)
@@ -16,12 +16,12 @@ Also, you can look demo [source code](./demo/src).
 
 1️⃣ &nbsp;**Foremost**, you have to do [initializing web apps](https://core.telegram.org/bots/webapps#initializing-mini-apps) step, because package has dependency of Telegram Web App context.
 
-2️⃣ &nbsp;**Install** by running: `npm i @vkruglikov/react-telegram-web-app --save`. Today we support React^18.
+2️⃣ &nbsp;**Install** by running: `npm i @altiore/twa --save`. Today we support React^18.
 
 3️⃣ &nbsp;**Try it out** by writing code.
 
 ```jsx
-import { MainButton, useShowPopup } from '@vkruglikov/react-telegram-web-app';
+import { MainButton, useShowPopup } from '@altiore/twa';
 
 const Content = () => {
 	const showPopup = useShowPopup();
@@ -50,7 +50,7 @@ const Content = () => {
   You can try to pass an object with options
 
   ```jsx
-  import { WebAppProvider, MainButton, BackButton } from '@vkruglikov/react-telegram-web-app';
+  import { WebAppProvider, MainButton, BackButton } from '@altiore/twa';
 
   <WebAppProvider
     options={{

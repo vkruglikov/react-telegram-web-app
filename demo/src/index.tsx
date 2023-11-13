@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import {
 	useThemeParams,
 	WebAppProvider,
-} from '@vkruglikov/react-telegram-web-app';
+} from '@altiore/twa';
 import { ConfigProvider, theme } from 'antd';
 import 'antd/dist/reset.css';
 

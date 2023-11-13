@@ -9,7 +9,7 @@ assignees: ''
 <!--
   Please provide a clear and concise description of what the bug is. Include
   screenshots if needed. Please test using the latest version of the relevant
-  @vkruglikov/react-telegram-web-app package to make sure your issue has not already been fixed.
+  @altiore/twa package to make sure your issue has not already been fixed.
 -->
 
 Package version:

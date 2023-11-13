@@ -1,6 +1,6 @@
 import { Button, Form, Typography } from 'antd';
 import { FC, useState } from 'react';
-import { BackButton, useShowPopup } from '@vkruglikov/react-telegram-web-app';
+import { BackButton, useShowPopup } from '@altiore/twa';
 
 const BackButtonDemo: FC = () => {
 	const [buttonState, setButtonState] = useState<{

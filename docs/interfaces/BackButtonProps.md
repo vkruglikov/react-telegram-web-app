@@ -1,4 +1,4 @@
-[@vkruglikov/react-telegram-web-app](../README.md) / BackButtonProps
+[@altiore/twa](../README.md) / BackButtonProps
 
 # Interface: BackButtonProps
 

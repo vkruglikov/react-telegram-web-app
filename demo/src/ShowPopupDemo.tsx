@@ -3,7 +3,7 @@ import { FC, useState } from 'react';
 import {
 	ShowPopupParams,
 	useShowPopup,
-} from '@vkruglikov/react-telegram-web-app';
+} from '@altiore/twa';
 
 const ShowPopupDemo: FC = () => {
 	const showPopup = useShowPopup();

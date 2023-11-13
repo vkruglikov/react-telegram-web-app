@@ -54,7 +54,7 @@ export type ShowPopupFunction = (params: ShowPopupParams) => Promise<string>;
  * The function that shows a native popup described by the params argument of the type {@link ShowPopupParams}.
  *
  * ```tsx
- * import { useShowPopup } from "@vkruglikov/react-telegram-web-app";
+ * import { useShowPopup } from "@altiore/twa";
  *
  * const showPopup = useShowPopup();
  *

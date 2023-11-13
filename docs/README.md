@@ -1,6 +1,6 @@
-@vkruglikov/react-telegram-web-app
+@altiore/twa
 
-# @vkruglikov/react-telegram-web-app
+# @altiore/twa
 
 ## Table of contents
 
@@ -532,7 +532,7 @@ You have to look original description in [telegram!WebApp](https://core.telegram
 `isExpanded` can be `undefined`
 
 ```tsx
-import { useExpand } from "@vkruglikov/react-telegram-web-app";
+import { useExpand } from "@altiore/twa";
 
 const [isExpanded, expand] = useExpand();
 const handleClick = () => !isExpanded && expand();
@@ -556,7 +556,7 @@ This hook that provided [ImpactOccurredFunction](README.md#impactoccurredfunctio
 You have to look original telegram description [telegram!HapticFeedback](https://core.telegram.org/bots/webapps#hapticfeedback), because it Hook implementing his.
 
 ```tsx
-import { useHapticFeedback } from '@vkruglikov/react-telegram-web-app';
+import { useHapticFeedback } from '@altiore/twa';
 
 const [impactOccurred, notificationOccurred, selectionChanged] =
 	useHapticFeedback();
@@ -580,7 +580,7 @@ This hook provides `initDataUnsafe` and `initData`
 You have to look original description in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-mini-apps), because hook just return this.
 
 ```tsx
-import { useInitData } from '@vkruglikov/react-telegram-web-app';
+import { useInitData } from '@altiore/twa';
 
 const [initDataUnsafe] = useInitData();
 const [initDataUnsafe, initData] = useInitData();
@@ -600,7 +600,7 @@ This hook that provided [ReadTextFromClipboardFunction](README.md#readtextfromcl
 You have to look original description readTextFromClipboard in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-mini-apps), because hook just implements his.
 
 ```tsx
-import { useReadTextFromClipboard } from '@vkruglikov/react-telegram-web-app';
+import { useReadTextFromClipboard } from '@altiore/twa';
 
 const readText = useReadTextFromClipboard();
 
@@ -635,7 +635,7 @@ The hook provided showPopup function of the type [ShowPopupFunction](README.md#s
 The function that shows a native popup described by the params argument of the type [ShowPopupParams](interfaces/ShowPopupParams.md).
 
 ```tsx
-import { useShowPopup } from '@vkruglikov/react-telegram-web-app';
+import { useShowPopup } from '@altiore/twa';
 
 const showPopup = useShowPopup();
 
@@ -668,7 +668,7 @@ You have to look original description switchInlineQuery in [telegram!WebApp](htt
 The hook provided colorScheme and themeParams values of the type [ColorScheme](README.md#colorscheme) and [ThemeParams](interfaces/ThemeParams.md).
 
 ```tsx
-import { useThemeParams } from '@vkruglikov/react-telegram-web-app';
+import { useThemeParams } from '@altiore/twa';
 
 const [colorScheme, themeParams] = useThemeParams();
 
@@ -693,7 +693,7 @@ readonly [[`ColorScheme`](README.md#colorscheme), [`ThemeParams`](interfaces/The
 This hook just provides native [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-mini-apps) object
 
 ```tsx
-import { useWebApp } from '@vkruglikov/react-telegram-web-app';
+import { useWebApp } from '@altiore/twa';
 
 const WebApp = useWebApp();
 
@@ -713,7 +713,7 @@ console.log(WebApp.version);
 Renders a [telegram!BackButton](https://core.telegram.org/bots/webapps#backbutton) component in React app as [react!Component](https://reactjs.org/docs/react-component.html)
 
 ```tsx
-import { BackButton } from '@vkruglikov/react-telegram-web-app';
+import { BackButton } from '@altiore/twa';
 
 <BackButton onClick={() => console.log('Hello, I am back button!')} />;
 ```
@@ -737,7 +737,7 @@ import { BackButton } from '@vkruglikov/react-telegram-web-app';
 Renders a [telegram!MainButton](https://core.telegram.org/bots/webapps#mainbutton) component in React app as [react!Component](https://reactjs.org/docs/react-component.html)
 
 ```tsx
-import { MainButton } from '@vkruglikov/react-telegram-web-app';
+import { MainButton } from '@altiore/twa';
 
 <MainButton
 	text="CLICK ME"
@@ -765,7 +765,7 @@ WebAppProvider provide context with WebApp for components and hooks.
 Necessary to use only if you want to override `options`
 
 ```tsx
-import { WebAppProvider } from "@vkruglikov/react-telegram-web-app";
+import { WebAppProvider } from "@altiore/twa";
 
 <WebAppProvider>
   <YourAppComponent />

@@ -1,4 +1,4 @@
-[@vkruglikov/react-telegram-web-app](../README.md) / ThemeParams
+[@altiore/twa](../README.md) / ThemeParams
 
 # Interface: ThemeParams
 
