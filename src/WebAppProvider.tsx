@@ -1,7 +1,6 @@
 import React, {
 	PropsWithChildren,
 	ReactElement,
-	useCallback,
 	useEffect,
 	useMemo,
 	useState,
@@ -16,6 +15,7 @@ import {
 	createSystemContextValue,
 } from './core';
 import { WebApp } from './core/twa-types';
+import { loadScript } from './core/utils';
 
 export type WebAppProviderProps = PropsWithChildren<{
 	options?: Options;
@@ -71,53 +71,12 @@ const WebAppProvider = ({
 		return () => window.removeEventListener('beforeunload', forceHideButtons);
 	}, [options?.smoothButtonsTransition, webApp]);
 
-	const [isLoading, setIsLoading] = useState(false);
+	const [isLoading, setIsLoading] = useState(true);
 	const [isLoaded, setIsLoaded] = useState(false);
 
-	const subscribeScriptLoading = useCallback(
-		(scriptEle: HTMLScriptElement) => {
-			try {
-				const successListener = () => {
-					setIsLoaded(true);
-					setIsLoading(false);
-					setWebApp(
-						typeof window !== 'undefined' && window?.Telegram?.WebApp
-							? window.Telegram.WebApp
-							: null,
-					);
-				};
-
-				const errorListener = (ev: unknown) => {
-					console.error('Error on loading file', ev);
-					setIsLoaded(false);
-					setIsLoading(false);
-				};
-
-				scriptEle.addEventListener('load', successListener);
-				scriptEle.addEventListener('error', errorListener);
-
-				return () => {
-					scriptEle.removeEventListener('load', successListener);
-					scriptEle.removeEventListener('error', errorListener);
-				};
-			} catch (err) {
-				console.error(err);
-			}
-
-			return () => {};
-		},
-		[setIsLoaded, setIsLoading, setWebApp],
-	);
-
 	useEffect(() => {
-		try {
-			if (isLoaded || isLoading) {
-				return;
-			}
-			setIsLoading(true);
-			const existingScripts: NodeListOf<HTMLScriptElement> =
-				window.document.querySelectorAll(`script[src='${SCRIPT}']`);
-			if (existingScripts[0]) {
+		loadScript(SCRIPT)
+			.then(() => {
 				setIsLoaded(true);
 				setIsLoading(false);
 				setWebApp(
@@ -125,28 +84,12 @@ const WebAppProvider = ({
 						? window.Telegram.WebApp
 						: null,
 				);
-				return () => {};
-			}
-
-			const scriptEle = document.createElement('script');
-
-			scriptEle.setAttribute('src', SCRIPT);
-			scriptEle.setAttribute('type', 'text/javascript');
-			scriptEle.setAttribute('async', 'true');
-
-			document.body.appendChild(scriptEle);
-
-			return subscribeScriptLoading(scriptEle);
-		} catch (err) {
-			console.error(err);
-			setIsLoaded(false);
-			setIsLoading(false);
-		}
-
-		return () => {};
-		// Осознанно, не должно быть зависимостей. Скрипт загружается только один раз
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+			})
+			.catch(() => {
+				setIsLoaded(false);
+				setIsLoading(false);
+			});
+	}, [setIsLoading, setIsLoaded]);
 
 	const systemValue = useMemo(createSystemContextValue, []);
 
