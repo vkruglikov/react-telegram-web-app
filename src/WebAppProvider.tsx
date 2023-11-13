@@ -1,6 +1,7 @@
 import React, {
 	PropsWithChildren,
 	ReactElement,
+	useCallback,
 	useEffect,
 	useMemo,
 	useState,
@@ -72,9 +73,55 @@ const WebAppProvider = ({
 
 	const [isLoading, setIsLoading] = useState(true);
 	const [isLoaded, setIsLoaded] = useState(false);
+
+	const subscribeScriptLoading = useCallback(
+		(scriptEle: HTMLScriptElement) => {
+			try {
+				const successListener = () => {
+					setIsLoaded(true);
+					setIsLoading(false);
+					setWebApp(
+						typeof window !== 'undefined' && window?.Telegram?.WebApp
+							? window.Telegram.WebApp
+							: null,
+					);
+				};
+
+				const errorListener = (ev: unknown) => {
+					console.error('Error on loading file', ev);
+					setIsLoaded(false);
+					setIsLoading(false);
+				};
+
+				scriptEle.addEventListener('load', successListener);
+
+				scriptEle.addEventListener('error', errorListener);
+
+				return () => {
+					scriptEle.removeEventListener('load', successListener);
+					scriptEle.removeEventListener('error', errorListener);
+				};
+			} catch (err) {
+				console.error(err);
+			}
+
+			return () => {};
+		},
+		[setIsLoaded, setIsLoading, setWebApp],
+	);
+
 	useEffect(() => {
 		try {
+			if (isLoaded || isLoading) {
+				return;
+			}
 			setIsLoading(true);
+			const existingScripts: NodeListOf<HTMLScriptElement> =
+				window.document.querySelectorAll(`script[src~='${SCRIPT}']`);
+			if (existingScripts[0]) {
+				return subscribeScriptLoading(existingScripts[0]);
+			}
+
 			const scriptEle = document.createElement('script');
 
 			scriptEle.setAttribute('src', SCRIPT);
@@ -83,28 +130,15 @@ const WebAppProvider = ({
 
 			document.body.appendChild(scriptEle);
 
-			// success event
-			scriptEle.addEventListener('load', () => {
-				setIsLoaded(true);
-				setIsLoading(false);
-				setWebApp(
-					typeof window !== 'undefined' && window?.Telegram?.WebApp
-						? window.Telegram.WebApp
-						: null,
-				);
-			});
-			// error event
-			scriptEle.addEventListener('error', ev => {
-				console.log('Error on loading file', ev);
-				setIsLoaded(false);
-				setIsLoading(false);
-			});
+			return subscribeScriptLoading(scriptEle);
 		} catch (err) {
 			console.error(err);
 			setIsLoaded(false);
 			setIsLoading(false);
 		}
-	}, [setIsLoaded, setIsLoading, setWebApp]);
+
+		return () => {};
+	}, [subscribeScriptLoading, isLoading, isLoaded]);
 
 	const systemValue = useMemo(createSystemContextValue, []);
 
