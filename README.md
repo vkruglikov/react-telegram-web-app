@@ -99,9 +99,9 @@ const Content = () => {
 
 Here's what's coming up:
 
-- [ ] In the future, We would like to use us components also in Web application, without Telegram context.
 - [ ] All Telegram WebApp feature support.
 - [x] Main Telegram WebApp feature support.
+- [x] TwaLoader component to better support TWA and non TWA applications
 
 ## 🥂 License
 

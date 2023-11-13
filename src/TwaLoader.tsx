@@ -11,6 +11,7 @@ interface IProps {
 	isTWApp?: React.JSX.Element;
 	noTWApp?: React.JSX.Element;
 	minVersion?: string | number;
+	showNotification?: boolean;
 }
 
 export const TwaLoader: FC<IProps> = ({
@@ -18,6 +19,7 @@ export const TwaLoader: FC<IProps> = ({
 	isTWApp = null,
 	noTWApp = null,
 	minVersion = null,
+	showNotification = false,
 }): React.JSX.Element | null => {
 	useEffect(() => {
 		if (!loading && !isTWApp && !noTWApp) {
@@ -38,9 +40,11 @@ export const TwaLoader: FC<IProps> = ({
 
 	useEffect(() => {
 		if (
-			isVersionAtLeast('6.2') &&
+			showNotification &&
+			isLoaded &&
 			minVersion &&
-			parseFloat(minVersion.toString()) > 6.2
+			isVersionAtLeast('6.2') &&
+			!isCorrectVersion
 		) {
 			showPopup({
 				message: `Please update your Telegram app to the latest version to use this app. Minimum supported version is "${minVersion}"`,
@@ -48,7 +52,14 @@ export const TwaLoader: FC<IProps> = ({
 				.then()
 				.catch(console.error);
 		}
-	}, [minVersion, isVersionAtLeast, showPopup]);
+	}, [
+		isVersionAtLeast,
+		showPopup,
+		isLoaded,
+		isCorrectVersion,
+		showNotification,
+		minVersion,
+	]);
 
 	const webApp = useWebApp();
 
