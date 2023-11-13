@@ -1,5 +1,5 @@
 import { useWebApp } from './core';
-import { useCallback } from 'react';
+import { useCallback, useMemo } from 'react';
 
 /**
  * A hook that shows version minimum check
@@ -13,8 +13,12 @@ export type VersionAtLeastFunction = (version: string | number) => boolean;
 export const useIsVersionAtLeast = (): VersionAtLeastFunction => {
 	const WebApp = useWebApp();
 
+	const _isVersionAtLeast = useMemo(() => {
+		return WebApp?.isVersionAtLeast;
+	}, [WebApp]);
+
 	return useCallback(
-		(version: string | number) => WebApp?.isVersionAtLeast?.(version) ?? false,
-		[WebApp],
+		(version: string | number) => _isVersionAtLeast?.(version) ?? false,
+		[_isVersionAtLeast],
 	);
 };
