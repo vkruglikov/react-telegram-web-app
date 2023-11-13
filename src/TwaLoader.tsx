@@ -74,7 +74,7 @@ export const TwaLoader = ({
 		return loading;
 	}
 
-	if (versionAtLeast && !isCorrectVersion) {
+	if (isLoaded && versionAtLeast && !isCorrectVersion) {
 		return oldTWApp;
 	}
 
