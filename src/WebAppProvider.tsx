@@ -118,7 +118,14 @@ const WebAppProvider = ({
 			const existingScripts: NodeListOf<HTMLScriptElement> =
 				window.document.querySelectorAll(`script[src='${SCRIPT}']`);
 			if (existingScripts[0]) {
-				return subscribeScriptLoading(existingScripts[0]);
+				setIsLoaded(true);
+				setIsLoading(false);
+				setWebApp(
+					typeof window !== 'undefined' && window?.Telegram?.WebApp
+						? window.Telegram.WebApp
+						: null,
+				);
+				return () => {};
 			}
 
 			const scriptEle = document.createElement('script');
@@ -137,7 +144,9 @@ const WebAppProvider = ({
 		}
 
 		return () => {};
-	}, [subscribeScriptLoading, isLoading, isLoaded]);
+		// Осознанно, не должно быть зависимостей. Скрипт загружается только один раз
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	const systemValue = useMemo(createSystemContextValue, []);
 
