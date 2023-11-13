@@ -32,7 +32,9 @@ export const TwaLoader: FC<IProps> = ({
 
 	const { isLoaded, isLoading } = useTwa();
 
-	const isCorrectVersion = useVersionAtLeast(minVersion);
+	const isCorrectVersion = useVersionAtLeast(
+		minVersion ? String(minVersion) : undefined,
+	);
 
 	const isVersionAtLeast = useIsVersionAtLeast();
 
