@@ -35,6 +35,7 @@ export const TwaLoader: FC<IProps> = ({
 		isCorrectVersion,
 		isLoading,
 		isLoaded,
+		minVersion,
 	});
 
 	if (isLoading) {

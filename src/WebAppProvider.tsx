@@ -80,17 +80,16 @@ const WebAppProvider = ({
 					typeof window !== 'undefined' && window?.Telegram?.WebApp
 						? window.Telegram.WebApp
 						: null;
-				if (_webApp?.initDataUnsafe?.user) {
-					setWebApp(_webApp);
-				}
+				setWebApp(_webApp);
 			})
-			.catch(console.error)
-			.finally(() => {
-				setTimeout(() => {
-					setIsLoading(false);
-				}, 0);
-			});
+			.catch(console.error);
 	}, [setIsLoading]);
+
+	useEffect(() => {
+		if (webApp) {
+			setIsLoading(false);
+		}
+	}, [webApp]);
 
 	const systemValue = useMemo(createSystemContextValue, []);
 
