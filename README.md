@@ -14,11 +14,9 @@ Also, you can look demo [source code](./demo/src).
 
 ## 🔧 Installation & Get started
 
-1️⃣ &nbsp;**Foremost**, you have to do [initializing web apps](https://core.telegram.org/bots/webapps#initializing-mini-apps) step, because package has dependency of Telegram Web App context.
+1️⃣ &nbsp;**Install** by running: `npm i @altiore/twa --save`. Today we support React^18.
 
-2️⃣ &nbsp;**Install** by running: `npm i @altiore/twa --save`. Today we support React^18.
-
-3️⃣ &nbsp;**Try it out** by writing code.
+2️⃣ &nbsp;**Try it out** by writing code.
 
 ```jsx
 import { MainButton, useShowPopup } from '@altiore/twa';
@@ -46,7 +44,7 @@ const Content = () => {
   This component controls the back button, which can be displayed in the header of the Web App in the Telegram interface.
 
 - [TwaLoader](./docs/README.md#twaloader) -
-  This component helps to show content dependent on was TWA script loaded or not
+  This component helps to show content dependent on was TWA application loaded or not
 
 - [WebAppProvider](./docs/README.md#webappprovider) -
   WebAppProvider provide context with WebApp for components and hooks.
