@@ -1,9 +1,6 @@
 import { Button, Form, Input, Typography } from 'antd';
 import { FC, useState } from 'react';
-import {
-	ShowPopupParams,
-	useShowPopup,
-} from '@altiore/twa';
+import { ShowPopupParams, useShowPopup } from '@altiore/twa';
 
 const ShowPopupDemo: FC = () => {
 	const showPopup = useShowPopup();

@@ -1,9 +1,6 @@
 import React, { DispatchWithoutAction, FC, useState } from 'react';
 import ReactDOM from 'react-dom/client';
-import {
-	useThemeParams,
-	WebAppProvider,
-} from '@altiore/twa';
+import { useThemeParams, WebAppProvider } from '@altiore/twa';
 import { ConfigProvider, theme } from 'antd';
 import 'antd/dist/reset.css';
 

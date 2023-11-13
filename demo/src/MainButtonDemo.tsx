@@ -1,9 +1,6 @@
 import { Button, Form, Input, Typography, Switch } from 'antd';
 import { FC, useState } from 'react';
-import {
-	MainButton,
-	MainButtonProps,
-} from '@altiore/twa';
+import { MainButton, MainButtonProps } from '@altiore/twa';
 
 const MainButtonDemo: FC<{
 	initialValues?: Partial<MainButtonProps> & { show?: boolean };

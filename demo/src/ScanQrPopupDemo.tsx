@@ -1,8 +1,5 @@
 import { Button, Form, Typography } from 'antd';
-import {
-	useScanQrPopup,
-	useShowPopup,
-} from '@altiore/twa';
+import { useScanQrPopup, useShowPopup } from '@altiore/twa';
 
 const ScanQrPopupDemo = () => {
 	const [showQrPopup, closeQrPopup] = useScanQrPopup();

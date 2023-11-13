@@ -1,7 +1,4 @@
-import {
-	useHapticFeedback,
-	useShowPopup,
-} from '@altiore/twa';
+import { useHapticFeedback, useShowPopup } from '@altiore/twa';
 import { useRef, useState } from 'react';
 
 const useBetaVersion = (initialState = false) => {
