@@ -4,6 +4,7 @@ exports[`Package /lib should have correct /lib structure 1`] = `
 [
   "/BackButton.d.ts",
   "/MainButton.d.ts",
+  "/TwaLoader.d.ts",
   "/WebAppProvider.d.ts",
   [
     "/core/context.d.ts",
@@ -29,11 +30,14 @@ exports[`Package /lib should have correct /lib structure 1`] = `
   "/useExpand.d.ts",
   "/useHapticFeedback.d.ts",
   "/useInitData.d.ts",
+  "/useIsVersionAtLeast.d.ts",
   "/useReadTextFromClipboard.d.ts",
   "/useScanQrPopup.d.ts",
   "/useShowPopup.d.ts",
   "/useSwitchInlineQuery.d.ts",
   "/useThemeParams.d.ts",
+  "/useTwa.d.ts",
+  "/useVersionAtLeast.d.ts",
   "/useWebApp.d.ts",
 ]
 `;
@@ -42,16 +46,20 @@ exports[`Package /lib should have exports from modules 1`] = `
 {
   "BackButton": [Function],
   "MainButton": [Function],
+  "TwaLoader": [Function],
   "WebAppProvider": [Function],
   "useCloudStorage": [Function],
   "useExpand": [Function],
   "useHapticFeedback": [Function],
   "useInitData": [Function],
+  "useIsVersionAtLeast": [Function],
   "useReadTextFromClipboard": [Function],
   "useScanQrPopup": [Function],
   "useShowPopup": [Function],
   "useSwitchInlineQuery": [Function],
   "useThemeParams": [Function],
+  "useTwa": [Function],
+  "useVersionAtLeast": [Function],
   "useWebApp": [Function],
 }
 `;

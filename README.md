@@ -45,6 +45,9 @@ const Content = () => {
 - [BackButton](./docs/README.md#backbutton) -
   This component controls the back button, which can be displayed in the header of the Web App in the Telegram interface.
 
+- [TwaLoader](./docs/README.md#twaloader) -
+  This component helps to show content dependent on was TWA script loaded or not
+
 - [WebAppProvider](./docs/README.md#webappprovider) -
   WebAppProvider provide context with WebApp for components and hooks.
   You can try to pass an object with options
@@ -83,6 +86,12 @@ const Content = () => {
   This hook provides `CloudStorage` object as Promise functions
 - [useInitData](./docs/README.md#useinitdata) -
   This hook provides `InitDataUnsafe` and `InitData` object
+- [useIsVersionAtLeast](./docs/README.md#useisversionatleast) -
+  This hook provides `isVersionAtLeast` function
+- [useVersionAtLeast](./docs/README.md#useversionatleast) -
+  This hook provides `isVersionAtLeast` result which is boolean
+- [useTwa](./docs/README.md#usetwa) -
+  This hook provides boolean values indicates was TWA script loaded or not
 - [useWebApp](./docs/README.md#usewebapp) -
   This hook just provides native `WebApp` object
 

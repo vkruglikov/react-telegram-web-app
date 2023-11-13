@@ -44,17 +44,21 @@
 - [useExpand](README.md#useexpand)
 - [useHapticFeedback](README.md#usehapticfeedback)
 - [useInitData](README.md#useinitdata)
+- [useIsVersionAtLeast](README.md#useIsVersionAtLeast)
 - [useReadTextFromClipboard](README.md#usereadtextfromclipboard)
 - [useScanQrPopup](README.md#usescanqrpopup)
 - [useShowPopup](README.md#useshowpopup)
 - [useSwitchInlineQuery](README.md#useswitchinlinequery)
 - [useThemeParams](README.md#usethemeparams)
+- [useTwa](README.md#useTwa)
+- [useVersionAtLeast](README.md#useVersionAtLeast)
 - [useWebApp](README.md#usewebapp)
 
 ### React Components
 
 - [BackButton](README.md#backbutton)
 - [MainButton](README.md#mainbutton)
+- [TwaLoader](README.md#TwaLoader)
 - [WebAppProvider](README.md#webappprovider)
 
 ## Type Aliases
@@ -592,6 +596,63 @@ readonly [[`InitDataUnsafe`](README.md#initdataunsafe), `string`]
 
 ---
 
+### useIsVersionAtLeast
+
+▸ **useIsVersionAtLeast**(): (version: string | number) => boolean
+
+This hook provides `isVersionAtLeast` function
+You have to look original description in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-mini-apps), because hook just return this.
+
+```tsx
+import { useIsVersionAtLeast } from '@altiore/twa';
+
+const isVersionAtLeast = useIsVersionAtLeast();
+
+if (isVersionAtLeast('6.5')) {
+	return <p>Version is at least 6.5</p>;
+}
+```
+
+---
+
+### useVersionAtLeast
+
+▸ **useVersionAtLeast**(): readonly boolean
+
+This hook provides `isVersionAtLeast` function result
+You have to look original description in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-mini-apps), because hook just return this.
+
+```tsx
+import { useVersionAtLeast } from '@altiore/twa';
+
+const isCorrectVersion = useIsVersionAtLeast('6.5');
+if (isCorrectVersion) {
+	return <p>Version is at least 6.5</p>;
+}
+```
+
+---
+
+### useTwa
+
+▸ **useTwa**(): readonly {isLoaded: boolean; isLoading: boolean}
+
+This hook provides information was TWA loaded or not
+
+```tsx
+import { useTwa } from '@altiore/twa';
+
+const { isLoaded, isLoading } = useTwa();
+if (isLoading) {
+	return <p>TWA script still loading</p>;
+}
+if (isLoaded) {
+	return <p>TWA script loaded</p>;
+}
+```
+
+---
+
 ### useReadTextFromClipboard
 
 ▸ **useReadTextFromClipboard**(): [`ReadTextFromClipboardFunction`](README.md#readtextfromclipboardfunction)
@@ -754,6 +815,30 @@ import { MainButton } from '@altiore/twa';
 #### Returns
 
 `null`
+
+---
+
+### TwaLoader
+
+▸ **TwaLoader**(`props`): `null`
+
+Renders its props depends on was TWA loaded or not
+
+```tsx
+import { TwaLoader } from '@altiore/twa';
+
+<TwaLoader
+	loading={<p>This will be shown while TWA script is loading</p>}
+	isTWApp={
+		<p>This will be shown if TWA was loaded in Telegram and available</p>
+	}
+	noTWApp={<p>This will be shown is this is not a Telegram environment</p>}
+/>;
+```
+
+#### Returns
+
+one of provided prop
 
 ---
 

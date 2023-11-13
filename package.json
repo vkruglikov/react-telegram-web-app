@@ -32,7 +32,7 @@
     "eslint": "npx eslint src",
     "test": "NODE_ENV=test jest",
     "test:all": "NODE_ENV=test jest --testPathIgnorePatterns package",
-    "test:package": "NODE_ENV=test jest  package"
+    "test:package": "NODE_ENV=test jest package --updateSnapshot"
   },
   "repository": {
     "type": "git",
