@@ -91,8 +91,14 @@ const Content = () => {
 Here's what's coming up:
 
 - [ ] In the future, We would like to use us components also in Web application, without Telegram context.
-- [ ] All Telegram WebApp feature support.
-- [x] Main Telegram WebApp feature support.
+- [ ] All Telegram WebApp feature support
+- [x] Main Telegram WebApp feature support
+
+## Contributing
+
+- Read up about its [🛣 Roadmap](#-roadmap) and [official documentation](https://core.telegram.org/bots/webapps) Telegram Mini Apps
+- Have questions? Check out our [examples](#-live-demo--code-examples), [duscussions](https://github.com/vkruglikov/react-telegram-web-app/discussions) and [issues](https://github.com/vkruglikov/react-telegram-web-app/discussions)
+- [Fork](https://github.com/vkruglikov/react-telegram-web-app/fork) and [Contribute](./CONTRIBUTING.md) your own modifications
 
 ## 🥂 License
 
