@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - master
-    paths-ignore:
-      - demo/**
+    paths:
+      - src/**
 
 jobs:
   build:
