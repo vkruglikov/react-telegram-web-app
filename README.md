@@ -98,7 +98,12 @@ Here's what's coming up:
 
 As always, thanks to our amazing contributors!
 
-<!--GAMFC--><!--GAMFC-END-->
+<!--GAMFC--><a href="https://github.com/vkruglikov" title="Valentin Kruglikov">
+  <img src="https://avatars.githubusercontent.com/u/9719024?v=4" width="42;" alt="Valentin Kruglikov"/>
+</a>
+<a href="https://github.com/xsa-dev" title="Aleksey Savin">
+  <img src="https://avatars.githubusercontent.com/u/16959353?v=4" width="42;" alt="Aleksey Savin"/>
+</a><!--GAMFC-END-->
 
 Made with [contributors](https://github.com/jaywcjlove/github-action-contributors).
 
