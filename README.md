@@ -94,6 +94,14 @@ Here's what's coming up:
 - [ ] All Telegram WebApp feature support
 - [x] Main Telegram WebApp feature support
 
+## Contributors
+
+As always, thanks to our amazing contributors!
+
+<!--GAMFC--><!--GAMFC-END-->
+
+Made with [contributors](https://github.com/jaywcjlove/github-action-contributors).
+
 ## Contributing
 
 - Read up about its [🛣 Roadmap](#-roadmap) and [official documentation](https://core.telegram.org/bots/webapps) Telegram Mini Apps
