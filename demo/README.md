@@ -3,7 +3,7 @@
 Install certificate
 
 ```bash
-mkсert react-telegram-web-app.domain.pem && mkcert install
+mkcert react-telegram-web-app.domain
 ```
 
 Add domain to /etc/hosts as 127.0.0.1
