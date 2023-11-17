@@ -1,8 +1,10 @@
 name: Run tests
 on:
   push:
-    paths-ignore:
-      - demo/**
+    paths:
+      - src/**
+      - tests/**
+      - jest.config.json
 jobs:
   test:
     runs-on: ubuntu-latest
