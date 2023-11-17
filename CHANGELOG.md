@@ -1,5 +1,11 @@
 # @vkruglikov/react-telegram-web-app
 
+## 2.1.6
+
+### Patch Changes
+
+- c2576d6: fix typo and privacy error fixed
+
 ## 2.1.5
 
 ### Patch Changes
