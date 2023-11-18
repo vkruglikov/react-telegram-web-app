@@ -57,10 +57,13 @@ export type InitDataUnsafe = {
  * ```
  * @group Hooks
  */
-const useInitData = (): readonly [InitDataUnsafe, InitData] => {
+const useInitData = (): readonly [
+  InitDataUnsafe | undefined,
+  InitData | undefined,
+] => {
   const WebApp = useWebApp();
 
-  return [WebApp!.initDataUnsafe, WebApp!.initData] as const;
+  return [WebApp?.initDataUnsafe, WebApp?.initData] as const;
 };
 
 export default useInitData;
