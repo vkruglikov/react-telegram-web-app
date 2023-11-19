@@ -1,5 +1,11 @@
 # @vkruglikov/react-telegram-web-app
 
+## 2.1.6
+
+### Patch Changes
+
+- 6631ede: useInitData returns undefined if window is unavailable
+
 ## 2.1.5
 
 ### Patch Changes
