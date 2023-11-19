@@ -103,6 +103,9 @@ As always, thanks to our amazing contributors!
 </a>
 <a href="https://github.com/xsa-dev" title="Aleksey Savin">
   <img src="https://avatars.githubusercontent.com/u/16959353?v=4" width="42;" alt="Aleksey Savin"/>
+</a>
+<a href="https://github.com/alexgoto" title="Alexandr Gotovtsev">
+  <img src="https://avatars.githubusercontent.com/u/43707500?v=4" width="42;" alt="Alexandr Gotovtsev"/>
 </a><!--GAMFC-END-->
 
 Made with [contributors](https://github.com/jaywcjlove/github-action-contributors).
