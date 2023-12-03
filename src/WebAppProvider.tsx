@@ -3,6 +3,7 @@ import React, {
   ReactElement,
   useEffect,
   useMemo,
+  useState,
 } from 'react';
 import {
   webAppContext,
@@ -54,7 +55,19 @@ const WebAppProvider = ({
   );
   const systemValue = useMemo(createSystemContextValue, []);
 
+  const [webApp, setWebApp] = useState(DEFAULT_WEBAPP);
+
   useEffect(() => {
+    let retries = 0;
+    const timer = setInterval(() => {
+      if (window?.Telegram?.WebApp) {
+        clearInterval(timer);
+        setWebApp(window.Telegram.WebApp);
+      }
+      if (retries > 4) clearInterval(timer);
+      retries += 1;
+    }, 1000);
+
     if (!options?.smoothButtonsTransition) return;
     const forceHideButtons = () => {
       DEFAULT_WEBAPP?.MainButton?.hide();
@@ -62,12 +75,15 @@ const WebAppProvider = ({
     };
 
     window.addEventListener('beforeunload', forceHideButtons);
-    return () => window.removeEventListener('beforeunload', forceHideButtons);
+    return () => {
+      window.removeEventListener('beforeunload', forceHideButtons)
+      clearInterval(timer);
+    };
   }, [options?.smoothButtonsTransition]);
 
   return (
     <systemContext.Provider value={systemValue}>
-      <webAppContext.Provider value={DEFAULT_WEBAPP}>
+      <webAppContext.Provider value={webApp}>
         <optionsContext.Provider value={mergedOptions}>
           {children}
         </optionsContext.Provider>
