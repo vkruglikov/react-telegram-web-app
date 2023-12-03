@@ -60,12 +60,12 @@ const WebAppProvider = ({
   useEffect(() => {
     let retries = 0;
     const timer = setInterval(() => {
+      retries += 1;
       if (window?.Telegram?.WebApp) {
         clearInterval(timer);
         setWebApp(window.Telegram.WebApp);
       }
       if (retries > 4) clearInterval(timer);
-      retries += 1;
     }, 1000);
 
     if (!options?.smoothButtonsTransition) return;
