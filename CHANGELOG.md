@@ -1,5 +1,11 @@
 # @vkruglikov/react-telegram-web-app
 
+## 2.1.8
+
+### Patch Changes
+
+- f187824: test fix
+
 ## 2.1.7
 
 ### Patch Changes
