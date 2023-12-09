@@ -1,5 +1,11 @@
 # @vkruglikov/react-telegram-web-app
 
+## 2.1.7
+
+### Patch Changes
+
+- 94b5e28: Added experimental `async` mode
+
 ## 2.1.6
 
 ### Patch Changes
