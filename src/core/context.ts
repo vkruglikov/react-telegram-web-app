@@ -1,12 +1,13 @@
 import { createContext, MutableRefObject } from 'react';
 
-export const DEFAULT_WEBAPP =
+export const getWebAppFromGlobal = () =>
   typeof window !== 'undefined' && window?.Telegram?.WebApp
     ? window.Telegram.WebApp
     : null;
 
-export const webAppContext =
-  createContext<typeof DEFAULT_WEBAPP>(DEFAULT_WEBAPP);
+export const webAppContext = createContext<
+  ReturnType<typeof getWebAppFromGlobal>
+>(getWebAppFromGlobal());
 
 /**
  * This object describe options be able to set through WebAppProvider
@@ -19,6 +20,7 @@ export type Options = {
    * @defaultValue `false`
    */
   smoothButtonsTransition?: boolean;
+  async?: boolean;
   /**
    * @defaultValue `10`
    * @remarks

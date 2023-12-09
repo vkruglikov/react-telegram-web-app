@@ -10,8 +10,9 @@ import {
   systemContext,
   Options,
   DEFAULT_OPTIONS,
-  DEFAULT_WEBAPP,
   createSystemContextValue,
+  getWebAppFromGlobal,
+  useAsyncMode,
 } from './core';
 
 export type WebAppProviderProps = PropsWithChildren<{
@@ -45,6 +46,7 @@ const WebAppProvider = ({
   children,
   options,
 }: WebAppProviderProps): ReactElement => {
+  const isLoadedWithAsyncMode = useAsyncMode(!!options?.async);
   const mergedOptions = useMemo(
     () => ({
       ...DEFAULT_OPTIONS,
@@ -53,21 +55,22 @@ const WebAppProvider = ({
     [options],
   );
   const systemValue = useMemo(createSystemContextValue, []);
+  const globalWebApp = useMemo(getWebAppFromGlobal, [isLoadedWithAsyncMode]);
 
   useEffect(() => {
     if (!options?.smoothButtonsTransition) return;
     const forceHideButtons = () => {
-      DEFAULT_WEBAPP?.MainButton?.hide();
-      DEFAULT_WEBAPP?.BackButton?.hide();
+      globalWebApp?.MainButton?.hide();
+      globalWebApp?.BackButton?.hide();
     };
 
     window.addEventListener('beforeunload', forceHideButtons);
     return () => window.removeEventListener('beforeunload', forceHideButtons);
-  }, [options?.smoothButtonsTransition]);
+  }, [globalWebApp, options?.smoothButtonsTransition]);
 
   return (
     <systemContext.Provider value={systemValue}>
-      <webAppContext.Provider value={DEFAULT_WEBAPP}>
+      <webAppContext.Provider value={globalWebApp}>
         <optionsContext.Provider value={mergedOptions}>
           {children}
         </optionsContext.Provider>
