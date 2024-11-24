@@ -1,13 +1,27 @@
-import { useContext, useEffect, useId } from 'react';
-import { useWebApp, useSmoothButtonsTransition, systemContext } from './core';
+import { useEffect } from 'react';
+import { useWebApp } from './core';
 
+/**
+ * The props type of {@link SettingsButton | `SettingsButton`}.
+ */
 export interface SettingsButtonProps {
   onClick?: () => void;
 }
 
+/**
+ * Renders a {@link telegram!SettingsButton} component in React app as {@link react!Component}
+ *
+ * ```tsx
+ * import { SettingsButton } from "@vkruglikov/react-telegram-web-app";
+ *
+ * <SettingsButton
+ *     onClick={() => console.log('Hello, I am settings button!')}
+ * />
+ * ```
+ * @param props
+ * @group React Components
+ */
 const SettingsButton = ({ onClick }: SettingsButtonProps): null => {
-  const system = useContext(systemContext);
-  const buttonId = useId();
   const WebApp = useWebApp();
 
   useEffect(() => {
@@ -21,12 +35,17 @@ const SettingsButton = ({ onClick }: SettingsButtonProps): null => {
     };
   }, [onClick, WebApp]);
 
-  useSmoothButtonsTransition({
-    show: WebApp?.SettingsButton?.show,
-    hide: WebApp?.SettingsButton?.hide,
-    currentShowedIdRef: system.SettingsButton,
-    id: buttonId,
-  });
+  useEffect(() => {
+    if (!WebApp?.SettingsButton) {
+      return;
+    }
+
+    WebApp.SettingsButton.show?.();
+
+    return () => {
+      WebApp.SettingsButton.hide?.();
+    };
+  }, [WebApp]);
 
   return null;
 };

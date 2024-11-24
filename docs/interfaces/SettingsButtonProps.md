@@ -20,8 +20,6 @@ The props type of [`SettingsButton`](../README.md#settingsbutton).
 
 ▸ (): `void`
 
-The settings button press event handler
-
 ##### Returns
 
 `void`
