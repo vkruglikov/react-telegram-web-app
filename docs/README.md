@@ -9,6 +9,7 @@
 - [BackButtonProps](interfaces/BackButtonProps.md)
 - [MainButtonProps](interfaces/MainButtonProps.md)
 - [ScanQrPopupParams](interfaces/ScanQrPopupParams.md)
+- [SettingsButtonProps](interfaces/SettingsButtonProps.md)
 - [ShowPopupButton](interfaces/ShowPopupButton.md)
 - [ShowPopupParams](interfaces/ShowPopupParams.md)
 - [ThemeParams](interfaces/ThemeParams.md)
@@ -55,6 +56,7 @@
 
 - [BackButton](README.md#backbutton)
 - [MainButton](README.md#mainbutton)
+- [SettingsButton](README.md#settingsbutton)
 - [WebAppProvider](README.md#webappprovider)
 
 ## Type Aliases
@@ -245,6 +247,7 @@ This object describe options be able to set through WebAppProvider
 
 | Name                         | Type      | Description                                                                                                                                                                                                                                   |
 | :--------------------------- | :-------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `async?`                     | `boolean` | -                                                                                                                                                                                                                                             |
 | `smoothButtonsTransition?`   | `boolean` | When is `true`, we can smooth button transitions due to show(), hide() calls. So when you use MainButton or BackButton on multiple pages, there will be no noticeable flickering of the button during transitions **`Default Value`** `false` |
 | `smoothButtonsTransitionMs?` | `number`  | **`Default Value`** `10` **`Remarks`**                                                                                                                                                                                                        |
 
@@ -493,9 +496,10 @@ You have to look original description switchInlineQuery in [telegram!WebApp](htt
 | `first_name`                | `string`  |
 | `id`                        | `number`  |
 | `is_bot?`                   | `boolean` |
+| `is_premium?`               | `boolean` |
 | `language_code?`            | `string`  |
 | `last_name?`                | `string`  |
-| `photo_url?`                | `true`    |
+| `photo_url?`                | `string`  |
 | `username?`                 | `string`  |
 
 ## Hooks
@@ -574,7 +578,7 @@ readonly [[`ImpactOccurredFunction`](README.md#impactoccurredfunction), [`Notifi
 
 ### useInitData
 
-▸ **useInitData**(): readonly [[`InitDataUnsafe`](README.md#initdataunsafe), `string`]
+▸ **useInitData**(): readonly [`undefined` \| [`InitDataUnsafe`](README.md#initdataunsafe), `undefined` \| `string`]
 
 This hook provides `initDataUnsafe` and `initData`
 You have to look original description in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-mini-apps), because hook just return this.
@@ -588,7 +592,7 @@ const [initDataUnsafe, initData] = useInitData();
 
 #### Returns
 
-readonly [[`InitDataUnsafe`](README.md#initdataunsafe), `string`]
+readonly [`undefined` \| [`InitDataUnsafe`](README.md#initdataunsafe), `undefined` \| `string`]
 
 ---
 
@@ -750,6 +754,30 @@ import { MainButton } from '@vkruglikov/react-telegram-web-app';
 | Name    | Type                                               |
 | :------ | :------------------------------------------------- |
 | `props` | [`MainButtonProps`](interfaces/MainButtonProps.md) |
+
+#### Returns
+
+`null`
+
+---
+
+### SettingsButton
+
+▸ **SettingsButton**(`props`): `null`
+
+Renders a [telegram!SettingsButton](https://core.telegram.org/bots/webapps#settingsbutton) component in React app as [react!Component](https://reactjs.org/docs/react-component.html)
+
+```tsx
+import { SettingsButton } from '@vkruglikov/react-telegram-web-app';
+
+<SettingsButton onClick={() => console.log('Hello, I am settings button!')} />;
+```
+
+#### Parameters
+
+| Name    | Type                                                       |
+| :------ | :--------------------------------------------------------- |
+| `props` | [`SettingsButtonProps`](interfaces/SettingsButtonProps.md) |
 
 #### Returns
 

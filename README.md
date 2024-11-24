@@ -48,6 +48,7 @@ const Content = () => {
 - [WebAppProvider](./docs/README.md#webappprovider) -
   WebAppProvider provide context with WebApp for components and hooks.
   You can try to pass an object with options
+- [SettingsButton](./docs/README.md#settingsbutton) Settings button (mvp)
 
   ```jsx
   import { WebAppProvider, MainButton, BackButton } from '@vkruglikov/react-telegram-web-app';

@@ -56,7 +56,7 @@ export declare namespace TelegramWebApp {
     last_name?: string;
     username?: string;
     language_code?: string;
-    photo_url?: true;
+    photo_url?: string;
   }
 
   /**
