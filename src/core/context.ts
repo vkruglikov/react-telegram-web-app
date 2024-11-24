@@ -38,11 +38,13 @@ export const optionsContext = createContext<Options>(DEFAULT_OPTIONS);
 type SystemContext = {
   MainButton: MutableRefObject<null | string>;
   BackButton: MutableRefObject<null | string>;
+  SettingsButton: MutableRefObject<null | string>;
 };
 
 export const createSystemContextValue = () => ({
   MainButton: { current: null },
   BackButton: { current: null },
+  SettingsButton: { current: null },
 });
 
 export const systemContext = createContext<SystemContext>(

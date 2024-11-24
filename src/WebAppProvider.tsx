@@ -62,6 +62,7 @@ const WebAppProvider = ({
     const forceHideButtons = () => {
       globalWebApp?.MainButton?.hide();
       globalWebApp?.BackButton?.hide();
+      globalWebApp?.SettingsButton?.hide();
     };
 
     window.addEventListener('beforeunload', forceHideButtons);

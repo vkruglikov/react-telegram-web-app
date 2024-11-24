@@ -1,6 +1,10 @@
 export { default as MainButton, MainButtonProps } from './MainButton';
 export { default as BackButton, BackButtonProps } from './BackButton';
 export {
+  default as SettingsButton,
+  SettingsButtonProps,
+} from './SettingsButton';
+export {
   default as useShowPopup,
   ShowPopupFunction,
   ShowPopupParams,

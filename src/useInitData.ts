@@ -21,7 +21,8 @@ export type WebAppUser = {
   last_name?: string;
   username?: string;
   language_code?: string;
-  photo_url?: true;
+  photo_url?: string;
+  is_premium?: boolean;
   added_to_attachment_menu?: true;
   allows_write_to_pm?: true;
 };
