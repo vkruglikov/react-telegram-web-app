@@ -1,5 +1,11 @@
 # @vkruglikov/react-telegram-web-app
 
+## 2.2.0
+
+### Minor Changes
+
+- e3bcaf0: Add SettingsButton
+
 ## 2.1.9
 
 ### Patch Changes
